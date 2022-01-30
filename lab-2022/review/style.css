@@ -1,0 +1,61 @@
+html {
+    background-color: rgba(251, 246, 240, 0.5);
+}
+
+h1 {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    margin: 10px 0 10px 0;
+}
+
+h3 {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.dig-photo-archive {
+    margin: 30px auto 30px auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    list-style-type: square;
+    line-height: 30px;
+}
+
+blockquote p {
+    padding: 10px;
+    background-color: #FFA45B;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+p,
+form,
+select {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #99154E;
+}
+
+a:hover {
+    color: blue;
+    font-weight: bold;
+}
+
+.color-1 {
+    background-color: #FFDA77;
+}
+
+.color-2 {
+    background-color: #AEE6E6;
+}
