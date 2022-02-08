@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&family=Playfair+Display:wght@600;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5efe5;
+}
+
+#header-container {
+    min-height: 60vh;
+    max-height: 80vh;
+    min-width: 100%;
+    display: flex;
+}
+
+#left-header {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 75px;
+    background-color: #323049;
+    color: #F3E9D6;
+}
+
+h1 {
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 64px;
+    margin-bottom: 25px;
+    color: #F3E9D6;
+}
+
+.subtitle {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    opacity: 0.5;
+    font-size: 14px;
+    max-width: 290px;
+}
+
+.align-left {
+    float: left;
+}
+
+.align-right {
+    float: right;
+}
+
+#description {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    clear: both;
+    max-width: 450px;
+    padding-top: 10px;
+}
+
+img {
+    max-width: 40%;
+    object-fit: cover;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1d1c31;
+    margin: 100px 0 90px 0;
+}
+
+h2 {
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+ol, ul, .content > p {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+.optional {
+    font-style: italic;
+    opacity: 0.4;
+}
+
+li {
+    padding-left: 15px;
+    max-width: 400px;
+}
+
