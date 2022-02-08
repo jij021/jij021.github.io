@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f5efe5;
+    background-color: #f0f0ef;
 }
 
 #header-container {
@@ -24,8 +24,8 @@ body {
     justify-content: center;
     width: 60%;
     padding: 75px;
-    background-color: #323049;
-    color: #F3E9D6;
+    background-color: #1d2d3d;
+    color: #f3ebe1;
 }
 
 h1 {
@@ -34,7 +34,7 @@ h1 {
     font-size: 64px;
     line-height: 64px;
     margin-bottom: 25px;
-    color: #F3E9D6;
+    color: #ffb46e;
 }
 
 .subtitle {
@@ -54,8 +54,8 @@ h1 {
 
 #description {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 26px;
     clear: both;
     max-width: 450px;
     padding-top: 10px;
@@ -70,7 +70,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #1d1c31;
+    color: #1d2d3d;
     margin: 100px 0 90px 0;
 }
 
@@ -96,8 +96,8 @@ h3 {
 
 ol, ul, .content > p {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 30px;
     margin-bottom: 15px;
 }
 
