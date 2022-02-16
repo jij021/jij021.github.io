@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'Pitch-Regular';
+    src: url('./fonts/Pitch-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('./fonts/Pitch-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {background-color: #FBFBFB;}
+
+.nav {
+    position: sticky;
+    height: 0;
+    top: 0;
+    float: right;
+    min-width: 5%;
+}
+
+nav {
+    font-family: 'Pitch-Regular', 'Courier New', Courier, monospace;
+    font-size: 1em;
+    list-style: none;
+    background-color: #A2A5AB;
+    border: 2px solid #2E2729;
+}
+
+nav > ul {padding: 0.5em;}
+
+ul > li {
+    list-style: none;
+    text-align: center;
+    color: #FEFEFE;
+    padding: 0.25em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    grid-area: header;
+    font-family: 'freight-display-pro', 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 3em;
+    line-height: 110%;
+    color: #2E2729;
+    padding: 3em 1em 1em 1em;
+}
+
+.side-content {
+    font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #A2A5AB;
+    background-color: #F5F5F5;
+    padding: 2em 0 2em 0;
+}
+
+video {
+    max-width: 80%;
+    height: auto;
+    margin: -1em 0 0 0;
+}
+
+h2 {
+    font-family: 'freight-text-pro', 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    color: #2E2729;
+    margin-bottom: 0.5em;
+}
+
+.content {
+    padding: 2em;
+}
+
+.content > p {
+    font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 150%;
+    color: #2E2729;
+    margin-bottom: 1em;
+}
+
+.emphasis {color: #6196F6;}
+
+img {
+    max-width: 40%;
+    min-width: 30%;
+    height: auto;
+}
+
+.caption {
+    font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.8em;
+    letter-spacing: 0.03em;
+    margin: 1em 0 1em 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1.7em;
+}
+
+ol > li {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    line-height: 150%;
+    margin-bottom: 1em;
+}
+
+.image-examples {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0 2em 0;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#flowchart {
+    min-width: 90%;
+    height: auto;
+}
+
+@media (min-width: 750px) {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "side-content-0 header"
+        "side-content-final final-content"
+        "side-content-1 content-1"
+        "side-content-2 content-2"
+        "side-content-3 content-3";
+    }
+
+    h1 {
+        grid-area: header;
+        padding: 2em 0 0 1.2em;
+        max-width: 80%;
+    }
+
+    #empty-space {
+        grid-area: side-content-0;
+        background-color: #F5F5F5
+    }
+
+    .content {
+        max-width: 60%;
+        min-width: 60%;
+    }
+
+    #final-product-side {
+        grid-area: side-content-final;
+        text-align: right;
+        padding: 2em 4em 0 0;
+    }
+
+    #final-product-content {
+        grid-area: final-content;
+        padding: 2em 0 0 4em;
+    }
+
+    video {
+        min-width: 100%;
+        height: auto;
+        margin: -1em 0 0 0;
+    }
+
+    #concept-side {
+        grid-area: side-content-1;
+        text-align: right;
+        padding: 2em 4em 0 0;
+    }
+
+    #concept-content {
+        grid-area: content-1;
+        padding: 2em 0 0 4em;
+    }
+
+    #dev-side {
+        grid-area: side-content-2;
+        text-align: right;
+        padding: 2em 4em 0 0;
+    }
+
+    #dev-content {
+        grid-area: content-2;
+        padding: 2em 0 0 4em;
+        margin-bottom: -2em;
+    }
+
+    #reflections-side {
+        grid-area: side-content-3;
+        text-align: right;
+        padding: 2em 4em 3em 0;
+    }
+
+    #reflections-content {
+        grid-area: content-3;
+        padding: 2em 0 3em 4em;
+    }
+}
