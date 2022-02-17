@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -11,14 +11,16 @@
 
 <body>
 
+    <!-- i made it so that flexbox is used for smaller screens and a grid layout was used for larger ones with media query. -->
+
     <!-- fonts and text sizes per element:
-    h1: Freight Display Pro; 3em
-    h2: Freight Text Pro; 1.5em
-    p (body): Brandon Grotesque; 1.5em
+    h1: Freight Display Pro; 4em
+    h2: Freight Text Pro; 2.5em
+    p (body): Brandon Grotesque; 1.1em
     p (side content): Brandon Grotesque; 1em
-    p (captions): Brandon Grotesque; 0.75em
-    ol/li: Fira Code; 1.5em
-    ul/li (in nav): Pitch; 1.5em  -->
+    p (captions): Brandon Grotesque; 1.1em
+    ol/li: Fira Code; 1em
+    ul/li (in nav): Pitch; 1em  -->
 
     <!-- letter-spacings used:
     h2 subheadings: 0.05em
@@ -54,7 +56,7 @@
 
         <div id="final-product-content" class="content">
             <div class="image-examples">
-                <video width="720px" height="1280px" controls>
+                <video width="720" height="1280" controls autoplay muted>
                     <source src="./assets/collective-self-video.mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -96,18 +98,18 @@
 
             <div class="image-examples">
                 <div class="image">
-                    <img src="./assets/shark.jpg" width="605px" height="222px">
-                    <img src="./assets/shark drawing.png" width="305px" height="423px">
+                    <img src="./assets/shark.jpg" width="605" height="222" alt="picture of my shark plush toy">
+                    <img src="./assets/shark-drawing.png" width="305" height="423" alt="drawing of my shark plush toy">
                 </div>
 
                 <div class="image">
-                    <img src="./assets/ds.jpg" width="454px" height="363px">
-                    <img src="./assets/ds drawing.png" width="510px" height="607px">
+                    <img src="./assets/ds.jpg" width="454" height="363" alt="picture of my nintendo ds">
+                    <img src="./assets/ds-drawing.png" width="510" height="607" alt="drawing of my nintendo ds">
                 </div>
 
                 <div class="image">
-                    <img src="./assets/keyboard.jpg" width="403px" height="153px">
-                    <img src="./assets/keyboard drawing.png" width="328px" height="380px">
+                    <img src="./assets/keyboard.jpg" width="403" height="153" alt="picture of my logitech keyboard">
+                    <img src="./assets/keyboard-drawing.png" width="328" height="380" alt="drawing of my logitech keyboard">
                 </div>
                 
                 <p class="caption">Photo and drawing comparisons.</p>
@@ -116,7 +118,7 @@
             <p>I added the drawings and wall text into an Instagram story, though I did add a "buffer" image before the drawings to build suspense as you click through the story. For easier viewing, I took screenshots of my Instagram story and moved them into Figma so that the experience could last longer than the 24 hour limit on Instagram.</p>
 
             <div class="image-examples">
-                <img id="flowchart" src="./assets/flowchart.png" width="2110px" height="540px">
+                <img id="flowchart" src="./assets/flowchart.png" width="2110" height="540" alt="screenshot of my workspace in Figma">
                 
                 <p class="caption">Prototype flowchart in Figma.</p>
             </div>

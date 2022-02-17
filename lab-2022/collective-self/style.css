@@ -61,17 +61,17 @@ h1 {
     grid-area: header;
     font-family: 'freight-display-pro', 'Times New Roman', Times, serif;
     font-weight: 900;
-    font-size: 3em;
+    font-size: 4em;
     line-height: 110%;
     color: #2E2729;
-    padding: 3em 1em 1em 1em;
+    padding: 3em 1em 0.5em 1em;
 }
 
 .side-content {
     font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
     font-style: italic;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: center;
     letter-spacing: 0.1em;
     color: #A2A5AB;
@@ -88,7 +88,8 @@ video {
 h2 {
     font-family: 'freight-text-pro', 'Times New Roman', Times, serif;
     font-weight: 900;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    line-height: 120%;
     letter-spacing: 0.05em;
     color: #2E2729;
     margin-bottom: 0.5em;
@@ -100,7 +101,7 @@ h2 {
 
 .content > p {
     font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
-    font-size: 1em;
+    font-size: 1.1em;
     line-height: 150%;
     color: #2E2729;
     margin-bottom: 1em;
@@ -117,7 +118,7 @@ img {
 .caption {
     font-family: 'brandon-grotesque', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.9em;
     letter-spacing: 0.03em;
     margin: 1em 0 1em 0;
 }
@@ -131,6 +132,7 @@ img {
 
 ol > li {
     font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1em;
     line-height: 150%;
     margin-bottom: 1em;
 }
@@ -139,7 +141,7 @@ ol > li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2em 0 2em 0;
+    margin: 2em 0 1em 0;
 }
 
 .image {
@@ -168,7 +170,7 @@ ol > li {
 
     h1 {
         grid-area: header;
-        padding: 2em 0 0 1.2em;
+        padding: 2em 0 0 1em;
         max-width: 80%;
     }
 
@@ -185,7 +187,7 @@ ol > li {
     #final-product-side {
         grid-area: side-content-final;
         text-align: right;
-        padding: 2em 4em 0 0;
+        padding: 2.5em 4em 0 0;
     }
 
     #final-product-content {
@@ -202,7 +204,7 @@ ol > li {
     #concept-side {
         grid-area: side-content-1;
         text-align: right;
-        padding: 2em 4em 0 0;
+        padding: 2.5em 4em 0 0;
     }
 
     #concept-content {
@@ -213,19 +215,19 @@ ol > li {
     #dev-side {
         grid-area: side-content-2;
         text-align: right;
-        padding: 2em 4em 0 0;
+        padding: 2.5em 4em 0 0;
     }
 
     #dev-content {
         grid-area: content-2;
         padding: 2em 0 0 4em;
-        margin-bottom: -2em;
+        margin-bottom: -1em;
     }
 
     #reflections-side {
         grid-area: side-content-3;
         text-align: right;
-        padding: 2em 4em 3em 0;
+        padding: 2.5em 4em 3em 0;
     }
 
     #reflections-content {
