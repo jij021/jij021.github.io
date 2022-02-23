@@ -1,0 +1,166 @@
+/* colors
+white: #f2f2f2
+black: #1a1b1f
+orange: #E77D5C
+green: #8ABF82 
+and everything in between 
+
+fonts
+title: Termina
+subtitle: Calmettea
+other headings/body: Neue Haas Grotesk Text 
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1b1f;
+    color: #f2f2f2;
+    margin: 0 1.5em 1em 1.5em;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #1a1b1f;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2em;
+    padding: 1em 0;
+}
+
+h1 {
+    font-family: 'Termina', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-family: 'Calmetta', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.75em;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    margin: 1em 0 2em 0;
+}
+
+.content-body {
+    padding: 0 1.5em;
+}
+
+h3, h4, p:not(.content-footer > p), footer {
+    font-family: 'Neue Haas Grostesk Text', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2.5em;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.content-body > p {
+    font-size: 1em;
+    line-height: 140%;
+    margin-bottom: 1em;
+}
+
+.pull-quote {
+    padding: 1em 0;
+    margin: 2em 0;
+    color: #8ABF82;
+    font-size: 1.5em;
+    line-height: 140%;
+    border-top: 1px solid #8ABF82;
+    border-bottom: 1px solid #8ABF82;
+}
+
+.manifesto {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+}
+
+@keyframes marquee {
+    0% {transform: translateX(100vw);}
+    100% {transform: translateX(-100vw);}
+}
+
+.marquee {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: auto;
+    padding: 0.5em 0;
+    font-size: 1em;
+    color: #1a1b1f;
+    text-transform: uppercase;
+}
+
+.marquee-text {animation: marquee 10s linear infinite;}
+
+.manifesto > blockquote > p, 
+.manifesto > blockquote > footer {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 1.5em;
+    font-size: 1em;
+    line-height: 140%;
+}
+
+.content-footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Neue Haas Grostesk Text', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 3em;
+}
+
+/* mobile (phones, 480px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .body {
+        background-color: pink;
+        font-size: bold;
+    }
+}
+
+/* Larger devices (laptops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .body {
+        background-color: blue;
+    }
+}
+
+/* Very large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .body {
+        background-color: yellow;
+    }
+}
+
+/* Huge devices (extra large screens and TVs, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+    .body {
+        background-color: white;
+    }
+}
