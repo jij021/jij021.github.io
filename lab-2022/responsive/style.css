@@ -20,8 +20,10 @@ other headings/body: Neue Haas Grotesk Text
 body {
     background-color: #1a1b1f;
     color: #f2f2f2;
-    margin: 0 1.5em 1em 1.5em;
     overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 2em;
 }
 
 a {
@@ -38,8 +40,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.2em;
-    padding: 1em 0;
+    padding: 1em 1.5em;
 }
 
 h1 {
@@ -47,6 +48,7 @@ h1 {
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.2em;
+    padding: 0.1em 0;
 }
 
 h2 {
@@ -60,10 +62,11 @@ iframe {
     width: 100%;
     height: auto;
     margin: 1em 0 2em 0;
+    border: none;
 }
 
 .content-body {
-    padding: 0 1.5em;
+    padding: 0 3em;
 }
 
 h3, h4, p:not(.content-footer > p), footer {
@@ -78,7 +81,7 @@ h3 {
 
 .content-body > p {
     font-size: 1em;
-    line-height: 140%;
+    line-height: 150%;
     margin-bottom: 1em;
 }
 
@@ -118,9 +121,9 @@ h3 {
 .manifesto > blockquote > p, 
 .manifesto > blockquote > footer {
     border-bottom: 1px solid #f2f2f2;
-    padding: 1.5em;
+    padding: 1.5em 3em;
     font-size: 1em;
-    line-height: 140%;
+    line-height: 150%;
 }
 
 .content-footer {
@@ -129,38 +132,298 @@ h3 {
     font-family: 'Neue Haas Grostesk Text', Helvetica, Arial, sans-serif;
     font-weight: bold;
     margin-top: 3em;
+    padding: 0 1.5em;
 }
 
 /* mobile (phones, 480px and down) */
-@media only screen and (max-width: 600px) {
-    
+/* changes made with media queries:
+    1. font-size of h1, h2
+        h1: 1.2em
+        h2: 0.75em
+    2. color of h1, h2, and p tags
+        h1, h2, p: white
+    3. background color of body
+        body: black
+    4. paddding of h1, h2
+        h1, h2: 0
+    5. line-height of p tags 
+        p: 130%
+*/
+@media only screen and (max-width: 480px) {
+    body {background-color: black;}
+
+    header {
+        background-color: black;
+    }
+
+    h1, h2, h3 {
+        color: white;
+    }
+
+    .content-body > p {
+        color: white;
+        font-size: 1.5em;
+        line-height: 130%;
+    }
+
+    .manifesto > blockquote > p, 
+    .manifesto > blockquote > footer {
+        border-bottom: 1px solid white;
+        color: white;
+        padding: 1.5em 2.5em;
+        font-size: 1.5em;
+        line-height: 130%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .body {
-        background-color: pink;
-        font-size: bold;
+/* changes made with media queries:
+    1. font-size of h1, h2
+        h1: 1.5em
+        h2: 1em
+    2. color of h1, h2, and p tags
+        h1, h2, p: #f2f2f2
+    3. background color of body
+        body: #222327
+    4. paddding of h1, h2
+        h1, h2: 0.5rem
+    5. line-height of p tags 
+        p: 140%
+*/
+@media only screen and (min-width: 481px) {
+    body {background-color: #222327;}
+
+    header {
+        background-color: #222327;
+    }
+
+    h1, h2, h3 {color: #f2f2f2;}
+
+    h1 {
+        font-size: 1.5em;
+        padding: 0 1rem 0 0;
+    }
+
+    h2 {
+        font-size: 1em;
+        padding: 0 1rem 0 0;
+    }
+
+    h3 {
+        font-size: 3em;
+        max-width: 90%;
+    }
+
+    .content-body > p,
+    .content-footer {
+        color: #f2f2f2;
+        font-size: 1.2em;
+        line-height: 150%;
+    }
+
+    .manifesto > blockquote > p, 
+    .manifesto > blockquote > footer {
+        color: #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        padding: 1.5em 2.5em;
+        font-size: 1.2em;
+        line-height: 150%;
+    }
+
+    .marquee {
+        background-color: #f2f2f2;
+        color: #222327;
     }
 }
 
 /* Larger devices (laptops, 1024px and up) */
-@media only screen and (min-width: 1024px) {
-    .body {
-        background-color: blue;
+/* changes made with media queries:
+    1. font-size of h1, h2
+        h1: 2em
+        h2: 1.3em
+    2. color of h1, h2, and p tags
+        h1, h2, p: #b8bbc0
+    3. background color of body
+        body: #3b3c41
+    4. paddding of h1, h2
+        h1, h2: 4rem
+    5. line-height of p tags 
+        p: 150%
+*/
+@media only screen and (min-width: 769px) {
+    body {background-color: #3b3c41;}
+
+    header {
+        background-color: #3b3c41;
+    }
+
+    h1, h2, h3 {color: #b8bbc0;}
+
+    h1 {
+        font-size: 2em;
+        padding: 0 4rem 0 0;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding: 0 4rem 0 0;
+    }
+
+    h3 {
+        font-size: 4em;
+        max-width: 90%;
+    }
+
+    .content-body > p,
+    .content-footer {
+        color: #b8bbc0;
+        font-size: 1em;
+        line-height: 150%;
+    }
+
+    .manifesto > blockquote > p, 
+    .manifesto > blockquote > footer {
+        color: #b8bbc0;
+        border-bottom: 1px solid #b8bbc0;
+        padding: 1.5em 2.5em;
+        font-size: 1em;
+        line-height: 150%;
+    }
+
+    .marquee {
+        background-color: #b8bbc0;
+        color: #3b3c41;
     }
 }
 
 /* Very large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .body {
-        background-color: yellow;
+/* changes made with media queries:
+    1. font-size of h1, h2
+        h1: 2.5em
+        h2: 1.8em
+    2. color of h1, h2, and p tags
+        h1, h2, p: #34353a
+    3. background color of body
+        body: #c8cace
+    4. paddding of h1, h2
+        h1, h2: 8rem
+    5. line-height of p tags 
+        p: 160%
+*/
+@media only screen and (min-width: 1025px) {
+    body {background-color: #c8cace;}
+
+    header {
+        background-color: #c8cace;
+    }
+
+    h1, h2, h3 {color: #34353a;}
+
+    h1 {
+        font-size: 2.5em;
+        padding: 0 8rem 0 0;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        padding: 0 8rem 0 0;
+    }
+
+    h3 {
+        font-size: 4.5em;
+        max-width: 90%;
+    }
+
+    .content-body > p,
+    .content-footer {
+        color: #34353a;
+        font-size: 1em;
+        line-height: 160%;
+    }
+
+    .pull-quote {
+        color: #E77D5C;
+        border-top: 1px solid #E77D5C;
+        border-bottom: 1px solid #E77D5C;
+    }
+
+    .manifesto > blockquote > p, 
+    .manifesto > blockquote > footer {
+        color: #34353a;
+        border-bottom: 1px solid #34353a;
+        padding: 1.5em 2.5em;
+        font-size: 1em;
+        line-height: 160%;
+    }
+
+    .marquee {
+        background-color: #34353a;
+        color: #c8cace;
     }
 }
 
 /* Huge devices (extra large screens and TVs, 1201px and up) */
+/* changes made with media queries:
+    1. font-size of h1, h2, and p tags
+        h1: 3em
+        h2: 2em
+    2. color of h1, h2, and p tags
+        h1, h2, p: #1a1b1f
+    3. background color of body
+        body: #f2f2f2
+    4. paddding of h1, h2
+        h1, h2: 35rem
+    5. line-height of p tags 
+        p: 170%
+*/
 @media only screen and (min-width: 1201px) {
-    .body {
-        background-color: white;
+    body {background-color: #f2f2f2;}
+
+    header {
+        background-color: #f2f2f2;
+    }
+
+    h1, h2, h3 {color: #1a1b1f;}
+
+    h1 {
+        font-size: 3em;
+        padding: 0 35rem 0 0;
+    }
+
+    h2 {
+        font-size: 2em;
+        padding: 0 35rem 0 0;
+    }
+
+    h3 {
+        font-size: 4.5em;
+        max-width: 90%;
+    }
+
+    .content-body > p,
+    .content-footer {
+        color: #34353a;
+        font-size: 1em;
+        line-height: 170%;
+    }
+
+    .pull-quote {
+        color: #E77D5C;
+        border-top: 1px solid #E77D5C;
+        border-bottom: 1px solid #E77D5C;
+    }
+
+    .manifesto > blockquote > p, 
+    .manifesto > blockquote > footer {
+        color: #34353a;
+        border-bottom: 1px solid #34353a;
+        padding: 1.5em 2.5em;
+        font-size: 1em;
+        line-height: 170%;
+    }
+
+    .marquee {
+        background-color: #1a1b1f;
+        color: #f2f2f2;
     }
 }
