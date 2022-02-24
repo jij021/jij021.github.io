@@ -41,6 +41,7 @@ header {
     flex-direction: column;
     align-items: flex-end;
     padding: 1em 1.5em;
+    z-index: 10;
 }
 
 h1 {
@@ -58,11 +59,23 @@ h2 {
     font-size: 0.75em;
 }
 
+figure {
+    margin: 2em auto;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40%;
+    width: 80%;
+}
+
 iframe {
-    width: 100%;
-    height: auto;
-    margin: 1em 0 2em 0;
     border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .content-body {
@@ -76,7 +89,7 @@ h3, h4, p:not(.content-footer > p), footer {
 
 h3 {
     font-size: 2.5em;
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 1em 0;
 }
 
 .content-body > p {
@@ -212,6 +225,7 @@ h3 {
     h3 {
         font-size: 3em;
         max-width: 90%;
+        margin: 0.5em 0 0.5em 0;
     }
 
     .content-body > p,
@@ -272,6 +286,7 @@ h3 {
     h3 {
         font-size: 4em;
         max-width: 90%;
+        margin: 0.5em 0 0.5em 0;
     }
 
     .content-body > p,
@@ -279,6 +294,12 @@ h3 {
         color: #b8bbc0;
         font-size: 1em;
         line-height: 150%;
+    }
+
+    .pull-quote {
+        color: #6c9b65;
+        border-top: 1px solid #6c9b65;
+        border-bottom: 1px solid #6c9b65;
     }
 
     .manifesto > blockquote > p, 
@@ -329,11 +350,6 @@ h3 {
         padding: 0 8rem 0 0;
     }
 
-    h3 {
-        font-size: 4.5em;
-        max-width: 90%;
-    }
-
     .content-body > p,
     .content-footer {
         color: #34353a;
@@ -342,9 +358,9 @@ h3 {
     }
 
     .pull-quote {
-        color: #E77D5C;
-        border-top: 1px solid #E77D5C;
-        border-bottom: 1px solid #E77D5C;
+        color: #c96243;
+        border-top: 1px solid #c96243;
+        border-bottom: 1px solid #c96243;
     }
 
     .manifesto > blockquote > p, 
@@ -397,7 +413,7 @@ h3 {
 
     h3 {
         font-size: 4.5em;
-        max-width: 90%;
+        max-width: 80%;
     }
 
     .content-body > p,
