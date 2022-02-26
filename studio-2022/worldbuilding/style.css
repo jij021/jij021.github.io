@@ -182,7 +182,7 @@ h3 {
 }
 
 #hidden {
-    display: hidden;
+    display: none;
 }
 
 #ticker {
