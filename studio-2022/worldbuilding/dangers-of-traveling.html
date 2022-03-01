@@ -33,7 +33,7 @@
                     <li>intestinal parasites</li>
                 </ul>
 
-                <p>... and that's not even covering the dangers of water, especially the ocean. If you're considering traveling by ship or boat, you should definitely reconsider your options, as hundreds of maritime disasters occur every year. That's right, even with technology as advanced as today, it's impossible to predict everything that may happen, whether it be related to storms or simply due to an unfortunate wave that's too big for the ship to handle out at sea.</p>
+                <p>... and that's not even covering the dangers of water, <span class="event" onclick="show(); tickerChange()">especially the ocean</span>. If you're considering traveling by ship or boat, you should definitely reconsider your options, as hundreds of maritime disasters occur every year. That's right, even with technology as advanced as today, it's impossible to predict everything that may happen, whether it be related to storms or simply due to an unfortunate wave that's too big for the ship to handle out at sea.</p>
 
                 <div class="traveling-content-diseases">
                     <p>Not to mention, you may also be exposed to a number of infectious diseases while on a trip. Though some diseases may be prevented by vaccination, there are some infectious diseases, including some of the most important and most dangerous, that have no vaccine or cure with current modern medicine.</p>
@@ -55,7 +55,7 @@
             </div>
         </div> 
 
-        <div id="hidden" class="traveling-content-water">
+        <div id="hidden" class="traveling-content-water hidden">
             <h3>"One way or <a class="link-place" href="index.html">return?</a>"</h3>
 
             <p class="water-1 gradient-1">nausea</p>
@@ -101,13 +101,15 @@
             <p class="water-1 gradient-21"><a href="seahaven.html" class="link-place">the lonely shore</a></p>
         </div>
         
-        <div id="ticker" >
-            <div class="ticker-text" onclick="this.classList.toggle('pause');">
+        <div class="ticker" onclick="pauseAlt()">
+            <div id="ticker-1" class="ticker-text">
                 <p>Why don't you forget about the perils of flying, settle back, and listen to some music to calm you down.</p>
             </div>
-            <div class="ticker-text-alt" onclick="this.classList.toggle('pause');">
-                <p>"Oh, Truman. You knew this would happen. You know you can't drive over water. Let's go home where you'll feel safe."</p>
+            <div id="ticker-2" class="hidden">
+                <p><a class="link-place" href="./index.html">Oh, Truman. You knew this would happen. You know you can't drive over water. Let's go home where you'll feel safe.</a></p>
             </div>
         </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
