@@ -21,34 +21,68 @@ body {
     height: 100%;
 }
 
-.secret {background-color: white;}
+.secret {
+    background-color: white;
+    overflow-x: hidden;
+}
 
 .container {margin: 4.5em 2em 0 2em;}
 
-.container-alt {margin: 4.5em 3em 0 3em;}
-
-/* top div */
-.container-secret {
-    padding: 4.5em 3em 3em 3em;
-    background-color: #DFDEDA;
-    height: 60vh;
+.container-alt {
+    margin: 4.5em 3em 0 3em;
+    overflow-y: hidden;
 }
 
-/* bottom div (underneath top div) */
-.container-script {
-    position: absolute;
-    top: 20em;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    padding: 0 3em;
+/* top div */
+.curtain {
+    height:100vh;
+    position: relative;
+    z-index: 2;
+    background-color: #DFDEDA;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4.5em 3em 3em 3em;
+}
+
+.secret-header {
+    margin: 0 auto;
+    max-width: 60%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #211F20;
+}
+
+/* bottom div/script */
+
+.main{
+    position: fixed;
+    bottom:0;
+    height: 450px;
+    width: 100%;
     background-color: white;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 1em;
+    display: flex;
+    justify-content: center;
 }
+
+.reveal-main{
+    height: 400px;
+    background:#e3e3e3;
+}
+
+.container-script {max-width: 65%;}
+
+.active {
+    position: relative;
+    margin-top: -6%;
+    margin-top: -118px;
+    height: 900px;
+}
+
+.activetwo {
+    height: 10px;
+    position: absolute;
+}  
 
 .container-script > h3, 
 .secret-header-name {
@@ -108,6 +142,10 @@ h2 {
     padding: 2.5em 0;
     border-top: 1px solid #211F20;
     max-width: 80%;
+}
+
+.seahaven-scene {
+    height: 65em;
 }
 
 .seahaven-scene-content {
@@ -316,9 +354,7 @@ h3 {
     text-decoration: underline;
 }
 
-.link-ticker {
-    color: #FF333A;
-}
+.link-ticker {color: #FF333A;}
 
 .home-content > div {margin-bottom: 2em;}
 
@@ -378,6 +414,10 @@ h3 {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     .secret-dialogue {max-width: 70%;}
+
+    .seahaven-scene {
+        height: 45em;
+    }
     
     h1 {font-size: 3em;}
 
@@ -391,12 +431,13 @@ h3 {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .container-script {
-        margin: 0 auto;
-        max-width: 75%;
-    }
+    .container-script {max-width: 70%;}
 
     .secret-dialogue {max-width: 65%;}
+
+    .secret-header > h2 {
+        max-width: 80%;
+    }
     
     h1 {font-size: 4.5em;}
 
@@ -428,6 +469,10 @@ h3 {
     .seahaven-content,
     .traveling-content {padding: 3em 2.5em;}
 
+    .seahaven-scene {
+        height: 40em;
+    }
+
     .seahaven-scene-content {padding: 3em 4.5em;}
 
     .traveling-content-water {gap: 3em;}
@@ -450,7 +495,6 @@ h3 {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .container-script {
-        margin: 0 auto;
         min-width: 60%;
         max-width: 65%;
     }
@@ -500,6 +544,10 @@ h3 {
 
     .pull-quote {padding: 2em 6em 3em 6em;}
 
+    .seahaven-scene {
+        height: 60em;
+    }
+
     .seahaven-scene-content {
         margin: 0 auto;
         font-size: 1em;
@@ -545,10 +593,13 @@ h3 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .seahaven-scene {
+        height: 59.5em;
+    }
+
     .seahaven-scene-people {gap: 2em;}
 
     .container-script {
-        margin: 0 auto;
         min-width: 50%;
         max-width: 60%;
     }
