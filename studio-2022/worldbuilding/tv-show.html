@@ -13,20 +13,23 @@
         <header>
             <h1><i>Show me the way to go home</i></h1>
 
-            <h2>"You stay and relax. Enjoy yourself! Your favorite show will be coming on."</h2>
+            <h2>"You <a class="link-home" href="index.html">stay right here</a> and relax. Enjoy yourself! Your favorite show will be coming on."</h2>
         </header>
-        <div class="tv-content">
-            <p>"And there'll be another episode of I Love Lucy at the same time tomorrow! But right now, it's time for golden-oldies.</p>
 
-            <p>Tonight, we present the enduring much loved classic, Show Me the Way To Go Home. A hymn of praise to small town life where we learn that <a class="link-place" href="index.html">you don't have to leave home</a> to discover what the world's all about and that no one's poor that has friends. Full of laughter and love, pain and sadness, but ultimately redemption, we share the trials and tribulations of the Abbot family."</p>
-
-            <p>"Note the touching performance of Ronald Rearly as Uncle Bunny. And that scene with the bowl of cherries is gonna have you splitting your sides with laughter all over again. And there'll be tears too. Oh yes, when David and Jennifer are reunited. But enough from me! Let's join the Abbot family in Candon Village."</p>
+        <div id="tvContent" class="tv-content tv-content-background">
+            <div id="needToHide" class="tv-content-landing">
+                <p class="event-tv" onclick="showTV()">Turn on the TV.</p>
+            </div>
+            
+            <div id="hidden" class="tv-content-text hidden">
+                <p id="changeText">And there'll be another episode of &#8220;I Love Lucy&#8221; at the same time tomorrow! But right now, it's time for golden-oldies.</p>
+            </div>
         </div>
     </div>
 
     <div class="ticker" onclick="pause()">
         <div id="ticker-text" class="ticker-text">
-            <p>Tune in tomorrow for another episode of "I Love Lucy" where we'll meet the new character Carolyn Appleby, Lucy's friend from New York.</p>
+            <p>Tune in tomorrow for another episode of &#8220;I Love Lucy&#8221; where we'll meet Lucy's friend from New York.</p>
         </div>
     </div>
 

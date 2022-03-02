@@ -112,7 +112,8 @@ h2 {
 
 .seahaven-scene-content {
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     font-size: 1em;
     line-height: 130%;
     padding: 1.8em;
@@ -133,12 +134,6 @@ h2 {
 .seahaven-content > p,
 .seahaven-scene-content > p {margin-bottom: 0.5em;}
 
-.event {
-    cursor: pointer;
-    color: #256fa8; 
-    text-decoration: underline;
-}
-
 .pull-quote {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -153,14 +148,44 @@ h2 {
     font-weight: bold;
     font-size: 1em;
     line-height: 130%;
-    padding: 2em 2em 1em 2em;
+    padding: 2em;
     margin-bottom: 3em;
     border: 1px solid #211F20;
     max-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tv-content > p,
-.traveling-content > p {margin-bottom: 1em;}
+.tv-content-background {
+    background-color: #211F20;
+    height: 50vh;
+}
+
+.tv-content-transparent {
+    background-color: transparent;
+    height: 50vh;
+}
+
+.tv-content-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.3em;
+    width: 80%;
+    line-height: 130%;
+}
+
+.tv-content-landing {
+    color: #DFDEDA;
+    padding-bottom: 1.5em;
+}
+
+#changeText {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.hideText {opacity: 0 !important;}
 
 .traveling-content {
     margin: 0 auto;
@@ -178,11 +203,24 @@ h2 {
     margin: 1em 0;
 }
 
+.brochure-header {
+    margin-bottom: 0.5em;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    font-size: 1.5em;
+}
+
+.traveling-content > p {margin-bottom: 0.5em;}
+
+.traveling-content-diseases {
+    margin-top: 2em;
+}
+
 .traveling-content-water {
     padding-top: 100vh;
     padding-bottom: 20em;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,7 +286,7 @@ h2 {
 
 .gradient-20 {color: #d4494a;}
 
-.gradient-21 {color: #D33D3F;}
+.gradient-21 {color: #B72A2C;}
 
 h3 {
     font-size: 1.2em;
@@ -257,8 +295,29 @@ h3 {
 }
 
 .link-place {
-    color: #D33D3F;
+    color: #1D5986;
     text-decoration: underline;
+}
+
+.link-home {
+    color: #B72A2C;
+    text-decoration: underline;
+}
+
+.event {
+    cursor: pointer;
+    color: #211F20; 
+    text-decoration: underline;
+}
+
+.event-tv {
+    cursor: pointer;
+    color: #DFDEDA; 
+    text-decoration: underline;
+}
+
+.link-ticker {
+    color: #FF333A;
 }
 
 .home-content > div {margin-bottom: 2em;}
@@ -279,9 +338,7 @@ h3 {
     }
 }
 
-#secret-link:hover {
-    animation: monotext 0.5s linear 1;
-}
+#secret-link:hover {animation: monotext 0.5s linear 1;}
 
 .hidden {display: none;}
 
@@ -301,8 +358,8 @@ h3 {
 }
 
 @keyframes scrolling {
-    0% {transform: translateX(100vw);}
-    100% {transform: translateX(-100vw);}
+    0% {transform: translateX(200vw);}
+    100% {transform: translateX(-200vw);}
 }
 
 .ticker-text {
@@ -313,7 +370,7 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
-    animation: scrolling 10s linear infinite;
+    animation: scrolling 15s linear infinite;
 }
 
 .ticker-text .pause {animation-play-state: paused;}
@@ -322,13 +379,14 @@ h3 {
 @media only screen and (min-width: 600px) {
     .secret-dialogue {max-width: 70%;}
     
-    h1 {
-        font-size: 3em;
-    }
+    h1 {font-size: 3em;}
+
     h2 {
         margin: 0 auto 2em auto;
         max-width: 60%;
     }
+
+    .pause {animation-play-state: paused;}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -340,9 +398,7 @@ h3 {
 
     .secret-dialogue {max-width: 65%;}
     
-    h1 {
-        font-size: 4.5em;
-    }
+    h1 {font-size: 4.5em;}
 
     .home-content {
         display: grid;
@@ -379,11 +435,15 @@ h3 {
     .tv-content {
         min-width: 70%;
         max-width: 75%;
-        padding: 3em 5em 2em 5em;
     }
-    
-    .ticker-text {animation: scrolling 15s linear infinite;}
-    
+
+    .tv-content-text {font-size: 1.5em;}
+
+    @keyframes scrolling {
+        0% {transform: translateX(150vw);}
+        100% {transform: translateX(-150vw);}
+    }
+
     .pause {animation-play-state: paused;}
 }
 
@@ -438,13 +498,10 @@ h3 {
         padding: 3em 4em;
     }
 
-    .pull-quote {
-        padding: 2em 6em 3em 6em;
-    }
+    .pull-quote {padding: 2em 6em 3em 6em;}
 
     .seahaven-scene-content {
         margin: 0 auto;
-        font-family: Arial, Helvetica, sans-serif;
         font-size: 1em;
         line-height: 130%;
         padding: 3em 4em;
@@ -470,9 +527,7 @@ h3 {
         gap: 1em;
     }
 
-    .seahaven-scene-people > div {
-        display: block;
-    }
+    .seahaven-scene-people > div {display: block;}
 
     .traveling-content-water > h3 {font-size: 1.2em;}
 
@@ -481,8 +536,9 @@ h3 {
     .tv-content {
         min-width: 55%;
         max-width: 60%;
-        padding: 4em 10em 3em 10em;
     }
+
+    .ticker-text {animation: scrolling 20s linear infinite;}
 
     .pause {animation-play-state: paused;}
 }
@@ -498,4 +554,6 @@ h3 {
     }
 
     .secret-dialogue {max-width: 45%;}
+
+    .pause {animation-play-state: paused;}
 }
