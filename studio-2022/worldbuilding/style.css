@@ -13,12 +13,26 @@ white: #FFFFFF */
     box-sizing: border-box;
 }
 
-html {height: 100%;}
+html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
     background-color: #DFDEDA;
     color: #211F20;
     height: 100%;
+}
+
+#landingHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 200%;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.2em;
+    height: 100vh;
 }
 
 .secret {
@@ -39,7 +53,6 @@ body {
     position: relative;
     z-index: 2;
     background-color: #DFDEDA;
-    font-family: Arial, Helvetica, sans-serif;
     padding: 4.5em 3em 3em 3em;
 }
 
@@ -105,7 +118,6 @@ body {
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     text-align: center;
     font-size: 3em;
@@ -116,7 +128,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
     text-align: center;
     font-size: 1em;
     line-height: 120%;
@@ -126,7 +138,6 @@ h2 {
 
 .home-content {
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 130%;
     padding: 2.5em 0 1em 0;
@@ -136,7 +147,6 @@ h2 {
 
 .seahaven-content {
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 130%;
     padding: 2.5em 0;
@@ -150,8 +160,7 @@ h2 {
 
 .seahaven-scene-content {
     margin: 0 auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 130%;
     padding: 1.8em;
@@ -173,23 +182,23 @@ h2 {
 .seahaven-scene-content > p {margin-bottom: 0.5em;}
 
 .pull-quote {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     font-size: 1em;
     line-height: 130%;
     padding: 2em 2em 3em 2em;
 }
 
+.tv-container {
+    margin: 0 auto;
+    padding-top: 2.5em;
+    border-top: 1px solid #211F20;
+}
+
 .tv-content {
     margin: 0 auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     font-size: 1em;
     line-height: 130%;
     padding: 2em;
-    margin-bottom: 3em;
     border: 1px solid #211F20;
-    max-width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,8 +215,6 @@ h2 {
 }
 
 .tv-content-text {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     font-size: 1.3em;
     width: 80%;
     line-height: 130%;
@@ -227,7 +234,6 @@ h2 {
 
 .traveling-content {
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     line-height: 130%;
     padding: 2.5em 0;
@@ -241,48 +247,67 @@ h2 {
     margin: 1em 0;
 }
 
-.brochure-header {
-    margin-bottom: 0.5em;
-    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
-    font-size: 1.5em;
-}
-
 .traveling-content > p {margin-bottom: 0.5em;}
 
-.traveling-content-diseases {
-    margin-top: 2em;
-}
+.traveling-content-diseases {margin-top: 2em;}
 
 .traveling-content-water {
     padding-top: 100vh;
     padding-bottom: 20em;
     width: 100%;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     gap: 2em;
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,212,255,0) 50%);
 }
 
 .traveling-content-water > h3 {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
     padding-bottom: 100vh;
 }
 
 .water-1 {font-size: 1em;}
 
-.water-2 {font-size: 1.3em;}
+.water-2 {font-size: 1.5em;}
 
-.water-3 {font-size: 1.6em;}
+.water-3 {font-size: 3.5em;}
 
-.water-4 {font-size: 2em;}
+.water-4 {font-size: 2.2em;}
 
-.water-5 {font-size: 2.3em;}
+.water-5 {font-size: 1.7em;}
 
-.water-6 {font-size: 2.6em;}
+.water-6 {font-size: 1em;}
+
+.water-7 {font-size: 2em;}
+
+.water-8 {font-size: 2.5em;}
+
+.water-9 {font-size: 4em;}
+
+.water-10 {font-size: 4.2em;}
+
+.water-11 {font-size: 4.3em;}
+
+.water-12 {font-size: 1.7em;}
+
+.water-13 {font-size: 1em;}
+
+.water-14 {font-size: 1.5em;}
+
+.water-15 {font-size: 2.8em;}
+
+.water-16 {font-size: 6.5em;}
+
+.water-17 {font-size: 4.5em;}
+
+.water-18 {font-size: 3.3em;}
+
+.water-19 {font-size: 2.5em;}
+
+.water-20 {font-size: 1.3em;}
+
+.water-21 {font-size: 1em;}
 
 .gradient-1 {color: #211F20;}
 
@@ -332,12 +357,7 @@ h3 {
     font-weight: bold;
 }
 
-.link-place {
-    color: #1D5986;
-    text-decoration: underline;
-}
-
-.link-home {
+.link {
     color: #B72A2C;
     text-decoration: underline;
 }
@@ -403,7 +423,6 @@ h3 {
     justify-content: center;
     align-content: center;
     color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-size: 1.5em;
     animation: scrolling 15s linear infinite;
@@ -431,6 +450,10 @@ h3 {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    #landingHeader {
+        font-size: 2em;
+    }
+
     .container-script {max-width: 70%;}
 
     .secret-dialogue {max-width: 65%;}
@@ -441,32 +464,9 @@ h3 {
     
     h1 {font-size: 4.5em;}
 
-    .home-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: 
-            "content-1 content-2"
-            "content-3 content-4";
-        grid-gap: 2em;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1em;
-        padding: 2.5em 0 4em 0;
-        max-width: 75%;
-        margin: 0 auto;
-        border-top: 1px solid #211F20;
-    }
-    .home-content > div {margin-bottom: 0;}
-    
-    .home-content-1 {grid-area: content-1;}
-    
-    .home-content-2 {grid-area: content-2;}
-    
-    .home-content-3 {grid-area: content-3;}
-    
-    .home-content-4 {grid-area: content-4;}
-
+    .home-content,
     .seahaven-content,
+    .tv-container,
     .traveling-content {padding: 3em 2.5em;}
 
     .seahaven-scene {
@@ -475,9 +475,9 @@ h3 {
 
     .seahaven-scene-content {padding: 3em 4.5em;}
 
-    .traveling-content-water {gap: 3em;}
+    .traveling-content-water {gap: 2.5em;}
 
-    .tv-content {
+    .tv-container {
         min-width: 70%;
         max-width: 75%;
     }
@@ -511,32 +511,10 @@ h3 {
         margin: 0 auto 2.5em auto;
         max-width: 50%;
     }
-    .home-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas: 
-            "content-1 content-2"
-            "content-3 content-4";
-        grid-gap: 2em;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1em;
-        padding: 3em 0 4em 0;
-        max-width: 70%;
-        margin: 0 auto;
-        border-top: 1px solid #211F20;
-    }
-    .home-content > div {margin-bottom: 0;}
 
-    .home-content-1 {grid-area: content-1;}
-
-    .home-content-2 {grid-area: content-2;}
-
-    .home-content-3 {grid-area: content-3;}
-
-    .home-content-4 {grid-area: content-4;}
-
+    .home-content,
     .seahaven-content,
+    .tv-container,
     .traveling-content {
         max-width: 60%;
         padding: 3em 4em;
@@ -579,9 +557,9 @@ h3 {
 
     .traveling-content-water > h3 {font-size: 1.2em;}
 
-    .traveling-content-water {gap: 3.5em;}
+    .traveling-content-water {gap: 3em;}
 
-    .tv-content {
+    .tv-container {
         min-width: 55%;
         max-width: 60%;
     }
@@ -593,6 +571,30 @@ h3 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .home-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "content-1 content-2"
+            "content-3 content-4";
+        grid-gap: 2em;
+        font-size: 1em;
+        padding: 3em 4em;
+        max-width: 60%;
+        margin: 0 auto;
+        border-top: 1px solid #211F20;
+    }
+    .home-content > div {margin-bottom: 0;}
+
+    .home-content-1 {grid-area: content-1;}
+
+    .home-content-2 {grid-area: content-2;}
+
+    .home-content-3 {grid-area: content-3;}
+
+    .home-content-4 {grid-area: content-4;}
+
     .seahaven-scene {
         height: 59.5em;
     }
