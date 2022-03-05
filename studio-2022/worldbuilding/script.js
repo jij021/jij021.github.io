@@ -4,6 +4,12 @@ function show() {
   hiddenElement.classList.replace("hidden", "show");
 }
 
+function showSeahaven() {
+  var hiddenElement = document.getElementById("hidden");
+
+  hiddenElement.classList.replace("hidden", "show");
+}
+
 function showFlex() {
   var hiddenElement = document.getElementById("hidden");
 
