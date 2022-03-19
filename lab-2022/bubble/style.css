@@ -1,0 +1,21 @@
+html {
+    font-size: 18px;
+}
+body {
+    margin: 0;
+}
+#container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(251, 255, 254), rgb(242, 261, 249));
+}
+.bubble {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(247, 255, 255, 0.5);
+    border: solid 0.1rem rgba(106, 198, 198, 0.2);
+    border-radius: 50%;
+    box-shadow: inset -0.3rem -0.3rem 0.8rem rgba(106, 198, 198, 0.3);
+    cursor: pointer;
+}
