@@ -7,8 +7,21 @@
     <title>Assignment 6</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="text/javascript" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="jquery.js" type="text/javascript" defer></script>
 </head>
-<body>
-    <div id="container"></div>
+<body onload="bubbles()">
+    <div id="container">
+        <div id="text-box">
+            <p>pop</p>
+            <p>the</p>
+            <p>bubbles!</p>
+            <button type="button" class="button" onclick="bubbles()">more bubbles pls!</button>
+        </div>
+        <img id="rubber-duck" src="./images/rubber-duck.png" height="1314" width="1242">
+        <img id="soap" src="images/soap.png" height="1813" width="2400">
+        <img id="bath-towel" src="./images/bath-towel.png" height="800" width="800">
+    </div>
 </body>
 </html>

@@ -1,21 +1,113 @@
-html {
-    font-size: 18px;
+@font-face {
+    font-family: 'Arista';
+    src: url('./fonts/Arista20.woff2') format('woff2'),
+        url('fonts/Arista20.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
+html {font-size: 18px;}
+
 body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgb(255, 249, 252), rgb(255, 245, 249));
 }
 #container {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, rgb(251, 255, 254), rgb(242, 261, 249));
+}
+
+p {margin: 0.5em;}
+
+#text-box {
+    font-family: 'Arista', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: rgb(62, 27, 105);
+    text-align: center;
+    transition: 1s ease;
+}
+.button {
+    font-family: 'Arista', Arial, Helvetica, sans-serif;
+    background-color: rgb(65, 54, 85);
+    border: none;
+    border-radius: 2em;
+    color: rgb(255, 249, 252);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 1em;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #e01c47;
+    color: rgb(249, 250, 255);
+}
+img {
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+#rubber-duck {
+    transform: rotate(15deg);
+    height: 150px;
+    width: auto;
+    position: absolute;
+    top: 300px;
+    left: 40px;
+}
+#soap {
+    transform: rotate(-15deg);
+    height: 150px;
+    width: auto;
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
+#bath-towel {
+    transform: rotate(10deg);
+    height: 250px;
+    width: auto;
+    position: absolute;
+    top: 500px;
+    left: 20px;
 }
 .bubble {
     position: absolute;
     width: 5rem;
     height: 5rem;
-    background-color: rgba(247, 255, 255, 0.5);
-    border: solid 0.1rem rgba(106, 198, 198, 0.2);
+    background-color: rgba(255, 247, 250, 0.5);
+    border: solid 0.1rem rgba(223, 120, 176, 0.2);
     border-radius: 50%;
-    box-shadow: inset -0.3rem -0.3rem 0.8rem rgba(106, 198, 198, 0.3);
+    box-shadow: inset -0.3rem -0.3rem 0.8rem rgba(230, 177, 208, 0.3);
     cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+    #text-box {font-size: 2.5rem;}
+
+    .button {font-size: 1.2rem;}
+
+    #rubber-duck {
+        transform: rotate(15deg);
+        height: 300px;
+        width: auto;
+        top: 300px;
+        left: 500px;
+    }
+    #soap {
+        height: 200px;
+        width: auto;
+        top: 500px;
+        left: 200px;
+    }
+    #bath-towel {
+        height: 350px;
+        width: auto;
+        top: 200px;
+        left: 20px;
+    }
 }
