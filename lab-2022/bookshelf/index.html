@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="text/javascript" defer></script>
 </head>
-<body>
+<body class="fade-in-hidden">
   <header>
-    <h1><a target="_blank" href="https://airtable.com/shrUNYdKobzBa1qx2">My Bookshelf</a></h1>
-    <h2 id="hide-books">Put books away &#128218;</h2>
+    <div id="nav">
+      <h1><a target="_blank" href="https://airtable.com/shrUNYdKobzBa1qx2">My Bookshelf</a></h1>
+      <p id="header-caption">AKA things I read when I was younger</p>
+      <h2 id="hide-books">Put away &#128218;</h2>
+    </div>
   </header>
-    
+
+  <main>
     <nav id="shelf" class="shelf"></nav>
+    
     <article id="book-detail" class="book-detail hidden">
       <section class="figure">
         <img
@@ -25,6 +30,7 @@
       </section>
       <section class="info">
         <h2 class="title">Flipped</h2>
+        <h3 class="author">Wendelin Van Draanen</h3>
         <p class="description">
             A stand-alone teen romance with the two protagonists alternately presenting their perspective on a shared set of events.
         </p>
@@ -33,7 +39,7 @@
         </a>
       </section>
     </article>
-
+  </main>  
     <script src="lib/airtable.browser.js"></script>
 </body>
 </html>

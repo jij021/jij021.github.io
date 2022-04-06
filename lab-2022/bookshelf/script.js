@@ -1,5 +1,21 @@
 console.log("Hello bookshelf!");
 
+// other data (animation effect)
+
+const text = document.querySelector("#header-caption");
+text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+
+const element = document.querySelectorAll("span");
+for(let i = 0; i < element.length; i++){
+  element[i].style.animationDelay = i*0.03 + 's';
+}
+
+setTimeout( () => {
+  document.querySelector("body").className = "fade-out-visible";
+}, 1200);
+
+// airtable data
+
 var Airtable = require("airtable");
 console.log(Airtable);
 
@@ -57,8 +73,7 @@ function showBooks() {
       showBook(book, div);
       // set the background and links to the same random color
       let color = getRandomColor();
-      document.body.style.backgroundColor= color;
-      document.querySelector(".more").style.color = color;
+      document.querySelector("html").style.backgroundColor= color;
     });
     // put the newly created book spine on the shelf
     shelf.appendChild(div);
@@ -67,7 +82,7 @@ function showBooks() {
   // reset the bookshelf and put the books away
   document.querySelector("#hide-books").addEventListener("click", () => {
     hideBook();
-    document.body.style.backgroundColor = "white";
+    document.querySelector("html").style.backgroundColor = "#fbfbfb";
   });
 }
 
@@ -80,11 +95,15 @@ function showBook(book, div) {
 
   // populate the template with the data in the provided book
   bookDetail.getElementsByClassName("title")[0].innerText = book.fields.title; 
+  bookDetail.getElementsByClassName("author")[0].innerText = "By " + book.fields.author; 
   bookDetail.getElementsByClassName("description")[0].innerText =
     book.fields.description;
   bookDetail.getElementsByClassName("more")[0].href = book.fields.more;
   bookDetail.getElementsByClassName("cover-image")[0].src =
     book.fields.cover_image[0].url;
+
+  // randomly rotate the cover image a little
+  document.querySelector(".cover-image").style.transform = getRandomRotation();
 
   // remove the .active class from any book spines that have it...
   const shelf = document.getElementById("shelf");
@@ -116,10 +135,11 @@ function hideBook(book, div) {
 }
 
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+  return 'hsla(' + (Math.random() * 360) + ', 95%, 75%, 1)';
+}
+
+function getRandomRotation() {
+  let min = -5;
+  let max = 5;
+  return 'rotate(' + (Math.random() * (max - min) + min) + 'deg)';
 }
