@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://use.typekit.net/ipr3avt.css");
 
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 html {
     background-color: #fbfbfb;
     font-size: 16px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: 'freight-sans-pro', Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -19,6 +19,12 @@ header {
     position: sticky;
     background-color: #fbfbfb;
     z-index: 5;
+}
+
+h1 {
+    font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
 }
 
 main {
@@ -46,6 +52,12 @@ a:hover {
     align-items: center;
 }
 
+#header-caption {
+    font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
 #header-caption span {
     position: relative;
     display: inline-block;
@@ -67,6 +79,7 @@ a:hover {
     border: 2px solid #272727;
     box-shadow: 0.10rem 0.1rem #272727;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 #hide-books:active {
@@ -111,6 +124,7 @@ a:hover {
     writing-mode: vertical-lr;
     line-height: 30px;
     font-size: 1rem;
+    font-weight: 500;
 
     cursor: pointer;
 }
@@ -158,14 +172,17 @@ a:hover {
 }
 
 .book-detail .title {
-    font-size: 1.1rem;
+    max-width: 600px;
+    font-size: 2rem;
     text-transform: uppercase;
+    font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
 }
 
 .book-detail .author {
     margin-top: 0.5em;
     padding-bottom: 1em;
-    font-size: 1.1rem;
+    font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
     text-transform: uppercase;
     border-bottom: 2px dotted #272727;
 }
@@ -173,7 +190,9 @@ a:hover {
 .book-detail .description {
     margin: 0.5em 0;
     font-size: 2.3rem;
-    line-height: 1.5;
+    font-family: 'freight-sans-pro', Helvetica, sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
     max-width: 600px;
 }
 
@@ -186,7 +205,12 @@ a:hover {
     color: rgb(244, 42, 42);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    .book-detail .figure {
+        min-width: 90%;
+    }    
+}
+@media (max-width: 992px) {
     main {
         max-width: 80%;
     }
@@ -194,9 +218,6 @@ a:hover {
         max-width: 80%;
         justify-content: space-between;
     }
-    
-}
-@media (max-width: 992px) {
     #header-caption {
         display: none;
     }
@@ -208,8 +229,11 @@ a:hover {
         border-left: none;
         border-top: 2px solid #272727;
     }
+    .book-detail .description {
+        font-size: 2rem;
+    }
     .book-detail .figure {
-        max-width: 80%;
+        max-width: 60%;
         height: auto;
         margin: 2em auto;
     }
