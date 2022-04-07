@@ -35,12 +35,12 @@ Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
     apiKey: 'keyzO8HNBKPW555xb'
 });
-var base = new Airtable({apiKey: 'keyzO8HNBKPW555xb'}).base('appJSCdd9N93mXE0I');
+var base = Airtable.base('appJSCdd9N93mXE0I');
 
 console.log(Airtable);
 
-// get the "Images" table from the base, select ALL the items
-base("Images").select({}).eachPage(gotPageOfImages, gotAllImages);
+// get the "Warm-Images" table from the base, select ALL the items
+base("Warm-Images").select({}).eachPage(gotPageOfImages, gotAllImages);
 
 // an empty array to hold our Images data
 const images = [];
@@ -77,34 +77,22 @@ function consoleLogImages() {
     })
 }
 
-// function showBook(img, div) {
-//     console.log("showBook()", img);
+console.log(images);
+
+// create the ads
+function showImages() {
+  console.log("showImages()");
+
+  // look for the ad-section figure element
+  const adSection = document.querySelector("#ad-section");
   
-//     // find the img detail element
-//     const bookDetail = document.getElementById("book-detail");
-  
-//     // populate the template with the data in the provided book
-//     bookDetail.getElementsByClassName("title")[0].innerText = img.fields.title; 
-//     bookDetail.getElementsByClassName("author")[0].innerText = "By " + img.fields.author; 
-//     bookDetail.getElementsByClassName("description")[0].innerText =
-//     img.fields.description;
-//     bookDetail.getElementsByClassName("more")[0].href = img.fields.more;
-//     bookDetail.getElementsByClassName("cover-image")[0].src =
-//     img.fields.cover_image[0].url;
-  
-//     // randomly rotate the cover image a little
-//     document.querySelector(".cover-image").style.transform = getRandomRotation();
-  
-//     // remove the .active class from any book spines that have it...
-//     const shelf = document.getElementById("shelf");
-//     const bookSpines = shelf.getElementsByClassName("active");
-//     for (const bookSpine of bookSpines) {
-//       bookSpine.classList.remove("active");
-//     }
-//     // ...and set it on the one just clicked
-//     div.classList.add("active");
-  
-//     // reveal the detail element, we only really need this the first time
-//     // but its not hurting to do it more than once
-//     bookDetail.classList.remove("hidden");
-//   }
+  // loop through the books loaded from the Airtable API
+  images.forEach((image) => {
+    // make an img and add the "ad-image" class
+    const img = document.createElement("img");
+    img.classList.add("ad-image");
+    img.src = image.fields.attachments[0].url;
+    // put the img tags into the figure
+    adSection.appendChild(img);
+  });
+}

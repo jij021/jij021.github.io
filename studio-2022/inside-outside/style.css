@@ -43,6 +43,11 @@ a {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(-359deg);}
 }
+#ad-section {
+    outline: 1px solid green;
+    width: 100%;
+    height: 88vh;
+}
 
 /* classes --------------------------------- */
 
@@ -55,18 +60,19 @@ a {
     width: 100%;
     height: auto;
     padding: 1em 0;
-    /* outline: 1px solid yellow; */
+    outline: 1px solid yellow;
 }
 .home-figure div {
     margin: 0 auto;
     width: 100%;
     max-width: 326px;
 }
+.home-figure div img {
+    outline: 1px solid red;
+}
 /* nature/scenery pages -------- */
 .nature-main {
     margin: 0 2em 2em 2em;
-    background: url(/images/placeholder.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 .nature-main header nav {
     background-color: #0f0f0f;
@@ -89,12 +95,12 @@ a {
     background: #0f0f0f;
     color: white;
     list-style: none;
-    padding-top: 4em;
+    padding-top: 3em;
 }
 .menu li {
     position: relative;
     left: 1.8em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 .show-menu {
     transform: translateY(0);
@@ -103,17 +109,51 @@ a {
     position: relative;
     z-index: 100;
     top: 0;
-    left: 0;
+    left: -0.3em;
     border: none;
     background: transparent;
     cursor: pointer;
 }
+.ad-image {
+    position: absolute;
+    left: 0;
+    z-index: 30;
+    width: 60%;
+    height: auto;
+}
+.ad-image img {
+    width: 60%;
+    height: auto;
+}
 .nature-figure img {
+    outline: 1px solid red;
     width: 100%;
     height: 88vh;
+    background: url(/images/placeholder.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* media queries --------------------------------- */
+@media only screen and (min-width: 768px) {
+    /* nature/scenery pages ---------------- */
+    .hamburger {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        position: static;
+        transform: none;
+        padding-top: 0;
+        transition: none;
+    }
+    .menu li {
+        left: 0;
+        margin-bottom: 0;
+    }
+}
+
 @media only screen and (min-width: 992px) {
     /* homepage ---------------- */
     #home-header {
@@ -134,21 +174,6 @@ a {
         flex-direction: row;
         gap: 3em;
     }
-    /* nature/scenery pages ---------------- */
-    .hamburger {
-        display: none;
-    }
-    .menu {
-        display: flex;
-        flex-direction: row;
-        gap: 2em;
-        position: static;
-        transform: none;
-        padding-top: 0;
-        transition: none;
-    }
-    .menu li {
-        left: 0;
-        margin-bottom: 0;
-    }
+    
+    
 }
