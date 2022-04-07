@@ -1,0 +1,154 @@
+@import url("https://use.typekit.net/ngx2ocg.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: #0f0f0f;
+    color: white;
+    font-size: 18px;
+    font-family: 'neue-haas-grotesk-text', Helvetica, Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+a {
+    color: inherit;
+}
+
+/* ids --------------------------------- */
+
+/* homepage -------- */
+#home-header {
+    font-family: 'neue-haas-grotesk-display', Helvetica, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(2rem, calc(1rem + 3vw), 2.5rem);
+    max-width: 326px;
+    margin: 0 auto 0.5em auto;
+}
+/* nature/scenery pages -------- */
+#close-icon {
+    display: none;
+}
+#refresh {
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    gap: 0.5em;
+}
+#refresh-svg {
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-359deg);}
+}
+
+/* classes --------------------------------- */
+
+/* homepage -------- */
+.home-main {
+    margin: 2em auto;
+    width: 75%;
+}
+.home-figure {
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+    /* outline: 1px solid yellow; */
+}
+.home-figure div {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 326px;
+}
+/* nature/scenery pages -------- */
+.nature-main {
+    margin: 0 2em 2em 2em;
+    background: url(/images/placeholder.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.nature-main header nav {
+    background-color: #0f0f0f;
+    width: 100%;
+    height: 2.8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #0f0f0f;
+    color: white;
+    list-style: none;
+    padding-top: 4em;
+}
+.menu li {
+    position: relative;
+    left: 1.8em;
+    margin-bottom: 1em;
+}
+.show-menu {
+    transform: translateY(0);
+}
+.hamburger {
+    position: relative;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.nature-figure img {
+    width: 100%;
+    height: 88vh;
+}
+
+/* media queries --------------------------------- */
+@media only screen and (min-width: 992px) {
+    /* homepage ---------------- */
+    #home-header {
+        max-width: none;
+        margin: 0 0 0.5em 0;
+    }
+    .home-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding-bottom: 3em;
+        width: 70%;
+        height: 100vh;
+    }
+    .home-section {
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+    }
+    /* nature/scenery pages ---------------- */
+    .hamburger {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        position: static;
+        transform: none;
+        padding-top: 0;
+        transition: none;
+    }
+    .menu li {
+        left: 0;
+        margin-bottom: 0;
+    }
+}
