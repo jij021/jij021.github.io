@@ -11,7 +11,6 @@ html {
     font-size: 16px;
     font-family: 'freight-sans-pro', Arial, Helvetica, sans-serif;
 }
-
 header {
     margin-bottom: 3em;
     border-bottom: 2px solid #272727;
@@ -20,24 +19,25 @@ header {
     background-color: #fbfbfb;
     z-index: 5;
 }
-
 h1 {
     font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
-
 main {
     margin: 0 auto 2em auto;
     max-width: 70%;
 }
-
 a {
     color: inherit;
 }
-
 a:hover {
+    transition: 0.2s ease-in-out;
     color: rgb(244, 42, 42);
+}
+a::after {
+    content: ' ↗';
+    text-decoration: none;
 }
 
 /* ids */
@@ -51,25 +51,21 @@ a:hover {
     justify-content: space-between;
     align-items: center;
 }
-
 #header-caption {
     font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
 }
-
 #header-caption span {
     position: relative;
     display: inline-block;
     animation: wave 2s ease-in-out infinite;
 }
-
 @keyframes wave {
     0% {transform: translateY(3px);}
     50% {transform: translateY(-3px);}
     100% {transform: translateY(3px);}
 }
-
 #hide-books {
     user-select: none;
     display: inline-block;
@@ -81,7 +77,6 @@ a:hover {
     font-size: 1rem;
     font-weight: 600;
 }
-
 #hide-books:active {
     background-color: #fbfbfb;
     box-shadow: 0 0 #272727;
@@ -93,23 +88,19 @@ a:hover {
 .fade-in-hidden {
     opacity: 0;
 }
-
 .fade-out-visible {
     opacity: 1;
     transition: opacity 2s ease-out;
 }
-
 .hidden {
     display: none !important;
 }
-  
 .shelf {
     border-bottom: 10px solid #272727;
     display: flex;
     align-items: flex-end;
     margin-bottom: 2em;
 }
-
 .shelf .book-spine {
     background: #272727;
     color: #fbfbfb;
@@ -128,56 +119,47 @@ a:hover {
 
     cursor: pointer;
 }
-
 .shelf .book-spine.active {
     background: rgb(244, 42, 42);
 }
-
 .shelf .book-spine:hover:not(.active) {
     background: linear-gradient(270deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 100%);
     background-size: 1000% 1000%;
 
     animation: slideBackground 2s ease infinite;
 }
-
 @keyframes slideBackground {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
-
 .book-detail {
     display: grid;
     grid-template: "image desc desc" / 1fr 2fr;
     border: 2px solid #272727;
 }
-
 .book-detail .figure {
     grid-area: image;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .book-detail .cover-image {
     margin: 2em;
     width: 65%;
     height: auto;
     border: 2px solid #272727;
 }
-
 .book-detail .info {
     grid-area: desc;
     border-left: 2px solid #272727;
 }
-
 .book-detail .title {
     max-width: 600px;
     font-size: 2rem;
     text-transform: uppercase;
     font-family: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
 }
-
 .book-detail .author {
     margin-top: 0.5em;
     padding-bottom: 1em;
@@ -186,7 +168,6 @@ a:hover {
     text-transform: uppercase;
     border-bottom: 2px dotted #272727;
 }
-
 .book-detail .description {
     margin: 0.5em 0;
     font-size: 2.3rem;
@@ -195,12 +176,10 @@ a:hover {
     line-height: 1.4;
     max-width: 600px;
 }
-
 .info {
     background-color: #fbfbfb;
     padding: 1.5em;
 }
-
 .more {
     color: rgb(244, 42, 42);
 }
