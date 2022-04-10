@@ -130,7 +130,8 @@ a {
     width: 100%;
     height: 88vh;
     background: url(/images/placeholder.jpg) no-repeat center center fixed;
-    background-size: cover;
+    /* background-size: cover; */
+    object-fit: contain;
 }
 
 /* media queries --------------------------------- */
