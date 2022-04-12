@@ -26,14 +26,13 @@ var base = new Airtable({apiKey: 'keyzO8HNBKPW555xb'}).base('appYidD4KOiOTegE9')
 // base("books").select({}).eachPage(gotPageOfBooks, gotAllBooks);
 
 // add view to get a select "view" "books" from table to airtable database
-// this will only show the books from the fiction category
 // change the "view:" line to get a certain category
 base("books").select({
-    view: "fiction"
+  view: "main"
 }).eachPage(gotPageOfBooks, gotAllBooks);
 
 // an empty array to hold our book data
-const books = [];
+var books = [];
 
 // callback function that receives our data
 function gotPageOfBooks(records, fetchNextPage) {
@@ -151,3 +150,78 @@ function getRandomRotation() {
   let max = 5;
   return 'rotate(' + (Math.random() * (max - min) + min) + 'deg)';
 }
+
+// click filters and filter out data ---------------------
+
+// all filter
+document.querySelector("#all-filter").addEventListener("click", () => {
+  // loop through the books loaded from the Airtable API
+  const bookSpines = document.querySelectorAll(".book-spine");
+  // hide the book detail data in case it clashes
+  hideBook();
+  // removes each book currently on the shelf
+  bookSpines.forEach(book => {
+    book.remove();
+  });
+  // clear the array to make way for new info
+  books = [];
+  base("books").select({
+    view: "main"
+  }).eachPage(gotPageOfBooks, gotAllBooks);
+});
+
+// fiction filter
+document.querySelector("#fiction-filter").addEventListener("click", () => {
+  // loop through the books loaded from the Airtable API
+  const bookSpines = document.querySelectorAll(".book-spine");
+  hideBook();
+  bookSpines.forEach(book => {
+    book.remove();
+  });
+  books = [];
+  base("books").select({
+    view: "fiction"
+  }).eachPage(gotPageOfBooks, gotAllBooks);
+});
+
+// non-fiction filter
+document.querySelector("#non-fiction-filter").addEventListener("click", () => {
+  // loop through the books loaded from the Airtable API
+  const bookSpines = document.querySelectorAll(".book-spine");
+  hideBook();
+  bookSpines.forEach(book => {
+    book.remove();
+  });
+  books = [];
+  base("books").select({
+    view: "non-fiction"
+  }).eachPage(gotPageOfBooks, gotAllBooks);
+});
+
+// comic filter
+document.querySelector("#comic-filter").addEventListener("click", () => {
+  // loop through the books loaded from the Airtable API
+  const bookSpines = document.querySelectorAll(".book-spine");
+  hideBook();
+  bookSpines.forEach(book => {
+    book.remove();
+  });
+  books = [];
+  base("books").select({
+    view: "comic"
+  }).eachPage(gotPageOfBooks, gotAllBooks);
+});
+
+// text only filter
+document.querySelector("#text-only-filter").addEventListener("click", () => {
+  // loop through the books loaded from the Airtable API
+  const bookSpines = document.querySelectorAll(".book-spine");
+  hideBook();
+  bookSpines.forEach(book => {
+    book.remove();
+  });
+  books = [];
+  base("books").select({
+    view: "text only"
+  }).eachPage(gotPageOfBooks, gotAllBooks);
+});

@@ -76,6 +76,7 @@ a {
     border: 1px solid white;
     border-radius: 25px;
     padding: 0.4em 0.8em;
+    transition: 0.2s ease-in-out;
 }
 #refresh-svg {
     display: flex;
@@ -87,6 +88,13 @@ a {
 }
 #refresh li p {
     margin-bottom: 3px;
+}
+#refresh:hover {
+    background-color: white;
+    color: #0f0f0f;
+}
+#refresh:hover #refresh-svg {
+    fill: #0f0f0f;
 }
 #ad-section {
     outline: 1px solid green;

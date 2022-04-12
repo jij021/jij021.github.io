@@ -13,10 +13,8 @@ html {
 }
 header {
     margin-bottom: 3em;
-    border-bottom: 2px solid #272727;
     top: 0;
     position: sticky;
-    background-color: #fbfbfb;
     z-index: 5;
 }
 h1 {
@@ -41,7 +39,10 @@ a::after {
 }
 
 /* ids */
-
+#nav-container {
+    border-bottom: 2px solid #272727;
+    background-color: #fbfbfb;
+}
 #nav {
     margin: 0 auto;
     padding: 1em 0 1.5em 0;
@@ -82,6 +83,32 @@ a::after {
     box-shadow: 0 0 #272727;
     transform: translateY(2px);
 }
+#filters {
+    margin: 1em auto;
+    max-width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+#all-filter {border: 2px solid hsl(3, 100%, 87%);}
+
+#fiction-filter {border: 2px solid hsl(50, 100%, 83%);}
+
+#non-fiction-filter {border: 2px solid hsl(97, 71%, 81%);}
+
+#comic-filter {border: 2px solid hsl(199, 100%, 85%);}
+
+#text-only-filter {border: 2px solid hsl(279, 100%, 85%);}
+
+#all-filter:hover {background-color: hsl(3, 100%, 87%);}
+
+#fiction-filter:hover {background-color: hsl(50, 100%, 83%);}
+
+#non-fiction-filter:hover {background-color: hsl(97, 71%, 81%);}
+
+#comic-filter:hover {background-color: hsl(199, 100%, 85%);}
+
+#text-only-filter:hover {background-color: hsl(279, 100%, 85%);}
 
 /* classes */
 
@@ -94,6 +121,13 @@ a::after {
 }
 .hidden {
     display: none !important;
+}
+.filter-pill {
+    font-size: 1rem;
+    border-radius: 1.5em;
+    padding: 0.2em 0.6em;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 .shelf {
     border-bottom: 10px solid #272727;
@@ -199,6 +233,9 @@ a::after {
     }
     #header-caption {
         display: none;
+    }
+    #filters {
+        max-width: 80%;
     }
     .book-detail {
         display: flex;
