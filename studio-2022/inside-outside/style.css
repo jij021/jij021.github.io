@@ -27,21 +27,66 @@ a {
     margin: 0 auto 0.5em auto;
 }
 /* nature/scenery pages -------- */
-#close-icon {
-    display: none;
+#sunset-svg:hover {
+    fill: url(#sunset-linear-gradient);
+}
+#garden-svg:hover {
+    fill: url(#garden-linear-gradient);
+}
+#sky-svg:hover {
+    fill: url(#sky-linear-gradient);
+}
+#sunset-link:hover {
+    font-weight: bold;
+    background: linear-gradient(to right, #f6c917 20%, #ffa938 40%, #ffa938 60%, #f6c917 80%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    animation: slidingGradient 1s linear infinite;
+}
+#garden-link:hover {
+    font-weight: bold;
+    background: linear-gradient(to right, #2ac397 20%, #4493cb 40%, #4493cb 60%, #2ac397 80%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    animation: slidingGradient 1s linear infinite;
+}
+#sky-link:hover {
+    font-weight: bold;
+    background: linear-gradient(to right, #d4d4d4 20%, #9a9a9a 40%, #9a9a9a 60%, #d4d4d4 80%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    animation: slidingGradient 1s linear infinite;
+}
+@keyframes slidingGradient {
+    to {
+        background-position: 200% center;
+    }
 }
 #refresh {
     cursor: pointer;
     list-style-type: none;
     display: flex;
     gap: 0.5em;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 0.4em 0.8em;
 }
 #refresh-svg {
+    display: flex;
     animation: spin 2s linear infinite;
 }
 @keyframes spin {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(-359deg);}
+}
+#refresh li p {
+    margin-bottom: 3px;
 }
 #ad-section {
     outline: 1px solid green;
@@ -72,47 +117,30 @@ a {
 }
 /* nature/scenery pages -------- */
 .nature-main {
-    margin: 0 2em 2em 2em;
+    margin: 0 2em 0 2em;
 }
-.nature-main header nav {
+header nav {
     background-color: #0f0f0f;
     width: 100%;
-    height: 2.8em;
+    height: 3.8em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 .menu {
-    position: fixed;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99;
-    background: #0f0f0f;
     color: white;
     list-style: none;
-    padding-top: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.6em;
 }
-.menu li {
-    position: relative;
-    left: 1.8em;
-    margin-bottom: 1.5em;
+.menu-divider {
+    opacity: 0.2;
 }
-.show-menu {
-    transform: translateY(0);
-}
-.hamburger {
-    position: relative;
-    z-index: 100;
-    top: 0;
-    left: -0.3em;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+.menu-item {
+    display: none;
 }
 .ad-image {
     position: absolute;
@@ -128,30 +156,20 @@ a {
 .nature-figure img {
     outline: 1px solid red;
     width: 100%;
-    height: 88vh;
+    height: 86.5vh;
     background: url(/images/placeholder.jpg) no-repeat center center fixed;
-    /* background-size: cover; */
+    background-size: cover;
     object-fit: contain;
 }
 
 /* media queries --------------------------------- */
 @media only screen and (min-width: 768px) {
     /* nature/scenery pages ---------------- */
-    .hamburger {
+    .menu-icon {
         display: none;
     }
-    .menu {
-        display: flex;
-        flex-direction: row;
-        gap: 2em;
-        position: static;
-        transform: none;
-        padding-top: 0;
-        transition: none;
-    }
-    .menu li {
-        left: 0;
-        margin-bottom: 0;
+    .menu-item {
+        display: block;
     }
 }
 
@@ -175,6 +193,4 @@ a {
         flex-direction: row;
         gap: 3em;
     }
-    
-    
 }
