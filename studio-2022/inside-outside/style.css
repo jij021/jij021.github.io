@@ -10,7 +10,7 @@ html {
     color: white;
     font-size: 18px;
     font-family: 'neue-haas-grotesk-text', Helvetica, Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 a {
     color: inherit;
@@ -69,13 +69,16 @@ a {
     }
 }
 #refresh {
+    z-index: 99;
     cursor: pointer;
+    user-select: none;
     list-style-type: none;
     display: flex;
     gap: 0.5em;
+    background-color: #0f0f0f;
     border: 1px solid white;
     border-radius: 25px;
-    padding: 0.4em 0.8em;
+    padding: 0.4em 1em 0.4em 0.8em;
     transition: 0.2s ease-in-out;
 }
 #refresh-svg {
@@ -96,10 +99,22 @@ a {
 #refresh:hover #refresh-svg {
     fill: #0f0f0f;
 }
-#ad-section {
-    outline: 1px solid green;
-    width: 100%;
-    height: 88vh;
+#nature-figure-background {
+    max-width: 600px;
+    width: 70%;
+    height: auto;
+    margin-bottom: 7em;
+}
+#nature-figure-caption {
+    font-family: 'ivypresto-display', 'Times New Roman', Times, serif;
+    font-size: clamp(2rem, calc(1rem + 4vw), 4.5rem);
+    text-align: center;
+    line-height: 120%;
+    width: 40%;
+    max-width: 50%;
+    position: absolute;
+    transform: translateY(30%);
+    z-index: 5;
 }
 
 /* classes --------------------------------- */
@@ -113,16 +128,17 @@ a {
     width: 100%;
     height: auto;
     padding: 1em 0;
-    outline: 1px solid yellow;
 }
 .home-figure div {
     margin: 0 auto;
     width: 100%;
     max-width: 326px;
 }
-.home-figure div img {
-    outline: 1px solid red;
+.home-figure img {
+    margin-bottom: 0.5em;
+    width: 100%;
 }
+
 /* nature/scenery pages -------- */
 .nature-main {
     margin: 0 2em 0 2em;
@@ -138,6 +154,7 @@ header nav {
 }
 .menu {
     color: white;
+    background-color: #0f0f0f;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -150,30 +167,19 @@ header nav {
 .menu-item {
     display: none;
 }
-.ad-image {
-    position: absolute;
-    left: 0;
-    z-index: 30;
-    width: 60%;
-    height: auto;
-}
-.ad-image img {
-    width: 60%;
-    height: auto;
-}
-.nature-figure {
-    outline: 1px solid red;
+.nature-figure div {
     width: 100%;
     height: 86.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.nature-figure img {
-    max-width: 500px;
-    width: 70%;
+.ad-image {
+    position: absolute;
+    z-index: 5;
+    width: 25%;
+    max-width: 225px;
     height: auto;
-    margin-bottom: 5em;
 }
 
 /* media queries --------------------------------- */
@@ -184,6 +190,11 @@ header nav {
     }
     .menu-item {
         display: block;
+    }
+    #nature-figure-caption {
+        width: 35%;
+        max-width: 40%;
+        transform: translateY(50%);
     }
 }
 
@@ -206,5 +217,10 @@ header nav {
         display: flex;
         flex-direction: row;
         gap: 3em;
+    }
+    /* nature/scenery pages ---------------- */
+    #nature-figure-caption {
+        width: 30%;
+        max-width: 40%;
     }
 }
