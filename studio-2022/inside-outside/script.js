@@ -7,11 +7,7 @@ console.log("hello world");
 // airtable data -------------------------------------------
 
 var Airtable = require('airtable');
-Airtable.configure({
-    endpointUrl: 'https://api.airtable.com',
-    apiKey: 'keyzO8HNBKPW555xb'
-});
-var base = Airtable.base('appJSCdd9N93mXE0I');
+var base = new Airtable({apiKey: 'keyzO8HNBKPW555xb'}).base('appJSCdd9N93mXE0I');
 
 console.log(Airtable);
 
@@ -62,7 +58,7 @@ function showImages() {
   // look for the ad-section figure element
   const adSection = document.querySelector("#ad-section");
   
-  // loop through the books loaded from the Airtable API
+  // loop through the images loaded from the Airtable API
   images.forEach((image) => {
     // make an img and add the "ad-image" class
     const img = document.createElement("img");
