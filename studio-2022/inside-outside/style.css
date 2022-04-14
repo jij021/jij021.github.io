@@ -12,9 +12,9 @@ html {
     font-family: 'neue-haas-grotesk-text', Helvetica, Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
-a {
-    color: inherit;
-}
+
+a {color: inherit;}
+
 header {
     position: relative;
     padding: 0 2em;
@@ -28,7 +28,11 @@ header nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    transition: opacity 0.2s ease-in-out;
 }
+
+main {transition: opacity 0.2s ease-in-out;}
+
 footer {
     display: flex;
     padding: 0 2em 0em 2em;
@@ -85,9 +89,7 @@ footer {
     animation: slidingGradient 1s linear infinite;
 }
 @keyframes slidingGradient {
-    to {
-        background-position: 200% center;
-    }
+    to {background-position: 200% center;}
 }
 #refresh {
     z-index: 99;
@@ -110,16 +112,16 @@ footer {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(-359deg);}
 }
-#refresh li p {
-    margin-bottom: 3px;
-}
+
+#refresh li p {margin-bottom: 3px;}
+
 #refresh:hover {
     background-color: white;
     color: #0f0f0f;
 }
-#refresh:hover #refresh-svg {
-    fill: #0f0f0f;
-}
+
+#refresh:hover #refresh-svg {fill: #0f0f0f;}
+
 #nature-figure-background {
     max-width: 600px;
     width: 70%;
@@ -141,7 +143,7 @@ footer {
     position: relative;
     font-size: 0.8rem;
     z-index: 99;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 #about {
     cursor: pointer;
@@ -175,9 +177,8 @@ footer {
 }
 
 /* nature/scenery pages -------- */
-.nature-main {
-    margin: 0 2em;
-}
+.nature-main {margin: 0 2em;}
+
 .menu {
     color: white;
     background-color: #0f0f0f;
@@ -187,12 +188,11 @@ footer {
     justify-content: space-between;
     gap: 1.6em;
 }
-.menu-divider {
-    opacity: 0.2;
-}
-.menu-item {
-    display: none;
-}
+
+.menu-divider {opacity: 0.2;}
+
+.menu-item {display: none;}
+
 .nature-figure div {
     width: 100%;
     height: 86.5vh;
@@ -203,29 +203,24 @@ footer {
 .ad-image {
     position: absolute;
     z-index: 5;
-    width: 10%;
+    width: 11%;
     min-width: 100px;
     height: auto;
 }
-.hidden {
-    opacity: 0;
-}
-.lower-opacity {
-    opacity: 0.5;
-}
-.display {
-    opacity: 1;
-}
+
+.hidden {opacity: 0;}
+
+.lower-opacity {opacity: 0.3;}
+
+.no-display {display: none;}
 
 /* media queries --------------------------------- */
 @media only screen and (min-width: 768px) {
     /* nature/scenery pages ---------------- */
-    .menu-icon {
-        display: none;
-    }
-    .menu-item {
-        display: block;
-    }
+    .menu-icon {display: none;}
+
+    .menu-item {display: block;}
+
     #nature-figure-caption {
         width: 35%;
         max-width: 40%;
