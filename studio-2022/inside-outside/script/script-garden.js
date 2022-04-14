@@ -63,6 +63,10 @@ function showImages() {
     // put the img tags into the figure
     adSection.appendChild(img);
 
+    if(image.fields.category == "banner"){
+        img.style.width = 30 + '%';
+    }
+
     // randomizes the image locations
     randomImageLocation(img);
 

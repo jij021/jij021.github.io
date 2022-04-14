@@ -15,6 +15,27 @@ html {
 a {
     color: inherit;
 }
+header {
+    position: relative;
+    padding: 0 2em;
+    background: #0f0f0f;
+    z-index: 10;
+}
+header nav {
+    width: 100%;
+    height: 3.8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+footer {
+    display: flex;
+    padding: 0 2em 0em 2em;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+}
 
 /* ids --------------------------------- */
 
@@ -78,7 +99,7 @@ a {
     background-color: #0f0f0f;
     border: 1px solid white;
     border-radius: 25px;
-    padding: 0.4em 1em 0.4em 0.8em;
+    padding: 0.5em 1em 0.4em 0.8em;
     transition: 0.2s ease-in-out;
 }
 #refresh-svg {
@@ -116,6 +137,20 @@ a {
     transform: translateY(30%);
     z-index: 5;
 }
+#about-text {
+    position: relative;
+    font-size: 0.8rem;
+    z-index: 99;
+    transition: opacity 0.3s ease-in-out;
+}
+#about {
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    max-width: 24px;
+    height: auto;
+}
 
 /* classes --------------------------------- */
 
@@ -141,16 +176,7 @@ a {
 
 /* nature/scenery pages -------- */
 .nature-main {
-    margin: 0 2em 0 2em;
-}
-header nav {
-    background-color: #0f0f0f;
-    width: 100%;
-    height: 3.8em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    margin: 0 2em;
 }
 .menu {
     color: white;
@@ -177,9 +203,18 @@ header nav {
 .ad-image {
     position: absolute;
     z-index: 5;
-    width: 25%;
-    max-width: 225px;
+    width: 10%;
+    min-width: 100px;
     height: auto;
+}
+.hidden {
+    opacity: 0;
+}
+.lower-opacity {
+    opacity: 0.5;
+}
+.display {
+    opacity: 1;
 }
 
 /* media queries --------------------------------- */
