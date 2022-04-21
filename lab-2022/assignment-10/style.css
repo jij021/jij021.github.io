@@ -31,10 +31,10 @@ canvas {
 }
 
 footer {
-    margin: 0.5em;
+    margin: 0.5em 1.3em;
     font-size: 1.5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 /* ids and classes */
@@ -53,6 +53,14 @@ footer {
 #instructions h1 {font-size: 3rem;}
 
 #instructions p {font-size: 1.2rem;}
+
+#arrow {
+    margin-top: 0.8em;
+    position: relative;
+    left: -5%;
+    width: 90%; 
+    height: auto;
+}
 
 #button {
     display: inline;
