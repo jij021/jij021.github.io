@@ -1,12 +1,16 @@
+@import url("https://use.typekit.net/bar6veo.css");
+
+@import url("fonts/stylesheet.css");
+
 :root {
-    --font: Helvetica, Arial, sans-serif;
+    --body: freight-text-pro, Georgia, 'Times New Roman', Times, serif; 
+    --header: 'Circular Std', Helvetica, Arial, sans-serif;
     --white: white;
-    --light-gray: #e7e7e7; 
+    --light-gray: #f0f0f0; 
     --gray: #c4c4c4;
     --black: #212121;
     --shadow: #b0b0b0;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +18,7 @@
 }
 html {
     font-size: 18px;
-    font-family: var(--font);
+    font-family: var(--body);
     color: var(--black);
     overflow: hidden;
 }
@@ -23,21 +27,77 @@ main {
     display: flex;
     flex-direction: column-reverse;
 }
-h1, h2 {
-    font-size: 1rem;
+h1 {
+    font-family: var(--header);
+    animation: gradient 15s linear infinite;
+    background: linear-gradient(to right, hsl(181, 59%, 56%) 20%, hsl(306, 36%, 57%) 40%, hsl(337, 66%, 58%) 60%, hsl(181, 59%, 56%) 80%);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-h2 {
-    font-weight: normal;  
+@keyframes gradient {
+    from {background-position: 300% center;}
+}
+figure {
+    margin: 0;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h2, h3 {
+    font-size: 1rem;
+    font-family: var(--header);
+}
+h3 {
+    font-weight: normal; 
     color: var(--gray);
-    cursor: pointer;
+}
+hr {
+    border: none;
+    height: 1.5px;
+    background-color: var(--gray);
+    margin: 2em 0;
 }
 
 /* ids */
 
+#instructions-container {
+    position: absolute;
+    z-index: 99;
+    padding: 1em 1.5em;
+    font-family: var(--header);
+    height: 100vh;
+    width: 100%;
+}
+#instructions-header {
+    display: flex;
+    justify-content: space-between;
+}
+#close {
+    cursor: pointer;
+    width: 85%;
+    height: auto;
+}
+#instructions-description {
+    margin-top: 2em;
+    line-height: 150%;
+    height: 65%;
+}
+#description-list {
+    margin-left: 5.5em;
+}
+#description-1,
+#description-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    max-width: 400px;
+}
 #journal-container {
     background-color: var(--white);
     width: 100vw;
-    height: 45vh;
+    height: 40vh;
     z-index: 10;
 }
 #journal-header {
@@ -84,9 +144,13 @@ h2 {
     position: absolute;
     left: 50%;
     filter: blur(50px);
+    animation: fadeIn 0.8s;
 }
-
-.triangle {
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* .triangle {
     height: 0;
     width: 0;
     border-left: 100px solid transparent;
@@ -95,25 +159,45 @@ h2 {
     position: absolute;
     top: 30%;
     left: 70%;
-}
+} */
 
 /* media queries */
-/* Extra small devices (phones, 600px and down) */
+
 @media only screen and (max-width: 600px) {
 
 }
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    hr {
+        max-width: 620px;
+    }
     main {
         flex-direction: row;
     }
+    #instructions-header {
+        flex-direction: row-reverse;
+        justify-content: left;
+        gap: 2em;
+    }
+    #close {
+        transform: translateY(10px);
+    }
+    #instructions-description {
+        font-size: 1.2rem;
+        margin: 2.2em 0 0 4em;
+    }
+    #description-1,
+    #description-2 {
+        max-width: 500px;
+    }
     #journal-container {
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         width: 40%;
         min-width: 365px;
@@ -123,7 +207,7 @@ h2 {
         flex-direction: column;
         align-items: normal;
         justify-content: normal;
-        gap: 0.5em;
+        gap: 0.4em;
         box-shadow: none;
     }
     #canvas-container {
@@ -131,8 +215,6 @@ h2 {
         width: 60%;
     }
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     #journal-container {
         width: 35%;
@@ -141,8 +223,6 @@ h2 {
         width: 65%;
     }
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     #journal-container {
         width: 30%;
