@@ -1,11 +1,25 @@
 console.log("CONSOLE ready");
 
 // to do:
-// 1) make instruction toggle
+// 1) make instruction toggle -------- DONE
 // 2) set a timer to delete divs after a certain period of time, fading out
 
 $(document).ready(function() {
     console.log("JQUERY ready");
+
+    // functions for instructions
+
+    $("#instructions-button").click(function() {
+        $("main").fadeOut(600);
+        $("#instructions-container").fadeIn(600);
+    })
+
+    $("#close").click(function() {
+        $("#instructions-container").fadeOut(600);
+        $("main").fadeIn(600);
+    })
+
+    // functions for the typing stuff
 
     // types the letters
     function createLetter(key) {
@@ -40,7 +54,6 @@ $(document).ready(function() {
     }
 
     // put in random position 
-    // this is for mobile sizes
     function getRandomPos(div) {
         div.style.left= (100 * Math.random()) + '%';
         div.style.top= (100 * Math.random()) + '%';
@@ -79,4 +92,3 @@ $(document).ready(function() {
     }); 
 
 });
-
