@@ -43,7 +43,7 @@ figure {
     margin: 0;
 }
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 h2, h3 {
     font-size: 1rem;
@@ -57,7 +57,7 @@ hr {
     border: none;
     height: 1.5px;
     background-color: var(--gray);
-    margin: 2em 0;
+    margin: 1.5em 0;
     max-width: 450px;
 }
 
@@ -148,11 +148,6 @@ hr {
     position: absolute;
     left: 50%;
     filter: blur(50px);
-    animation: fadeIn 0.8s;
-}
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
 .hidden {
     display: none;
@@ -178,10 +173,10 @@ hr {
 }
 @media only screen and (min-width: 768px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
     hr {
-        max-width: 620px;
+        max-width: 550px;
     }
     main {
         flex-direction: row;
@@ -191,12 +186,9 @@ hr {
         justify-content: left;
         gap: 2em;
     }
-    #close {
-        transform: translateY(10px);
-    }
     #instructions-description {
-        font-size: 1.2rem;
-        margin: 2.2em 0 0 4em;
+        font-size: 1rem;
+        margin: 2em 0 0 4.7em;
     }
     #description-1,
     #description-2 {

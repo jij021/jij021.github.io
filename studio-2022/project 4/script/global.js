@@ -1,9 +1,5 @@
 console.log("CONSOLE ready");
 
-// to do:
-// 1) make instruction toggle -------- DONE
-// 2) set a timer to delete divs after a certain period of time, fading out
-
 $(document).ready(function() {
     console.log("JQUERY ready");
 
@@ -38,6 +34,14 @@ $(document).ready(function() {
         }
         var canvasContainer = document.querySelector("#canvas-container");
         canvasContainer.removeChild(canvasContainer.lastChild);
+    }
+
+    // delete the last div in canvas container after a certain period of time so the site won't slow down
+    function deleteDivTimed() {
+        setTimeout(function () {
+            console.log("removing element");
+            $("#canvas-container").children().first().remove();
+        }, 7000);   
     }
 
     // allow for random HSL colors
@@ -76,19 +80,24 @@ $(document).ready(function() {
         getRandomPos(div);
         div.style.backgroundColor = getRandomColor();
         div.style.transform = getRandomSize();
+
+        // fade in the elements once they're made, and then fade them out
+        $("#canvas-container").children().last().hide();
+        $("#canvas-container").children().last().fadeIn(600).delay(2400).fadeOut(600);
     }
 
     $(document).on("keydown", function(e) {
         if ("abcdefghijklmnopqrstuvwxyz!,'.;:?0123456789".includes(e.key.toLowerCase())) {
             createLetter(e.key);
             makeCircle();
+            deleteDivTimed();
         } else if (e.keyCode == 32){
             createLetter("&nbsp;");
             makeCircle();
+            deleteDivTimed();
         }
         else if (e.keyCode == 8) {
             deleteElement();
         }
     }); 
-
 });
