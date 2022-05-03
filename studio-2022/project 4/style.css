@@ -1,15 +1,13 @@
 @import url("https://use.typekit.net/bar6veo.css");
 
-@import url("fonts/stylesheet.css");
-
 :root {
-    --body: freight-text-pro, Georgia, 'Times New Roman', Times, serif; 
+    --body: 'Circular Std', Helvetica, Arial, sans-serif;
     --header: 'Circular Std', Helvetica, Arial, sans-serif;
     --white: white;
-    --light-gray: #f0f0f0; 
+    --light-gray: #e4e4e4; 
     --gray: #c4c4c4;
     --black: #212121;
-    --shadow: #b0b0b0;
+    --shadow: #cecece;
 }
 * {
     margin: 0;
@@ -22,13 +20,9 @@ html {
     color: var(--black);
     overflow: hidden;
 }
-main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column-reverse;
-}
 h1 {
     font-family: var(--header);
+    font-size: clamp(1.6rem, -1.5rem + 8vw, 2.5rem);
     animation: gradient 15s linear infinite;
     background: linear-gradient(to right, hsl(181, 59%, 56%) 20%, hsl(306, 36%, 57%) 40%, hsl(337, 66%, 58%) 60%, hsl(181, 59%, 56%) 80%);
     background-size: 300%;
@@ -41,12 +35,14 @@ h1 {
 }
 figure {
     margin: 0;
+    max-width: 24px;
+    height: auto;
 }
-h1 {
-    font-size: 2rem;
+main {
+    height: 100vh;
 }
 h2, h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: var(--header);
 }
 h3 {
@@ -56,20 +52,25 @@ h3 {
 hr {
     border: none;
     height: 1.5px;
-    background-color: var(--gray);
+    background-color: var(--light-gray);
     margin: 1.5em 0;
-    max-width: 450px;
 }
 
 /* ids */
 
 #instructions-container {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
     z-index: 99;
-    padding: 1em 1.5em;
+    padding: 2em 2.2em;
     font-family: var(--header);
-    height: 100vh;
-    width: 100%;
+    height: auto;
+    width: 85%;
+    max-width: 720px;
+    box-shadow: 0 0 10px var(--shadow);
+    border-radius: 1em;
 }
 #instructions-header {
     display: flex;
@@ -77,50 +78,59 @@ hr {
 }
 #close {
     cursor: pointer;
-    width: 85%;
+    width: 100%;
     height: auto;
+    margin-top: 4px;
 }
 #instructions-description {
-    margin-top: 2em;
+    font-size: clamp(1rem, -1.5rem + 8vw, 1.2rem);
     line-height: 150%;
     height: 65%;
 }
 #description-list {
-    margin-left: 5.5em;
+    margin-left: 5.3em;
 }
-#description-1,
-#description-2 {
+#description-1 {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    max-width: 400px;
+    max-width: 420px;
 }
 #journal-container {
-    background-color: var(--white);
-    width: 100vw;
-    height: 40vh;
+    width: 80%;
+    max-width: 550px;
+    height: auto;
     z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
 }
 #journal-header {
-    background-color: var(--white);
-    box-shadow: 0 4px 10px 0px var(--shadow);
-    padding: 1em 1.5em;
+    padding: 0.5em 1.5em;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 #instructions-button {
+    text-align: right;
     cursor: pointer;
+    text-decoration: underline rgba(196, 196, 196, 0) 1.5px;
+    text-underline-offset: 2px;
+    transition: 0.5s ease;
+}
+#instructions-button:hover {
+    text-decoration: underline rgba(196, 196, 196, 1) 1.5px;
 }
 #journal-entry-container {
-    background-color: var(--light-gray);
     height: 100%;
-    padding: 1em 1.5em;
+    padding: 0.5em 1.5em;
 }
 #journal-entry {
     width: 100%;
     height: 80%;
     display: inline-block;
+    font-size: 1.2rem;
     overflow-wrap: anywhere;
     line-height: 140%;
     overflow-y: auto;
@@ -135,7 +145,7 @@ hr {
 #canvas-container {
     background-color: white;
     width: 100vw;
-    height: 55vh;
+    height: 100vh;
 }
 
 /* classes */
@@ -152,81 +162,35 @@ hr {
 .hidden {
     display: none;
 }
-/* .triangle {
-    height: 0;
-    width: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 200px solid hsl(262, 53%, 35%);
-    position: absolute;
-    top: 30%;
-    left: 70%;
-} */
 
 /* media queries */
 
-@media only screen and (max-width: 600px) {
-
-}
-@media only screen and (min-width: 600px) {
-
-}
 @media only screen and (min-width: 768px) {
-    h1 {
-        font-size: 2rem;
+    figure {
+        max-width: 32px;
     }
-    hr {
-        max-width: 550px;
+    #close {
+        margin-top: 9px;
     }
     main {
         flex-direction: row;
     }
-    #instructions-header {
-        flex-direction: row-reverse;
-        justify-content: left;
-        gap: 2em;
+    #instructions-container {
+        padding: 2em 3em;
     }
     #instructions-description {
-        font-size: 1rem;
-        margin: 2em 0 0 4.7em;
+        font-size: 1.2rem;
     }
     #description-1,
     #description-2 {
         max-width: 500px;
     }
     #journal-container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 40%;
-        min-width: 365px;
-        box-shadow: 0 0 10px 0px var(--shadow);
-    }
-    #journal-header {
-        flex-direction: column;
-        align-items: normal;
-        justify-content: normal;
-        gap: 0.4em;
-        box-shadow: none;
-    }
-    #canvas-container {
-        height: 100vh;
-        width: 60%;
-    }
-}
-@media only screen and (min-width: 992px) {
-    #journal-container {
-        width: 35%;
-    }
-    #canvas-container {
         width: 65%;
     }
 }
+@media only screen and (min-width: 992px) {
+}
 @media only screen and (min-width: 1200px) {
-    #journal-container {
-        width: 30%;
-    }
-    #canvas-container {
-        width: 70%;
-    }
+
 }

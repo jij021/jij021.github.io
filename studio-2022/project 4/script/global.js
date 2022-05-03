@@ -41,12 +41,12 @@ $(document).ready(function() {
         setTimeout(function () {
             console.log("removing element");
             $("#canvas-container").children().first().remove();
-        }, 7000);   
+        }, 6400);   
     }
 
     // allow for random HSL colors
     function getRandomColor() {
-        return 'hsla(' + (Math.random() * 360) + ', 95%, 75%, 1)';
+        return 'hsla(' + (Math.random() * 360) + ', 95%, 65%, 1)';
     }
 
     // allow for random sizes
@@ -83,7 +83,7 @@ $(document).ready(function() {
 
         // fade in the elements once they're made, and then fade them out
         $("#canvas-container").children().last().hide();
-        $("#canvas-container").children().last().fadeIn(600).delay(2400).fadeOut(600);
+        $("#canvas-container").children().last().fadeIn(600).delay(3600).fadeOut(600);
     }
 
     $(document).on("keydown", function(e) {
