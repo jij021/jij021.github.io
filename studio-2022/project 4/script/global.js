@@ -87,7 +87,7 @@ $(document).ready(function() {
     }
 
     $(document).on("keydown", function(e) {
-        if ("abcdefghijklmnopqrstuvwxyz!,'.;:?0123456789".includes(e.key.toLowerCase())) {
+        if ("abcdefghijklmnopqrstuvwxyz!,'.;:?(){}[]/&*^%$#@<>~-_+=0123456789".includes(e.key.toLowerCase())) {
             createLetter(e.key);
             makeCircle();
             deleteDivTimed();
