@@ -4,7 +4,7 @@
     --body: 'Circular Std', Helvetica, Arial, sans-serif;
     --header: 'Circular Std', Helvetica, Arial, sans-serif;
     --white: white;
-    --light-gray: #e4e4e4; 
+    --light-gray: #f0f0f0; 
     --gray: #c4c4c4;
     --black: #212121;
     --shadow: #cecece;
@@ -16,14 +16,16 @@
 }
 html {
     font-size: 18px;
+    line-height: 170%;
     font-family: var(--body);
     color: var(--black);
     overflow: hidden;
 }
 h1 {
     font-family: var(--header);
-    font-size: clamp(1.6rem, -1.5rem + 8vw, 2.5rem);
-    animation: gradient 15s linear infinite;
+    font-size: 1.5rem;
+    line-height: 140%;
+    animation: gradient 10s linear infinite;
     background: linear-gradient(to right, hsl(181, 59%, 56%) 20%, hsl(306, 36%, 57%) 40%, hsl(337, 66%, 58%) 60%, hsl(181, 59%, 56%) 80%);
     background-size: 300%;
     -webkit-background-clip: text;
@@ -35,7 +37,7 @@ h1 {
 }
 figure {
     margin: 0;
-    max-width: 24px;
+    width: 24px;
     height: auto;
 }
 main {
@@ -49,12 +51,6 @@ h3 {
     font-weight: normal; 
     color: var(--gray);
 }
-hr {
-    border: none;
-    height: 1.5px;
-    background-color: var(--light-gray);
-    margin: 1.5em 0;
-}
 
 /* ids */
 
@@ -67,24 +63,29 @@ hr {
     padding: 2em 2.2em;
     font-family: var(--header);
     height: auto;
-    width: 85%;
-    max-width: 720px;
-    box-shadow: 0 0 10px var(--shadow);
+    width: 95%;
+    max-width: 680px;
     border-radius: 1em;
 }
 #instructions-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.7em;
 }
-#close {
+#close{
+    transform: translateY(-3px);
+    height: 42px;
+    width: auto;
     cursor: pointer;
-    width: 100%;
-    height: auto;
-    margin-top: 4px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.25s ease-in-out;
+}
+#close:hover {
+    background: var(--light-gray);
 }
 #instructions-description {
-    font-size: clamp(1rem, -1.5rem + 8vw, 1.2rem);
-    line-height: 150%;
+    font-size: 1.2rem;
     height: 65%;
 }
 #description-list {
@@ -132,7 +133,6 @@ hr {
     display: inline-block;
     font-size: 1.2rem;
     overflow-wrap: anywhere;
-    line-height: 140%;
     overflow-y: auto;
 }
 #cursor {
@@ -166,14 +166,8 @@ hr {
 /* media queries */
 
 @media only screen and (min-width: 768px) {
-    figure {
-        max-width: 32px;
-    }
-    #close {
-        margin-top: 9px;
-    }
-    main {
-        flex-direction: row;
+    html {
+        line-height: 180%;
     }
     #instructions-container {
         padding: 2em 3em;
@@ -181,16 +175,10 @@ hr {
     #instructions-description {
         font-size: 1.2rem;
     }
-    #description-1,
-    #description-2 {
+    #description-1 {
         max-width: 500px;
     }
     #journal-container {
         width: 65%;
     }
-}
-@media only screen and (min-width: 992px) {
-}
-@media only screen and (min-width: 1200px) {
-
 }

@@ -7,11 +7,11 @@ $(document).ready(function() {
 
     $("#instructions-button").click(function() {
         $("main").fadeOut(600);
-        $("#instructions-container").fadeIn(600);
+        $("#instructions-container").fadeIn(500);
     })
 
     $("#close").click(function() {
-        $("#instructions-container").fadeOut(600);
+        $("#instructions-container").fadeOut(500);
         $("main").fadeIn(600);
     })
 
