@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 11</title>
+    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+
+    <style id="style-layout">
+        html {
+            font-family: sans-serif;
+            font-size: 16px;	
+        }
+        body {
+            background: #eee;
+            margin: 0 auto;
+            padding: 2em;
+            line-height: 1.4;
+            font-size: 1em;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .container {
+            margin: 0 auto;
+        }
+        #terminal {
+            font-family: monospace;
+            white-space: pre;
+            padding: 1em;
+            border: 1px solid #424242;
+            background: #424242;
+            color: #93ff93;
+            margin: 16px 0;
+            max-height: 200px;
+            overflow: auto;
+        }
+        #terminal:empty:before {
+            content: attr(data-placeholder);
+            display: block;
+            color: #828282;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <!-- all required comments/annotations are listed in the script.js file -->
+
+    <div class="container">
+        <h2>Virtual Keyboard </h2>
+        <p>for show keyboard activity, Suitable for vlogger tutorial</p>
+    </div>
+    
+    <div id="terminal" contenteditable="true" spellcheck="false" data-placeholder="Typing here..."></div>
+    
+    <p>
+        <label><input checked class="change-size" type="radio" name="size" value="6"/> x-small</label>
+        <label><input class="change-size" type="radio" name="size" value="8"/> small</label>
+        <label><input class="change-size" type="radio" name="size" value="12"/> medium</label>
+        <label><input class="change-size" type="radio" name="size" value="16"/> large</label>
+    </p>
+    
+    <div class="keyboard-container">
+        <div class="keyboard">
+            <div class="key-row">
+                <kbd class="key key-s" data-key="27">Esc</kbd>
+                <kbd class="key key-break-1">&nbsp;</kbd>
+                <kbd class="key key-s" data-key="112">F1</kbd>
+                <kbd class="key key-s" data-key="113">F2</kbd>
+                <kbd class="key key-s" data-key="114">F3</kbd>
+                <kbd class="key key-s" data-key="115">F4</kbd>
+                <kbd class="key key-break-2">&nbsp;</kbd>
+                <kbd class="key key-s" data-key="116">F5</kbd>
+                <kbd class="key key-s" data-key="117">F6</kbd>
+                <kbd class="key key-s" data-key="118">F7</kbd>
+                <kbd class="key key-s" data-key="119">F8</kbd>
+                <kbd class="key key-break-2">&nbsp;</kbd>
+                <kbd class="key key-s" data-key="120">F9</kbd>
+                <kbd class="key key-s" data-key="121">F10</kbd>
+                <kbd class="key key-s" data-key="122">F11</kbd>
+                <kbd class="key key-s" data-key="123">F12</kbd>
+            </div>
+        
+            <div class="key-row">
+                <kbd class="key" data-key="192"><span class="top-key">~</span><span class="bottom-key">`</span></kbd>
+                <kbd class="key" data-key="49"><span class="top-key">!</span><span class="bottom-key">1</span></kbd>
+                <kbd class="key" data-key="50"><span class="top-key">@</span><span class="bottom-key">2</span></kbd>
+                <kbd class="key" data-key="51"><span class="top-key">#</span><span class="bottom-key">3</span></kbd>
+                <kbd class="key" data-key="52"><span class="top-key">$</span><span class="bottom-key">4</span></kbd>
+                <kbd class="key" data-key="53"><span class="top-key">%</span><span class="bottom-key">5</span></kbd>
+                <kbd class="key" data-key="54"><span class="top-key">^</span><span class="bottom-key">6</span></kbd>
+                <kbd class="key" data-key="55"><span class="top-key">&amp;</span><span class="bottom-key">7</span></kbd>
+                <kbd class="key" data-key="56"><span class="top-key">*</span><span class="bottom-key">8</span></kbd>
+                <kbd class="key" data-key="57"><span class="top-key">(</span><span class="bottom-key">9</span></kbd>
+                <kbd class="key" data-key="48"><span class="top-key">)</span><span class="bottom-key">0</span></kbd>
+                <kbd class="key" data-key="189"><span class="top-key">_</span><span class="bottom-key">-</span></kbd>
+                <kbd class="key" data-key="187"><span class="top-key">+</span><span class="bottom-key">=</span></kbd>
+                <kbd class="key key-backspace" data-key="8">Backspace</kbd>
+            </div>
+        
+            <div class="key-row">
+                <kbd class="key key-tab" data-key="9">Tab</kbd>
+                <kbd class="key" data-key="81">Q</kbd>
+                <kbd class="key" data-key="87">W</kbd>
+                <kbd class="key" data-key="69">E</kbd>
+                <kbd class="key" data-key="82">R</kbd>
+                <kbd class="key" data-key="84">T</kbd>
+                <kbd class="key" data-key="89">Y</kbd>
+                <kbd class="key" data-key="85">U</kbd>
+                <kbd class="key" data-key="73">I</kbd>
+                <kbd class="key" data-key="79">O</kbd>
+                <kbd class="key" data-key="80">P</kbd>
+                <kbd class="key" data-key="219"><span class="top-key">{</span><span class="bottom-key">[</span></kbd>
+                <kbd class="key" data-key="221"><span class="top-key">}</span><span class="bottom-key">]</span></kbd>
+            </div>
+            
+            <div class="key-row">
+                <kbd class="key key-capslock" data-key="20">CapsLock</kbd>
+                <kbd class="key" data-key="65">A</kbd>
+                <kbd class="key" data-key="83">S</kbd>
+                <kbd class="key" data-key="68">D</kbd>
+                <kbd class="key" data-key="70">F</kbd>
+                <kbd class="key" data-key="71">G</kbd>
+                <kbd class="key" data-key="72">H</kbd>
+                <kbd class="key" data-key="74">J</kbd>
+                <kbd class="key" data-key="75">K</kbd>
+                <kbd class="key" data-key="76">L</kbd>
+                <kbd class="key" data-key="186"><span class="top-key">:</span><span class="bottom-key">;</span></kbd>
+                <kbd class="key" data-key="222"><span class="top-key">"</span><span class="bottom-key">'</span></kbd>
+                <kbd class="key" data-key="220"><span class="top-key">|</span><span class="bottom-key">\</span></kbd>
+                <kbd class="key key-enter" data-key="13"><span>Enter</span></kbd>
+            </div>
+        
+            <div class="key-row">
+                <kbd class="key key-shift" data-key="16">Shift</kbd>
+                <kbd class="key" data-key="90">Z</kbd>
+                <kbd class="key" data-key="88">X</kbd>
+                <kbd class="key" data-key="67">C</kbd>
+                <kbd class="key" data-key="86">V</kbd>
+                <kbd class="key" data-key="66">B</kbd>
+                <kbd class="key" data-key="78">N</kbd>
+                <kbd class="key" data-key="77">M</kbd>
+                <kbd class="key" data-key="188"><span class="top-key">&lt;</span><span class="bottom-key">,</span></kbd>
+                <kbd class="key" data-key="190"><span class="top-key">&gt;</span><span class="bottom-key">.</span></kbd>
+                <kbd class="key" data-key="191"><span class="top-key">?</span><span class="bottom-key">/</span></kbd>
+                <kbd class="key key-break-3" data-key="38"><span class="span-arrow">&nbsp;</span></kbd>
+                <kbd class="key key-arrow" data-key="38"><span class="span-arrow">&uarr;</span></kbd>
+                <kbd class="key key-break-3" data-key="38"><span class="span-arrow">&nbsp;</span></kbd>
+            </div>
+        
+            <div class="key-row">
+                <kbd class="key key-ctrl" data-key="17">Ctrl</kbd>
+                <kbd class="key key-win" data-key="91">Win</kbd>
+                <kbd class="key key-alt" data-key="18">Alt</kbd>
+                <kbd class="key key-space" data-key="32">Space</kbd>
+                <kbd class="key key-menu" data-key="93">Menu</kbd>
+                <kbd class="key key-arrow" data-key="37"><span class="span-arrow">&larr;</span></kbd>
+                <kbd class="key key-arrow" data-key="40"><span class="span-arrow">&darr;</span></kbd>
+                <kbd class="key key-arrow" data-key="39"><span class="span-arrow">&rarr;</span></kbd>
+            </div>
+        
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

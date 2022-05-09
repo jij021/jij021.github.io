@@ -1,0 +1,226 @@
+/**
+  * fixer CSS with => http://autoprefixer.github.io/
+*/
+
+  .keyboard-container {
+    overflow: auto;
+}
+
+.keyboard {
+    font-size: 6px;
+    display: inline-block;
+    background: #424242;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    overflow: auto;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    -webkit-box-shadow: 0.063em 0.063em 0 0.125em #333232;
+            box-shadow: 0.063em 0.063em 0 0.125em #333232;
+    border: 0.063em solid #585858;
+    margin: 0 auto;
+}
+
+.key-row {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+.key {
+    display: inline-block;
+    position: relative;
+    background: #333;
+    text-align: center;
+    color: #eee;
+    /* float: left; */
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 3em;
+    height: 3em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    /* cursor: none; */
+    border: 0.063em solid #444;
+    -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+            box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+    font-family: monospace;
+    font-size: 1em;
+	line-height: 1.2;
+}
+
+.key.active, .key:focus {
+    border-color: #000db5;
+    border-bottom-color: #000975;
+    background: #0414de;
+    color: #fff;
+    position: relative;
+    top: 0.2em;
+    -webkit-box-shadow: 0 0 0 0.05em #000975;
+            box-shadow: 0 0 0 0.05em #000975;
+    z-index: 100;
+}
+
+.key-s {
+    height: 1.8em;
+}
+
+.top-key {
+    display: block;
+    margin-bottom: 0.2em;
+	font-size: 95%;
+}
+
+.bottom-key{
+    display: block;
+	font-size: 95%;
+}
+
+.key-capslock {
+	width: 6em;
+}
+
+.key-shift {
+    width: 8.1em;
+}
+
+.key-backspace {
+    width: 9em;
+}
+
+.key-tab {
+    width: 4.5em;
+}
+
+.key-ctrl {
+	width: 6.5em;
+}
+
+.key-win {
+    width: 4em;
+}
+
+.key-alt {
+    width: 4em;
+}
+
+.key-space {
+    width: 22em;
+}
+
+.key-menu {
+    width: 4em;
+}
+
+.key-enter {
+    width: 6em;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-color: transparent;
+}
+
+.key-enter:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 3em;
+    background: #333333;
+    top: -123%;
+    left: -25%;
+    width: 124%;
+    border: 0.063em solid #444;
+    -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+            box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+    font-family: monospace;
+    border-radius: 0.3em 0.3em 0 0.3em;
+}
+
+.key-enter:after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 117%;
+    background: #333333;
+    top: -0.55em;
+    left: -0.063em;
+    width: 100%;
+    border: 0.063em solid #444;
+    border-top-color: transparent;
+    -webkit-box-shadow: 0 0.2em 0 0.05em #222;
+            box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+    border-radius: 0 0 0.3em 0.3em;
+}
+
+.key-enter.active:before {
+    border-color: #000db5;
+    border-bottom-color: #000975;
+    background: #0414de;
+    -webkit-box-shadow: 0 0 0 0.05em #000975;
+            box-shadow: 0 0 0 0.05em #000975;
+}
+
+.key-enter.active:after {
+    background: #0414de;
+    border-color: #000db5;
+    border-top-color: transparent;
+    -webkit-box-shadow: 0 0.063em 0 0.01em #000975;
+            box-shadow: 0 0.063em 0 0.01em #000975;
+    border-bottom-color: #000975;
+}
+
+
+.key-enter span {
+    position: relative;
+    height: 1.5em;
+    display: block;
+    top: -62%;
+    z-index: 2;
+}
+
+.key-enter span:before {
+	content: "";
+	/* posrotion: absolute; */
+}
+
+.key-arrow {
+    width: 3.3em;
+    background: #f13c3c;
+    border: 0.063em solid #e83333;
+    -webkit-box-shadow: 0 0.2em 0 0.05em #bf0c0c;
+            box-shadow: 0 0.2em 0 0.05em #bf0c0c;
+    border-bottom-color: #d04040;
+}
+
+.span-arrow {
+    display: block;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.key-break-1 {
+    height: 1.8em;
+    visibility: hidden;
+}
+
+.key-break-2 {
+    height: 1.8em;
+    width: 2.58em;
+    visibility: hidden;
+}
+
+.key-break-3 {
+    width: 3.3em;
+    visibility: hidden;
+}
