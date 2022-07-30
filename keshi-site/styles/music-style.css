@@ -1,0 +1,25 @@
+/* music page CSS */
+
+/* ids */
+
+#extended-plays {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+#extended-plays ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#singles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin: 5em 0;
+}
+
+/* classes */
+.center-figure {
+    margin: 1.5em 0;
+    max-width: 720px;
+}
