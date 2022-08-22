@@ -109,8 +109,7 @@ function showBook(book, div) {
   // populate the template with the data in the provided book
   bookDetail.getElementsByClassName("title")[0].innerText = book.fields.title; 
   bookDetail.getElementsByClassName("author")[0].innerText = "By " + book.fields.author; 
-  bookDetail.getElementsByClassName("description")[0].innerText =
-    book.fields.description;
+  bookDetail.getElementsByClassName("description")[0].innerText = book.fields.description;
   if (book.fields.more == "none") {
     bookDetail.getElementsByClassName("more-book-website")[0].style.display = "none";
   } else {
@@ -133,9 +132,35 @@ function showBook(book, div) {
   // ...and set it on the one just clicked
   div.classList.add("active");
 
-  // reveal the detail element, we only really need this the first time
-  // but its not hurting to do it more than once
+  // reveal the detail element
   bookDetail.classList.remove("hidden");
+
+  // change the color of the pills with the background
+  if (book.fields.type == "Adventure") {
+    document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 55%)";
+    document.querySelector("#adventure-filter").style.backgroundColor = "hsl(50, 95%, 55%)";
+    // changes the other pill colors to be normal
+    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+    document.querySelector("#realistic-filter").style.backgroundColor = "";
+    document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+    document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
+  } else if (book.fields.type == "Realistic") {
+    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 65%, 60%)";
+    document.querySelector("#realistic-filter").style.backgroundColor = "hsl(97, 65%, 60%)";
+    // changes the other pill colors to be normal
+    document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+    document.querySelector("#adventure-filter").style.backgroundColor = "";
+    document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+    document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
+  } else if (book.fields.type == "Graphic novel") {
+    document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 70%)";
+    document.querySelector("#graphic-novel-filter").style.backgroundColor = "hsl(205, 90%, 70%)";
+    // changes the other pill colors to be normal
+    document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+    document.querySelector("#adventure-filter").style.backgroundColor = "";
+    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+    document.querySelector("#realistic-filter").style.backgroundColor = "";
+  }
 }
 
 function hideBook(book, div) {
@@ -151,6 +176,14 @@ function hideBook(book, div) {
   for (const bookSpine of bookSpines) {
     bookSpine.classList.remove("active");
   }
+
+  // changes all the pills to the default
+  document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+  document.querySelector("#adventure-filter").style.backgroundColor = "";
+  document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+  document.querySelector("#realistic-filter").style.backgroundColor = "";
+  document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+  document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
 }
 
 // misc functions for added interactivity
@@ -210,7 +243,7 @@ document.querySelector("#all-filter").addEventListener("click", () => {
   }).eachPage(gotPageOfBooks, gotAllBooks);
   backgroundWhite();
 
-  // check for other pill status
+  // changes all the other pills to the default style
   document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
   document.querySelector("#adventure-filter").style.backgroundColor = "";
   document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
@@ -260,8 +293,8 @@ document.querySelector("#realistic-filter").addEventListener("click", () => {
 
   // makes the active pill nav darker
   if (document.querySelector("html").style.backgroundColor = realisticColor) {
-    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 65%, 65%)";
-    document.querySelector("#realistic-filter").style.backgroundColor = "hsl(97, 65%, 65%)";
+    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 65%, 60%)";
+    document.querySelector("#realistic-filter").style.backgroundColor = "hsl(97, 65%, 60%)";
   }
 
   // check for other pill status
