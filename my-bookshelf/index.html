@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Bookshelf</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" type="text/javascript" defer></script>
-</head>
+  </head>
 
-<body class="fade-in-hidden">
+  <body class="fade-in-hidden">
     <header>
       <div id="nav-container">
         <div id="nav">
-          <h1><a target="_blank" href="https://airtable.com/shrUNYdKobzBa1qx2">My Bookshelf</a></h1>
+          <h1>
+            <a target="_blank" href="https://airtable.com/shrukuKFPGd4dsBUU">My Bookshelf</a>
+          </h1>
           <p id="header-caption">a virtual bookshelf of memories</p>
-          <h2 class="magnetic" id="hide-books">Put away &#128218;</h2>
-        </div> 
+          <h2 id="hide-books">Put away &#128218;</h2>
+        </div>
       </div>
       <!-- area for filter pills -->
       <div id="filters">
         <h2 class="filter-pill magnetic" id="all-filter">All</h2>
         <h2 class="filter-pill magnetic" id="adventure-filter">Adventure</h2>
         <h2 class="filter-pill magnetic" id="realistic-filter">Realistic</h2>
-        <h2 class="filter-pill magnetic" id="graphic-novel-filter">Graphic novel</h2>
+        <h2 class="filter-pill magnetic" id="graphic-novel-filter">
+          Graphic novel
+        </h2>
       </div>
     </header>
-    
+
     <main>
       <nav id="shelf" class="shelf"></nav>
-  
+
       <article id="book-detail" class="book-detail hidden">
         <figure class="figure">
           <img
@@ -54,8 +58,8 @@
           </div>
         </section>
       </article>
-    </main> 
-    
+    </main>
+
     <script src="lib/airtable.browser.js"></script>
-</body>
+  </body>
 </html>

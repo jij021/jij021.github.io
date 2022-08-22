@@ -7,12 +7,16 @@
 }
 
 :root {
-    --black: #272727;
+    --black: #0c0c0c;
     --gray: #d6d6d6;
-    --white: #fbfbfb;
+    --white: #ffffff;
     --red: #f42a2a;
     --freight-sans: 'freight-sans-pro', Arial, Helvetica, sans-serif;
     --freight-sans-compressed: 'freight-sans-compressed-pro', 'Arial Narrow', Arial, Helvetica, sans-serif;
+}
+
+::selection {
+    background: hsl(50, 100%, 83%);
 }
 
 html {
@@ -22,7 +26,7 @@ html {
     transition: 0.3s linear;
 }
 header {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     top: 0;
     position: sticky;
     z-index: 5;
@@ -32,6 +36,10 @@ h1 {
     font-weight: 600;
     font-size: 2.5rem;
 }
+h1:hover {
+    transition: 0.2s ease-in-out;
+    color: var(--red);
+}
 main {
     margin: 0 auto 2em auto;
     max-width: 70%;
@@ -39,14 +47,10 @@ main {
 a {
     color: inherit;
 }
-a:hover {
-    transition: 0.2s ease-in-out;
-    color: var(--red);
-}
 
 /* ids */
 #nav-container {
-    border-bottom: 2px solid #272727;
+    border-bottom: 3px solid #272727;
     background-color: var(--white);
 }
 #nav {
@@ -83,13 +87,12 @@ a:hover {
     box-shadow: 0.2rem 0.2rem var(--black);
     font-size: 1rem;
     font-weight: 600;
-    transition: box-shadow 0.2s ease, transform 0.15s linear;
 }
-#hide-books:hover {
-    box-shadow: 0 0 var(--black);
-}
+
 #hide-books:active {
     background-color: var(--white);
+    box-shadow: none;
+    transform: translate(2px, 3px);
 }
 #filters {
     margin: 1em auto;
@@ -99,35 +102,35 @@ a:hover {
     gap: 1em;
 }
 #all-filter {
-    border: 2px solid hsl(3, 100%, 87%);
+    border: 2px solid hsl(357, 90%, 80%);
 }
 
 #adventure-filter {
-    border: 2px solid hsl(50, 100%, 83%);
+    border: 2px solid hsl(50, 95%, 77%);
 }
 
 #realistic-filter {
-    border: 2px solid hsl(97, 71%, 81%);
+    border: 2px solid hsl(97, 75%, 73%);
 }
 
 #graphic-novel-filter {
-    border: 2px solid hsl(199, 100%, 85%);
+    border: 2px solid hsl(205, 90%, 80%);
 }
 
 #all-filter:hover {
-    background-color: hsl(3, 100%, 87%);
+    background-color: hsl(357, 90%, 80%);
 }
 
 #adventure-filter:hover {
-    background-color: hsl(50, 100%, 83%);
+    background-color: hsl(50, 95%, 77%);
 }
 
 #realistic-filter:hover {
-    background-color: hsl(97, 71%, 81%);
+    background-color: hsl(97, 75%, 75%);
 }
 
 #graphic-novel-filter:hover {
-    background-color: hsl(199, 100%, 85%);
+    background-color: hsl(205, 90%, 80%);
 }
 
 /* classes */
@@ -137,7 +140,7 @@ a:hover {
 }
 .fade-out-visible {
     opacity: 1;
-    transition: opacity 2s ease-out;
+    transition: opacity 1s ease-out;
 }
 .hidden {
     display: none !important;
@@ -147,7 +150,7 @@ a:hover {
     border-radius: 1.5em;
     padding: 0.2em 0.6em;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out, transform 0.15s linear;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.15s linear;
 }
 .shelf {
     border-bottom: 10px solid var(--black);
@@ -190,7 +193,7 @@ a:hover {
 .book-detail {
     display: grid;
     grid-template: "image desc desc" / 1fr 2fr;
-    border: 2px solid var(--black);
+    border: 3px solid var(--black);
 }
 .book-detail .figure {
     grid-area: image;
@@ -202,12 +205,12 @@ a:hover {
     margin: 2em;
     width: 65%;
     height: auto;
-    border: 2px solid var(--black);
+    border: 3px solid var(--black);
     cursor: pointer;
 }
 .book-detail .info {
     grid-area: desc;
-    border-left: 2px solid var(--black);
+    border-left: 3px solid var(--black);
 }
 .book-detail .title {
     max-width: 600px;
@@ -216,19 +219,19 @@ a:hover {
     font-family: var(--freight-sans-compressed);
 }
 .book-detail .author {
-    margin-top: 0.5em;
+    margin-top: 0.1em;
     padding-bottom: 1em;
     font-family: var(--freight-sans-compressed);
     font-size: 1.5rem;
     text-transform: uppercase;
-    border-bottom: 2px dotted var(--black);
+    border-bottom: 3px dotted var(--black);
 }
 .book-detail .description {
     margin: 0.5em 0;
     font-size: 2.3rem;
     font-family: var(--freight-sans);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 140%;
     max-width: 800px;
 }
 .info {
@@ -267,7 +270,7 @@ a:hover {
     }
     .book-detail .info {
         border-left: none;
-        border-top: 2px solid var(--black);
+        border-top: 3px solid var(--black);
     }
     .book-detail .description {
         font-size: 2rem;

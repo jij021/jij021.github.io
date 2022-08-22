@@ -15,9 +15,9 @@ setTimeout( () => {
 }, 1200);
 
 // for background color effects
-let adventureColor = 'hsl(56, 95%, 80%, 1)';
-let realisticColor = 'hsl(101, 95%, 80%, 1)';
-let graphicNovelColor = 'hsl(192, 95%, 80%, 1)';
+let adventureColor = 'hsl(50, 95%, 75%)';
+let realisticColor = 'hsl(97, 70%, 75%)';
+let graphicNovelColor = 'hsl(205, 88%, 80%)';
 
 // airtable data -----------------------------------------------------------------------------------------------
 
@@ -155,10 +155,6 @@ function hideBook(book, div) {
 
 // misc functions for added interactivity
 
-function getRandomColor() {
-  return 'hsla(' + (Math.random() * 360) + ', 95%, 75%, 1)';
-}
-
 function backgroundWhite() {
   // changes the background color back to white
   document.querySelector("html").style.backgroundColor = "rgb(255, 255, 255)";
@@ -213,6 +209,14 @@ document.querySelector("#all-filter").addEventListener("click", () => {
     view: "main"
   }).eachPage(gotPageOfBooks, gotAllBooks);
   backgroundWhite();
+
+  // check for other pill status
+  document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+  document.querySelector("#adventure-filter").style.backgroundColor = "";
+  document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+  document.querySelector("#realistic-filter").style.backgroundColor = "";
+  document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+  document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
 });
 
 // adventure filter
@@ -227,6 +231,18 @@ document.querySelector("#adventure-filter").addEventListener("click", () => {
     view: "adventure"
   }).eachPage(gotPageOfBooks, gotAllBooks);
   document.querySelector("html").style.backgroundColor = adventureColor;
+
+  // makes the active pill nav darker
+  if (document.querySelector("html").style.backgroundColor = adventureColor) {
+    document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 55%)";
+    document.querySelector("#adventure-filter").style.backgroundColor = "hsl(50, 95%, 55%)";
+  }
+
+  // check for other pill status
+  document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+  document.querySelector("#realistic-filter").style.backgroundColor = "";
+  document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+  document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
 });
 
 // realistic filter
@@ -241,6 +257,18 @@ document.querySelector("#realistic-filter").addEventListener("click", () => {
     view: "realistic"
   }).eachPage(gotPageOfBooks, gotAllBooks);
   document.querySelector("html").style.backgroundColor = realisticColor;
+
+  // makes the active pill nav darker
+  if (document.querySelector("html").style.backgroundColor = realisticColor) {
+    document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 65%, 65%)";
+    document.querySelector("#realistic-filter").style.backgroundColor = "hsl(97, 65%, 65%)";
+  }
+
+  // check for other pill status
+  document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+  document.querySelector("#adventure-filter").style.backgroundColor = "";
+  document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 80%)";
+  document.querySelector("#graphic-novel-filter").style.backgroundColor = "";
 });
 
 // graphic novel filter
@@ -255,4 +283,17 @@ document.querySelector("#graphic-novel-filter").addEventListener("click", () => 
     view: "graphic_novel"
   }).eachPage(gotPageOfBooks, gotAllBooks);
   document.querySelector("html").style.backgroundColor = graphicNovelColor;
+
+  // makes the active pill nav darker
+  if (document.querySelector("html").style.backgroundColor = graphicNovelColor) {
+    document.querySelector("#graphic-novel-filter").style.borderColor = "hsl(205, 90%, 70%)";
+    document.querySelector("#graphic-novel-filter").style.backgroundColor = "hsl(205, 90%, 70%)";
+  }
+
+  // check for other pill status
+  document.querySelector("#adventure-filter").style.borderColor = "hsl(50, 95%, 77%)";
+  document.querySelector("#adventure-filter").style.backgroundColor = "";
+  document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
+  document.querySelector("#realistic-filter").style.backgroundColor = "";
 });
+
