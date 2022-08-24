@@ -2,14 +2,23 @@ console.log("Hello bookshelf!");
 
 // animation effect
 
+// selects the text that will be animated
 const text = document.querySelector("#header-caption");
+// splits the string into characters, each letter placed in a <span> tag inside the <p> tag
+// '/\S/g' is an expression that catches all the whitespace in the string
+    // the '/' at the start marks the beginning of the pattern we're looking for
+    // the '\s' finds the whitespace in the string
+    // '/g' stands for global, which means it matches all the whitespace, not just the first one
+// '$&' is an expression that inserts a complete match 
 text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
 
+// takes all the span elements that are being animated and adds a different animation property to them so that they form a "wave"
 const element = document.querySelectorAll("span");
 for(let i = 0; i < element.length; i++){
   element[i].style.animationDelay = i*0.03 + 's';
 }
 
+// fades the site in slowly
 setTimeout( () => {
   document.querySelector("body").className = "fade-out-visible";
 }, 1200);
@@ -329,4 +338,3 @@ document.querySelector("#graphic-novel-filter").addEventListener("click", () => 
   document.querySelector("#realistic-filter").style.borderColor = "hsl(97, 75%, 73%)";
   document.querySelector("#realistic-filter").style.backgroundColor = "";
 });
-
