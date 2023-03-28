@@ -221,7 +221,7 @@ let sketch = function(p) {
   // particle ----------------------------------------------------------
   // basically a physics engine for the particles
 
-  var lineWeight = getRandomInt(3, 7);
+  var lineWeight = getRandomInt(1, 5);
   
   class Particle {
       constructor() {
@@ -298,7 +298,7 @@ let sketch = function(p) {
   
   // circle variables
   var qInt = getRandomInt(1,6);
-  var r = getRandomInt(100, 300);
+  var r = getRandomInt(80, 300);
   
   // flow direction functions
   var piInt = getRandomInt(1,5);
@@ -397,7 +397,7 @@ let sketch = function(p) {
     }
     // border
     p.stroke(hue2, sat2, light2);
-    p.strokeWeight(40);
+    p.strokeWeight(30);
     p.noFill();
     p.rect(0, 0, p.width, p.height);
   };

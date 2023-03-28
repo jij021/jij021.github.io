@@ -221,7 +221,7 @@ let sketch2 = function(s) {
   // particle ----------------------------------------------------------
   // basically a physics engine for the particles
 
-  var lineWeight = getRandomInt(3, 7);
+  var lineWeight = getRandomInt(1, 3);
   
   class Particle {
       constructor() {
@@ -230,7 +230,7 @@ let sketch2 = function(s) {
         this.vel = s.createVector(0,0);
         this.acc = s.createVector(0,0);
         // keep the particle's speed from going out of control
-        this.maxspeed = 14;
+        this.maxspeed = 12;
         // saves the prev pos the particle was at
         this.prevpos = this.pos.copy(); 
       }    
@@ -298,7 +298,7 @@ let sketch2 = function(s) {
     
     // circle variables
     var qInt = getRandomInt(1,6);
-    var r = getRandomInt(100, 300);
+    var r = getRandomInt(80, 300);
     
     // flow direction functions
     var piInt = getRandomInt(1,4);
@@ -343,7 +343,7 @@ let sketch2 = function(s) {
       flowfield = new Array(cols * rows);
   
       // change the 'i < ###' part to change how many particles show up
-      for (var i = 0; i < 900; i++) {
+      for (var i = 0; i < 700; i++) {
         particle[i] = new Particle();
       }
   
@@ -397,7 +397,7 @@ let sketch2 = function(s) {
       }
       // border
       s.stroke(hue2, sat2, light2);
-      s.strokeWeight(50);
+      s.strokeWeight(30);
       s.noFill();
       s.rect(0, 0, s.width, s.height);
   

@@ -54,7 +54,7 @@ button {
     width: fit-content;
     font-family: 'Neue Pixel Grotesk', Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
-    border: 1.5px white solid;
+    border: 1.4px white solid;
     padding: 0.5em;
 
     background-color: white;
@@ -217,6 +217,7 @@ img {
     button {
         margin: 0;
         position: fixed;
+        font-size: 1.3em;
     }
     .title {
         max-width: 25vw;
@@ -225,7 +226,7 @@ img {
         padding-right: 60vw;
     }
     .desc {
-        margin: 0 0 5.5em 0;
+        margin: 0 0 5em 0;
     }
     .desc p {
         font-size: 1em;
