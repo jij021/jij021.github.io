@@ -1,0 +1,116 @@
+@import url("https://use.typekit.net/yrm4hnh.css");
+
+@import url("fonts/stylesheet.css");
+
+:root {
+    --black: #1A1A1A;
+    --white: #EEEDEF;
+    --red: #C54249;
+    --america-mono: 'GT America Mono', 'Courier New', Courier, monospace;
+    --founders-grotesk: 'Founders Grotesk', Arial, Helvetica, sans-serif;
+    --obviously: 'obviously-wide', Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 18px;
+    font-family: var(--founders-grotesk);
+    font-weight: normal;
+}
+body {
+    width: 100%;
+    min-width: 600px;
+    margin: 0 auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 99;
+}
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: var(--obviously);
+    font-weight: 700;
+}
+h1:hover {
+    filter: blur(2px);
+}
+h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+a {
+    color: var(--red);
+}
+main {
+    margin: 0 auto;
+    width: 80%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+li {
+    margin: 0.2em 0;
+}
+figure {
+    margin: 1em 0;
+}
+figcaption {
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: 600;
+}
+dt {
+    margin-bottom: 0.8em;
+}
+footer {
+    margin-top: 3em;
+    padding: 0.7em 0;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--america-mono);
+    font-size: 0.7rem;
+}
+
+/* ids */
+
+#prime-nav ul {
+    font-size: 1.2rem;
+    text-transform: lowercase;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+#prime-nav a {
+    color: var(--red);
+    text-decoration: none;
+}
+#footer-text {
+    margin: 0 auto;
+    width: 85%;
+}
+
+/* classes */
+
+.float-figure-right {
+    width: 30%;
+    max-width: 360px;
+    float: right;
+    margin: 0 0 0.5em 2em;
+}
+.float-figure-right img {
+    width: 100%;
+    height: auto;
+}

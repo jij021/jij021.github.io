@@ -1,0 +1,53 @@
+/* index/homepage CSS */
+
+/* ids */
+
+#banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 1em auto;
+}
+#banner figure {
+    width: 85%;
+    height: auto;
+}
+#banner div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#banner-quote {
+    font-family: var(--obviously);
+    font-weight: 600;
+    font-size: 2.3rem;
+    line-height: 140%;
+}
+#banner-description {
+    width: 95%;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-top: 0;
+}
+#featured-songs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+}
+#thumbnail-grid {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    justify-items: end;
+    width: 80%;
+    align-self: flex-end;
+}
+#thumbnail-grid figure {
+    width: 90%;
+    height: auto;
+}
+#thumbnail-grid figure img {
+    filter: grayscale(100%);
+}
+#thumbnail-grid figure img:hover {
+    filter: none;
+}
