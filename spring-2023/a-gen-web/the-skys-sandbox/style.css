@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Neue Pixel Grotesk';
-    src: url('/fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff2') format('woff2'),
-        url('/fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff') format('woff');
+    src: url('fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff2') format('woff2'),
+        url('fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('/fonts/NeueMontreal/NeueMontreal-Italic.woff2') format('woff2'),
-        url('/fonts/NeueMontreal/NeueMontreal-Italic.woff') format('woff');
+    src: url('fonts/NeueMontreal/NeueMontreal-Italic.woff2') format('woff2'),
+        url('fonts/NeueMontreal/NeueMontreal-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('/fonts/NeueMontreal/NeueMontreal-Regular.woff2') format('woff2'),
-        url('/fonts/NeueMontreal/NeueMontreal-Regular.woff') format('woff');
+    src: url('fonts/NeueMontreal/NeueMontreal-Regular.woff2') format('woff2'),
+        url('fonts/NeueMontreal/NeueMontreal-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
