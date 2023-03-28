@@ -404,7 +404,7 @@ let sketch2 = function(s) {
       // makes the static screenshots / images
       // stops the if statement after ms milliseconds / ms * 5 iterations
       // ms * 50, where ms is the time it takes to make a new canvas (around ms millisecond)
-      var ms = 15;
+      var ms = 16;
       var scs = 50;
       if(s.frameCount <= ms*scs){
         // changes the canvas randomly every 1 sec
