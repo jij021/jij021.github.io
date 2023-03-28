@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5js Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5" defer></script>
+</head>
+<body>
+    <script>
+        console.log("script loading");
+  
+        function setup() {
+        createCanvas(windowWidth, windowHeight);
+        }
+
+        let hue = 0;
+
+        function draw() {
+        colorMode(HSB);    
+        
+        if(hue > 360){
+            hue = 0;
+        } else {
+            hue++;
+        }
+        
+        noStroke();
+        fill(hue, 40, 100);
+        ellipse(mouseX, mouseY, 100, 100);
+        
+        if(mouseIsPressed){
+            clear();
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Neue Pixel Grotesk';
+    src: url('NeuePixelGrotesk.woff2') format('woff2'),
+        url('NeuePixelGrotesk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

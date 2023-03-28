@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'Neue Pixel Grotesk';
+    src: url('/code/fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff2') format('woff2'),
+        url('/code/fonts/NeuePixelGrotesk/NeuePixelGrotesk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('/code/fonts/NeueMontreal/NeueMontreal-Italic.woff2') format('woff2'),
+        url('/code/fonts/NeueMontreal/NeueMontreal-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('/code/fonts/NeueMontreal/NeueMontreal-Regular.woff2') format('woff2'),
+        url('/code/fonts/NeueMontreal/NeueMontreal-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* main elements ////////////////////////////////////// */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0E0E0E;
+    color: #E4E5E7;
+    font-size: 16px;
+    font-family: 'Neue Montreal', Helvetica, Arial, sans-serif;
+    line-height: 135%;
+}
+
+main {
+    padding: 3.5vw;
+}
+
+img {
+    height: 100%;
+    width: auto;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    margin: 2em 0;
+    width: fit-content;
+    font-family: 'Neue Pixel Grotesk', Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    border: 2px white solid;
+    padding: 0.5em;
+
+    background-color: white;
+    color: #0E0E0E;
+}
+
+/* button:hover {
+    background-color: white;
+    color: #0E0E0E;
+}
+
+button:focus {
+    outline: white 1.5px auto;
+} */
+
+i {font-size: inherit;}
+
+canvas {
+    max-width: calc(300px * 2);
+    max-height: calc(500px * 2);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* classes ////////////////////////////////////// */
+
+.title {
+    margin: 3vw 0;
+}
+
+.header {
+    padding-right: 50%;
+    margin-bottom: 1.5em;
+}
+
+.desc {
+    margin: 1.2em 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.desc > p {
+    font-size: 1.5rem;
+}
+
+.outputs {
+    margin-bottom: 4em;
+}
+
+.animation-caption {
+    display: flex;
+    gap: 1em;
+}
+
+.animation-caption p {
+    font-size: 1.5em;
+    color: #979797;
+}
+
+.animation-caption p:nth-child(1) {
+    max-width: 60%;
+}
+
+.animation-caption p:nth-child(2) {
+    max-width: 40%;
+}
+
+.image-grid {
+    max-width: 100%;
+    padding: 0em 0.5em;
+}
+
+.div-grid {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.numbers {
+    font-family: 'Neue Pixel Grotesk', Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.5em;
+}
+
+/* ids ////////////////////////////////////// */
+
+#desc-1 {
+    max-width: 80%;
+    height: auto;
+    align-self: flex-end;
+}
+
+#desc-2 {
+    max-width: 70%;
+}
+
+#animation {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 2.5em;
+}
+
+#static-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    object-fit: cover;
+}
+
+/* media queries ////////////////////////////////////// */
+
+@media only screen and (min-width: 769px) {
+    main {
+        padding: 1vh 10vw;
+    }
+    header {
+        display: flex;
+        justify-content: end;
+    }
+    .title {
+        margin: 2vw 0;
+        max-width: 75vw;
+        height: auto;
+    }
+    .header {
+        padding-right: 60%;
+    }
+    .animation-caption p:nth-child(1) {
+        max-width: 50%;
+    }
+    
+    .animation-caption p:nth-child(2) {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    main {
+        padding: 1vh 12vw;
+    }
+    .title {
+        max-width: 65vw;
+    }
+    .header {
+        padding-right: 60%;
+    }
+    #static-grid {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    main {
+        padding: 5vh 3vw;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 2em;
+        justify-content: flex-end;
+    }
+    canvas {
+        max-width: calc(300px * 1.8);
+        max-height: calc(500px * 1.8);
+    }
+    button {
+        margin: 0;
+        position: fixed;
+    }
+    .title {
+        max-width: 25vw;
+    }
+    .header {
+        padding-right: 60vw;
+    }
+    .desc {
+        margin: 0.8em 0 6em 0;
+    }
+    .animation-caption {
+        max-width: 28%;
+        align-self: flex-end;
+    }
+    .animation-caption > p {
+        font-size: 1.2em;
+        color: #979797;
+    }
+    .image-grid {
+        max-width: 300px;
+        padding: 0;
+    }
+    .numbers {
+        font-size: 1em;
+        padding: 1em 0 0 0;
+    }
+    #desc-section {
+        max-width: 25vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin: 0 3vw 6vh auto;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+    }
+    #output-section {
+        max-width: 75vw;
+    }
+    #animation {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 4em;
+    }
+    #static-grid {
+        grid-template-columns: repeat(5, auto);
+        gap: 1em;
+        max-width: 75%;
+    }
+}
