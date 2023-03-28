@@ -221,7 +221,7 @@ let sketch = function(p) {
   // particle ----------------------------------------------------------
   // basically a physics engine for the particles
 
-  var lineWeight = getRandomInt(1, 5);
+  var lineWeight = getRandomInt(2, 5);
   
   class Particle {
       constructor() {
