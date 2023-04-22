@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-ExtraLight.woff2') format('woff2'),
+        url('Cambon-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-BoldItalic.woff2') format('woff2'),
+        url('Cambon-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-Italic.woff2') format('woff2'),
+        url('Cambon-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-Light.woff2') format('woff2'),
+        url('Cambon-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-Bold.woff2') format('woff2'),
+        url('Cambon-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-LightItalic.woff2') format('woff2'),
+        url('Cambon-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-ExtraLightItalic.woff2') format('woff2'),
+        url('Cambon-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-MediumItalic.woff2') format('woff2'),
+        url('Cambon-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-SemiBoldItalic.woff2') format('woff2'),
+        url('Cambon-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-Medium.woff2') format('woff2'),
+        url('Cambon-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-Regular.woff2') format('woff2'),
+        url('Cambon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cambon';
+    src: url('Cambon-SemiBold.woff2') format('woff2'),
+        url('Cambon-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-BdIt.woff2') format('woff2'),
+        url('GTPressuraTrial-BdIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-TextIt.woff2') format('woff2'),
+        url('GTPressuraTrial-TextIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-Rg.woff2') format('woff2'),
+        url('GTPressuraTrial-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-RgIt.woff2') format('woff2'),
+        url('GTPressuraTrial-RgIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-Bd.woff2') format('woff2'),
+        url('GTPressuraTrial-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Pressura';
+    src: url('GTPressuraTrial-Text.woff2') format('woff2'),
+        url('GTPressuraTrial-Text.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

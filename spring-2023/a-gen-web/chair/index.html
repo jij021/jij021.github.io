@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Character Creation (chair)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    <!-- <script type="module" src="/scripts/firebase.js" defer></script> -->
+    <script src="/scripts/canvas.js" defer></script>
+    <script src="/scripts/inputs.js" defer></script>
+</head>
+<body>
+    <main id="main-section">
+        <section id="input-section">
+            <div id="inputs-container">
+                <div id="title">
+                    <h1>Making an <b>uncomfortable</b> thing to sit in</h1>
+                    <p class="link" id="explanation-link"><a href="#" onclick="showDiv()">What is this?</a></p>
+                </div>
+                <div id="inputs">
+                    <div id="input-devices">
+                        <div id="colorPickerDiv">
+                            <label for="colorPicker" id="colorPickerLabel">Chair color</label>
+                        </div>
+                        <div id="checkboxDiv">
+                            <label for="back" class="checkbox-control">
+                                Include back
+                                
+                            </label>
+                            <input type="checkbox" name="backBox" value="back" id="backBox" class="checkbox" onclick="backCheckBox()">
+                            <label for="L arm" class="checkbox-control">
+                                Include L arm
+                                
+                            </label>
+                            <input type="checkbox" name="lArmBox" value="lArm" id="lArmBox" class="checkbox" onclick="lArmCheckBox()">
+                            <label for="R arm" class="checkbox-control">
+                                Include R arm
+                                
+                            </label>
+                            <input type="checkbox" name="rArmBox" value="rArm" id="rArmBox" class="checkbox" onclick="rArmCheckBox()">
+                        </div>
+                    </div>
+                    <div id="input-grid">
+                        <!-- seat sliders -->
+                        <label for="seatWidth">Seat width</label>
+                        <input type="range" min="10" max="200" value="30" id="seatWidth" class="slider" oninput="seatWidthProgress()">
+
+                        <label for="seatLength">Seat length</label>
+                        <input type="range" min="10" max="150" value="30" id="seatLength" class="slider" oninput="seatLengthProgress()">
+
+                        <label for="seatHeight">Seat height</label>
+                        <input type="range" min="1" max="150" value="5" id="seatHeight" class="slider" oninput="seatHeightProgress()">
+
+                        <label for="armHeight" class="arms">Arm height</label>
+                        <input type="range" min="3" max="60" value="10" id="armHeight" class="slider arms" oninput="armHeightProgress()">
+
+                        <!-- back sliders -->
+                        <label for="backHeight" class="back">Back height</label>
+                        <input type="range" min="10" max="130" value="30" id="backHeight" class="slider back" oninput="backHeightProgress()">
+
+                        <label for="backDepth" class="back">Back depth</label>
+                        <input type="range" min="1" max="140" value="5" id="backDepth" class="slider back" oninput="backDepthProgress()">
+
+                        <label for="backAngle" class="back">Back angle</label>
+                        <input type="range" min="-40" max="45" value="0" id="backAngle" class="slider back" oninput="backAngleProgress()">
+
+                        <!-- leg sliders -->
+                        <label for="legNumber">Number of legs</label>
+                        <input type="range" min="1" max="9" value="4" id="legNumber" class="slider" oninput="legNumberProgress()">
+
+                        <label for="legHeight">Leg height</label>
+                        <input type="range" min="20" max="200" value="20" id="legHeight" class="slider" oninput="legHeightProgress()">
+
+                        <label for="legThickness">Leg thickness</label>
+                        <input type="range" min="1" max="8" value="2" id="legThickness" class="slider" oninput="legThicknessProgress()">
+                    </div>
+                </div>
+                <div id="explanation-container">
+                    <div id="explanation">
+                        <p>Chairs are one of the most common pieces of furniture you encounter. Their primary purpose is for rest.</p>
+                        <p>Despite how often we run into chairs, not every chair is designed to be comfortable. Many are instead “designed” with the purpose of being unique or beautiful.</p>
+                        <p>Inspired by Bruno Munari's “Seeking Comfort in an Uncomfortable Chair” manifesto and my own experiences, you can make your own “chair” as unique and impractical as possible here so that it does not escape into the real world.</p>
+                    </div>
+                    <p class="link" id="back-to-chair-link"><a href="#" onclick="showDiv()">< Make my chair</a></p>
+                </div>
+                <div id="input-buttons">
+                    <button type="button" onclick="saveImg()" id="collectionButton">SAVE TO SITE</button>
+                    <br>
+                    <button type="button" onclick="screenShot()" id="saveButton">SAVE AS PNG</button>
+                    <p id="collection-link" class="link"><a href="">Check the collection</a></p>
+                </div>
+            </div>
+        </section>
+        <section id="canvas"></section>
+        <section id="control-explanation">
+            <div id="control-explanation-container">
+                <p>Click + drag to change camera angle</p>
+                <p>Scroll to zoom</p>
+                <p>Right click to reset camera</p>      
+            </div>
+        </section>
+    </main>
+</body>
+</html>
