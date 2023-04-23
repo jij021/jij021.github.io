@@ -29,11 +29,22 @@ function setup() {
 
   colorPicker = createColorPicker('#000080');
   colorPicker.parent(colorPickerDiv);
-  cameraPos = camera(100,-65,80,0,0,0);
+  cameraPos = camera(80,-60,60,0,0,0);
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6a-RqoaYVn6rZjL3EGtoK0YVP78IWBXc",
+    authDomain: "uncomfortable-chair.firebaseapp.com",
+    projectId: "uncomfortable-chair",
+    storageBucket: "uncomfortable-chair.appspot.com",
+    messagingSenderId: "878169192894",
+    appId: "1:878169192894:web:58d0f77359ea0a87d521ef",
+    measurementId: "G-RLTQYQSCRW"
+  };
+  firebase.initializeApp(firebaseConfig);
 }
 
 // when right click, reset the cam
-canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(100,-65,80,0,0,0);});
+canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(80,-60,60,0,0,0);});
 
 function draw() {
   let dx = mouseX - width/2;
@@ -276,4 +287,37 @@ function windowResized(){
 
 function screenShot(){
   save('my-chair.png');
+}
+
+// saves the canvas to firebase
+function saveCanvasToCloud() {
+  // get the data URL of the saved image
+  let canvasDataURL = canvas.toDataURL('image/png');
+
+  // allows you to put in images into the firebase storage
+  let storageRef = firebase.storage().ref();
+
+  // give the file a unique name starting with the date
+  let filename = Date.now() + '_my-chair.png';
+  
+  // uploads the file name and image to firebase
+  let uploadTask = storageRef.child(filename).putString(canvasDataURL, 'data_url');
+
+  // triggers an alert so the user knows its been saved to firebase and thus the collection
+  savedToCloud();
+}
+
+let myAlert = document.querySelector("#savedAlert");
+
+// sets an alert that notifies the user that its been sent to the collection
+function savedToCloud() {
+  console.log("Working")
+  myAlert.style.display = "block";
+  setTimeout(function(){ 
+    myAlert.style.opacity = 0;
+  }, 2000);
+  setTimeout(function(){ 
+    myAlert.style.display = "none"; 
+    myAlert.style.opacity = 1;
+  }, 3000);
 }

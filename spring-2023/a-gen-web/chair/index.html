@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 2: Character Creation (chair)</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <title>Making an Uncomfortable Thing to Sit In</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
-    <!-- <script type="module" src="/scripts/firebase.js" defer></script> -->
-    <script src="/scripts/canvas.js" defer></script>
-    <script src="/scripts/inputs.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="scripts/canvas.js" defer></script>
+    <script src="scripts/inputs.js" defer></script>
 </head>
 <body>
     <main id="main-section">
+        <div id="savedAlert">
+            <p>Saved to Collection</p>
+        </div>
         <section id="input-section">
             <div id="inputs-container">
                 <div id="title">
@@ -87,10 +91,10 @@
                     <p class="link" id="back-to-chair-link"><a href="#" onclick="showDiv()">< Make my chair</a></p>
                 </div>
                 <div id="input-buttons">
-                    <button type="button" onclick="saveImg()" id="collectionButton">SAVE TO SITE</button>
+                    <button type="button" onclick="saveCanvasToCloud()" id="collectionButton">SAVE TO SITE</button>
                     <br>
                     <button type="button" onclick="screenShot()" id="saveButton">SAVE AS PNG</button>
-                    <p id="collection-link" class="link"><a href="">Check the collection</a></p>
+                    <p id="collection-link" class="link"><a href="collection.html">View the Collection ></a></p>
                 </div>
             </div>
         </section>
@@ -99,8 +103,10 @@
             <div id="control-explanation-container">
                 <p>Click + drag to change camera angle</p>
                 <p>Scroll to zoom</p>
-                <p>Right click to reset camera</p>      
+                <p>Right click to reset camera</p>     
+                <div id="placeholder"></div> 
             </div>
+            
         </section>
     </main>
 </body>
