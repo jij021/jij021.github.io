@@ -29,7 +29,7 @@ function setup() {
 
   colorPicker = createColorPicker('#000080');
   colorPicker.parent(colorPickerDiv);
-  cameraPos = camera(80,-60,60,0,0,0);
+  cameraPos = camera(80,-40,60,0,0,0);
 
   const firebaseConfig = {
     apiKey: "AIzaSyB6a-RqoaYVn6rZjL3EGtoK0YVP78IWBXc",
@@ -44,7 +44,7 @@ function setup() {
 }
 
 // when right click, reset the cam
-canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(80,-60,60,0,0,0);});
+canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(80,-40,60,0,0,0);});
 
 function draw() {
   let dx = mouseX - width/2;

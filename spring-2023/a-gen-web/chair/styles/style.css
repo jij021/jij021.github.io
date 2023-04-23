@@ -8,12 +8,11 @@
     line-height: 135%;
     color: black;
     background-color: #f0f0f0;
-    overflow: hidden;
 }
 main {
     display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+    flex-direction: column;
+    margin: 2em auto;
     width: 80vw;
     height: 100vh;
 }
@@ -25,6 +24,7 @@ h1 {
     color: #000080;
     line-height: 120%;
     padding-bottom: 0.1em;
+    width: 60%;
 }
 b {
     font-family: inherit;
@@ -111,23 +111,23 @@ input[type="range"]::-webkit-slider-thumb {
     color: inherit;
 }
 #input-section {
-    width: 35%;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 #canvas {
-    width: 65%;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 #inputs-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70%;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 #colorPickerDiv {
     display: flex;
-    gap: 1em;
+    gap: 3.9em;
     margin-bottom: 0.4em;
 }
 #colorPickerLabel {
@@ -135,8 +135,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 #checkboxDiv {
     display: grid;
-    grid-template-columns: 45% 55%;
+    grid-template-columns: 32% 68%;
     grid-template-rows: auto;
+    width: 100%;
+    max-width: 500px;
 }
 #checkboxDiv > * {
     margin: 0.4em 0;
@@ -148,9 +150,24 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: 3em;
     margin-bottom: 1.5em;
 }
+#input-devices {
+    display: none;
+}
+#settingsButton {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+#settingsButton:hover {
+    background-color: #464646;
+    color: white;
+}
 #input-grid {
-    display: grid;
-    grid-template-columns: 45% 55%;
+    width: 80%;
+    max-width: 400px;
+    display: none;
+    grid-template-columns: 40% 60%;
     grid-template-rows: auto;
 }
 #input-grid > label {
@@ -169,42 +186,89 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 0.25em 1em;
 }
 #explanation p:first-child {
-    padding-top: 0.75em;
+    padding-top: 1em;
 }
 #explanation p:last-child {
-    padding-bottom: 0.75em;
+    padding-bottom: 1em;
 }
 #saveButton {
     background-color: #c5c5c5;
 }
 #control-explanation {
-    width: 35%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-end;
 }
 #control-explanation-container {
     text-align: right;
-    margin-bottom: 5vh;
+    margin-bottom: 1vh;
     margin-left: auto;
 }
-#control-explanation-container p {
-    
+#control-explanation-container p { 
     margin-top: 0.4em;
 }
 
 /* media queries ////////////////////////////////////// */
 
-/* @media only screen and (min-width: 769px) {
-    
-}
-
 @media only screen and (min-width: 1025px) {
-    
+    * {
+        overflow: hidden;
+    }
+    main {
+        display: flex;
+        flex-direction: row;
+        height: 92vh;
+    }
+    h1 {
+        width: 100%;
+    }
+    #input-section {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        justify-content: center;
+    }
+    #input-container {
+        height: 100%;
+    }
+    #view-settings {
+        display: none;
+    }
+    #input-devices {
+        display: block;
+    }
+    #canvas {
+        padding-top: 4em;
+        width: 65%;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    #colorPickerDiv {
+        gap: 1em;
+        margin-bottom: 0.4em;
+    }
+    #checkboxDiv {
+        grid-template-columns: 45% 55%;
+    }
+    #input-grid {
+        display: grid;
+        grid-template-columns: 45% 55%;
+    }
+    #explanation p:first-child {
+        padding-top: 0.75em;
+    }
+    #explanation p:last-child {
+        padding-bottom: 0.75em;
+    }
+    #control-explanation {
+        width: 35%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
 }
-
-@media only screen and (min-width: 1205px) {
-    
-} */

@@ -14,6 +14,22 @@ function showDiv() {
     }
 }
 
+// display settings for smaller windows
+let settingsButton = document.querySelector("#settingsButton");
+let devices = document.querySelector("#input-devices");
+let sliderGrid = document.querySelector("#input-grid");
+function showSettings() {
+    if (devices.style.display === "block") {
+        devices.style.display = "none";
+        sliderGrid.style.display = "none";
+        settingsButton.innerHTML = "VIEW SETTINGS";
+    } else {
+        devices.style.display = "block";
+        sliderGrid.style.display = "grid";
+        settingsButton.innerHTML = "HIDE SETTINGS";
+    }
+}
+
 // checkbox functions
 let backBox = document.querySelector("#backBox");
 let lArmBox = document.querySelector("#lArmBox");

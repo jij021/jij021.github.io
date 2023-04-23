@@ -10,7 +10,7 @@
     background-color: #f0f0f0;
 }
 main {
-    margin: 3em auto;
+    margin: 2em auto;
     width: 80vw;
     height: 100vh;
 }
@@ -67,17 +67,41 @@ a:hover {
 }
 #subhead p {
     height: auto;
-    width: 13%;
+    width: 35%;
     text-align: right;
 }
 #images {
-    padding-bottom: 3em;
+    padding-bottom: 2em;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     object-fit: cover;
-    max-width: 80vw;
 }
 #images > * {
     margin: auto 0;
+}
+
+/* media queries ////////////////////////////////////// */
+
+@media only screen and (min-width: 769px) {
+    #subhead p {
+        width: 20%;
+    }
+    #images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1205px) {
+    main {
+        margin: 3em auto;
+        width: 80vw;
+        height: 100vh;
+    }
+    #subhead p {
+        width: 13%;
+    }
+    #images {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
