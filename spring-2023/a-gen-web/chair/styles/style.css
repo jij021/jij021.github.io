@@ -222,7 +222,7 @@ input[type="range"]::-webkit-slider-thumb {
         height: 92vh;
     }
     h1 {
-        width: 100%;
+        width: 70%;
     }
     #input-section {
         display: flex;
@@ -251,7 +251,7 @@ input[type="range"]::-webkit-slider-thumb {
         margin-bottom: 0.4em;
     }
     #checkboxDiv {
-        grid-template-columns: 45% 55%;
+        grid-template-columns: 36% 64%;
     }
     #input-grid {
         display: grid;
