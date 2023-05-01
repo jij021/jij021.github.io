@@ -38,21 +38,21 @@ function backCheckBox() {
     if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
         backBox.style.backgroundColor = "#000000";
     } else {
-        backBox.style.backgroundColor = "#ffffff";
+        backBox.style.backgroundColor = "#D3D3D3";
     }
 }
 function lArmCheckBox() {
     if(window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
         lArmBox.style.backgroundColor = "#000000";
     } else {
-        lArmBox.style.backgroundColor = "#ffffff";
+        lArmBox.style.backgroundColor = "#D3D3D3";
     }
 }
 function rArmCheckBox() {
     if(window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
         rArmBox.style.backgroundColor = "#000000";
     } else {
-        rArmBox.style.backgroundColor = "#ffffff";
+        rArmBox.style.backgroundColor = "#D3D3D3";
     }
 }
 
@@ -71,53 +71,58 @@ let legThicknessSlider = document.querySelector("#legThickness");
 // mult the slidervalue by (100 / max slider value) and then adjust w/ + - 10 or 5
 
 function seatWidthProgress() {
-    let sliderValue = seatWidthSlider.value / 2;
-    seatWidthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    let sliderValue = seatWidthSlider.value / 2.1;
+    seatWidthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function seatLengthProgress() {
-    let sliderValue = seatLengthSlider.value * 0.64;
+    let sliderValue = seatLengthSlider.value * 0.58;
     if(sliderValue < 10){
-        sliderValue = seatLengthSlider.value * 0.5;
+        sliderValue = seatLengthSlider.value * 0.45;
     }
-    seatLengthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    if(sliderValue > 60){
+        sliderValue = seatLengthSlider.value * 0.66;
+    }
+    seatLengthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function seatHeightProgress() {
     let sliderValue = seatHeightSlider.value / 1.5;
-    seatHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    seatHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function armHeightProgress() {
-    let sliderValue = armHeightSlider.value * 1.66;
-    armHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    let sliderValue = armHeightSlider.value * 1.62;
+    armHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function backHeightProgress() {
-    let sliderValue = backHeightSlider.value * (100/140);
+    let sliderValue = backHeightSlider.value * (100/145);
     if(sliderValue <= 20) {
-        sliderValue = backHeightSlider.value * (100/140) - 2;
+        sliderValue = backHeightSlider.value * (100/145) - 5;
     }
-    if(sliderValue >= 70) {
-        sliderValue = backHeightSlider.value * (100/140) + 4;
+    if(sliderValue >= 53) {
+        sliderValue = backHeightSlider.value * (100/142) + 4;
     }
-    backHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    backHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function backDepthProgress() {
     let sliderValue = backDepthSlider.value * (100/140);
-    backDepthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    backDepthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function backAngleProgress() {
-    let sliderValue = 50;
+    let sliderValue = 49;
     if(backAngleSlider.value < 0){
-        sliderValue -= -backAngleSlider.value + 5;
+        sliderValue -= -backAngleSlider.value + 4;
     }
-    if(backAngleSlider.value > 0){
-        sliderValue -= -backAngleSlider.value;
+    if(backAngleSlider.value > 2){
+        sliderValue -= -backAngleSlider.value - 2;
     }
-    backAngleSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    console.log(backAngleSlider.value);
+    console.log(sliderValue);
+    backAngleSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function legNumberProgress() {
@@ -130,7 +135,7 @@ function legNumberProgress() {
     } else {
         sliderValue = legNumberSlider.value * 10;
     }
-    legNumberSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    legNumberSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function legHeightProgress() {
@@ -138,15 +143,18 @@ function legHeightProgress() {
     if(sliderValue > 0) {
         sliderValue = legHeightSlider.value * 0.5 - 5;
     }
-    legHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    legHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function legThicknessProgress() {
     let sliderValue = legThicknessSlider.value * 12.5 - 10;
     if(sliderValue > 27){
-        sliderValue = legThicknessSlider.value * 12.5 - 5;
+        sliderValue = legThicknessSlider.value * 12.5 - 6;
     }
-    legThicknessSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #ffffff ${sliderValue}%)`;
+    if(sliderValue > 82){
+        sliderValue = legThicknessSlider.value * 12.5 - 4;
+    }
+    legThicknessSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 seatWidthProgress();

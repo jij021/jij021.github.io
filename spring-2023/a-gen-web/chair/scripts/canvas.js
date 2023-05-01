@@ -1,10 +1,10 @@
 const canvasDiv = document.querySelector("#canvas");
 const inputDiv = document.querySelector("#inputs");
 const colorPickerDiv = document.querySelector("#colorPickerDiv");
-const canvasWidth = canvasDiv.offsetWidth;
-const canvasHeight = canvasDiv.offsetHeight;
+const canvasWidth = window.innerWidth;
+const canvasHeight = window.innerHeight;
 
-let colorPicker, cameraPos;
+let colorPicker, cameraPos, savedImg, myCanvas;
 
 let seatWidth = document.querySelector("#seatWidth");
 let seatLength = document.querySelector("#seatLength");
@@ -23,13 +23,13 @@ let arms = document.querySelectorAll(".arms");
 let back = document.querySelectorAll(".back");
 
 function setup() {
-  var myCanvas = createCanvas(canvasWidth, canvasHeight, WEBGL);
+  myCanvas = createCanvas(windowWidth, windowHeight, WEBGL);
   myCanvas.parent(canvasDiv);
   angleMode(DEGREES);
 
   colorPicker = createColorPicker('#000080');
   colorPicker.parent(colorPickerDiv);
-  cameraPos = camera(80,-40,60,0,0,0);
+  cameraPos = camera(100,-40,80,0,0,0);
 
   const firebaseConfig = {
     apiKey: "AIzaSyB6a-RqoaYVn6rZjL3EGtoK0YVP78IWBXc",
@@ -44,7 +44,7 @@ function setup() {
 }
 
 // when right click, reset the cam
-canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(80,-40,60,0,0,0);});
+// canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(100,-40,80,0,10,0);});
 
 function draw() {
   let dx = mouseX - width/2;
@@ -126,15 +126,15 @@ function draw() {
       translate(0, backHeight.value/2 - 15, 0);
       push();
         translate(0, seatHeight.value/2 + 10, seatLength.value * -0.38);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(seatWidth.value/2 - 6, seatHeight.value/2 + 10, seatLength.value * 0.3)
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(-seatWidth.value/2 + 6, seatHeight.value/2 + 10, seatLength.value * 0.3)
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
     pop();
   }
@@ -150,11 +150,11 @@ function draw() {
       translate(0, backHeight.value/2 - 15, 0);
       push();
         translate(seatWidth.value/2 - 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(-seatWidth.value/2 + 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
     pop();
     fourLegs();
@@ -165,11 +165,11 @@ function draw() {
       translate(0, backHeight.value/2 - 15, 0);
       push();
         translate(seatWidth.value/2 - 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(-seatWidth.value/2 + 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
     pop();
     fourLegs();
@@ -180,11 +180,11 @@ function draw() {
       translate(0, backHeight.value/2 - 15, 0);
       push();
         translate(seatWidth.value/2 - 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(-seatWidth.value/2 + 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
     pop();
     fourLegs();
@@ -196,11 +196,11 @@ function draw() {
       translate(0, backHeight.value/2 - 15, 0);
       push();
         translate(seatWidth.value/2 - 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
       push();
         translate(-seatWidth.value/2 + 2,  seatHeight.value/2 + 10, 0);
-        cylinder(legThickness.value, legHeight.value);
+        cylinder(legThickness.value, legHeight.value, 10);
       pop();
     pop();
     fourLegs();
@@ -239,7 +239,7 @@ function oneLeg() {
     translate(0, backHeight.value/2 - 15, 0);
     push();
       translate(0,  seatHeight.value/2 + 10, 0);
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
   pop();
 }
@@ -249,11 +249,11 @@ function twoLegs() {
     translate(0, backHeight.value/2 - 15, 0);
     push();
       translate(0,  seatHeight.value/2 + 10, seatLength.value * -0.45);
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
     push();
       translate(0, seatHeight.value/2 + 10, seatLength.value * 0.4);
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
   pop();
   
@@ -264,28 +264,36 @@ function fourLegs() {
     translate(0, backHeight.value/2 - 15, 0);
     push();
       translate(seatWidth.value/2 - 2,  seatHeight.value/2 + 10, seatLength.value * -0.45)
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
     push();
       translate(-seatWidth.value/2 + 2,seatHeight.value/2 + 10, seatLength.value * -0.45)
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
     push();
       translate(seatWidth.value/2 - 2, seatHeight.value/2 + 10, seatLength.value * 0.4)
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
     push();
       translate(-seatWidth.value/2 + 2, seatHeight.value/2 + 10, seatLength.value * 0.4)
-      cylinder(legThickness.value, legHeight.value);
+      cylinder(legThickness.value, legHeight.value, 10);
     pop();
   pop();
 }
 
 function windowResized(){
-  resizeCanvas(canvasWidth, canvasHeight);
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+function keyTyped(){
+  if(key == 'r' || key == 'R'){
+    cameraPos = camera(100,-40,80,0,0,0);
+  }
 }
 
 function screenShot(){
+  // savedImg = myCanvas.get(windowWidth/4, 0, windowWidth/2 + windowWidth/8, windowHeight);
+  // savedImg.save('my-chair', 'png');
   save('my-chair.png');
 }
 

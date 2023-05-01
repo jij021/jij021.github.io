@@ -45,10 +45,40 @@ a {
 a:hover {
     text-decoration: underline;
 }
+button {
+    display: none;
+    position: fixed;
+    top: calc(100vw/15);
+    right: calc(100vw/15);
+    cursor: pointer;
+    padding: 0.6em 0.6em;
+    /* margin: 0.25em 0 0.25em 0; */
+    border: none;
+    /* font-size: 2em; */
+    z-index: 2;
+    max-width: 2em;
+    height: auto;
+}
+button:hover {
+    background-color: #8C8C8C;
+}
 
+.image-container {
+    height: 400px;
+}
 .chair-images {
+    /* width: 100%;
+    height: auto;
+    object-fit: cover; */
+    object-fit: cover;
+    width: calc(100vw/2.6);
+    height: 400px;
+    cursor: pointer;
+}
+.big-chair-images {
     width: 100%;
     height: auto;
+    transform: scale(1.7, 1.7);
 }
 
 #header {
@@ -70,33 +100,78 @@ a:hover {
     width: 35%;
     text-align: right;
 }
+#images > * {
+    margin: auto 0;
+}
 #images {
     padding-bottom: 2em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    object-fit: cover;
+    gap: 0.5em;
 }
-#images > * {
-    margin: auto 0;
+#expandedImg {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#closeButton {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: inherit;
+}
+#bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 98.9vw;
 }
 
 /* media queries ////////////////////////////////////// */
 
 @media only screen and (min-width: 769px) {
+    button {
+        top: calc(100vw/15);
+        right: calc(100vw/8.5);
+    }
+    .chair-images {
+        width: calc(100vw/4);
+    }
+    .big-chair-images {
+        transform: scale(1.5, 1.5);
+    }
     #subhead p {
         width: 20%;
     }
     #images {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
     }
 }
 
 @media only screen and (min-width: 1205px) {
+    button {
+        top: calc(100vw/30);
+        right: calc(100vw/15);
+    }
     main {
         margin: 3em auto;
-        width: 80vw;
+        width: 88vw;
         height: 100vh;
+    }
+    .chair-images {
+        width: calc(100vw/5);
+        height: 550px;
+    }
+    .big-chair-images {
+        transform: scale(1.2, 1.2);
     }
     #subhead p {
         width: 13%;
