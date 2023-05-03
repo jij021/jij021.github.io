@@ -16,15 +16,12 @@ function showDiv() {
 
 // display settings for smaller windows
 let settingsButton = document.querySelector("#settingsButton");
-let devices = document.querySelector("#input-devices");
 let sliderGrid = document.querySelector("#input-grid");
 function showSettings() {
-    if (devices.style.display === "block") {
-        devices.style.display = "none";
+    if (sliderGrid.style.display === "grid") {
         sliderGrid.style.display = "none";
         settingsButton.innerHTML = "VIEW SETTINGS";
     } else {
-        devices.style.display = "block";
         sliderGrid.style.display = "grid";
         settingsButton.innerHTML = "HIDE SETTINGS";
     }
@@ -35,24 +32,24 @@ let backBox = document.querySelector("#backBox");
 let lArmBox = document.querySelector("#lArmBox");
 let rArmBox = document.querySelector("#rArmBox");
 function backCheckBox() {
-    if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
-        backBox.style.backgroundColor = "#000000";
+    if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
+        backBox.style.backgroundColor = "rgb(0, 0, 0)";
     } else {
-        backBox.style.backgroundColor = "#D3D3D3";
+        backBox.style.backgroundColor = "rgb(240, 240, 240)";
     }
 }
 function lArmCheckBox() {
-    if(window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
-        lArmBox.style.backgroundColor = "#000000";
+    if(window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
+        lArmBox.style.backgroundColor = "rgb(0, 0, 0)";
     } else {
-        lArmBox.style.backgroundColor = "#D3D3D3";
+        lArmBox.style.backgroundColor = "rgb(240, 240, 240)";
     }
 }
 function rArmCheckBox() {
-    if(window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
-        rArmBox.style.backgroundColor = "#000000";
+    if(window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
+        rArmBox.style.backgroundColor = "rgb(0, 0, 0)";
     } else {
-        rArmBox.style.backgroundColor = "#D3D3D3";
+        rArmBox.style.backgroundColor = "rgb(240, 240, 240)";
     }
 }
 
@@ -120,8 +117,6 @@ function backAngleProgress() {
     if(backAngleSlider.value > 2){
         sliderValue -= -backAngleSlider.value - 2;
     }
-    console.log(backAngleSlider.value);
-    console.log(sliderValue);
     backAngleSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 

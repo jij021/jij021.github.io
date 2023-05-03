@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'GT Pressura', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 135%;
+    font-family: "input-sans-condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 140%;
     color: black;
     background-color: #f0f0f0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 main {
     margin: 2em auto;
@@ -15,18 +18,15 @@ main {
     height: 100vh;
 }
 h1 {
-    font-family: 'Cambon', 'Times New Roman', Times, serif;
-    font-size: 2em;
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'KareliaTrial', Arial, Helvetica, sans-serif;
+    font-size: 2.6em;
     color: #000080;
     line-height: 120%;
     padding-bottom: 0.1em;
 }
 h2 {
-    font-family: 'Cambon', 'Times New Roman', Times, serif;
-    font-size: 1em;
-    font-weight: 300;
+    font-family: 'KareliaTrial', Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
     font-style: italic;
     color: #000080;
     line-height: 120%;
@@ -35,8 +35,9 @@ h2 {
 b {
     font-family: inherit;
     font-size: inherit;
+    font-style: inherit;
     color: inherit;
-    font-weight: 600;
+    font-weight: bold;
 }
 a {
     color: #8C8C8C;
@@ -64,7 +65,7 @@ button:hover {
 }
 
 .image-container {
-    height: 400px;
+    height: 500px;
 }
 .chair-images {
     /* width: 100%;
@@ -72,13 +73,13 @@ button:hover {
     object-fit: cover; */
     object-fit: cover;
     width: calc(100vw/2.6);
-    height: 400px;
+    height: 500px;
     cursor: pointer;
 }
 .big-chair-images {
     width: 100%;
     height: auto;
-    transform: scale(1.7, 1.7);
+    transform: scale(2, 2);
 }
 
 #header {
@@ -86,12 +87,12 @@ button:hover {
     flex-direction: column;
 }
 #back-link {
-    margin-top: 1em;
+    margin-top: 1.3em;
 }
 #subhead {
     display: flex;
     justify-content: flex-end;
-    margin-top: 2em;
+    margin-top: 2.5em;
     width: 100%;
     height: auto;
 }
@@ -104,7 +105,7 @@ button:hover {
     margin: auto 0;
 }
 #images {
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -162,19 +163,19 @@ button:hover {
         right: calc(100vw/15);
     }
     main {
-        margin: 3em auto;
+        margin: 3.7em auto;
         width: 88vw;
         height: 100vh;
     }
     .chair-images {
-        width: calc(100vw/5);
-        height: 550px;
+        width: calc(100vw/4.7);
+        height: 500px;
     }
     .big-chair-images {
         transform: scale(1.2, 1.2);
     }
     #subhead p {
-        width: 13%;
+        width: 12%;
     }
     #images {
         grid-template-columns: repeat(4, 1fr);

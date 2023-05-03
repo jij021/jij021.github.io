@@ -47,16 +47,37 @@ setTimeout(() => {
     });
 }, 1300);
 
+var bigImage = document.querySelector(".big-chair-images");
+
 function focusItem() {
     if (bg.style.display === "block") {
         // hide the image containers
         bg.style.display = "none";
-        bgButton.style.display = "none";
+        // bgButton.style.display = "none";
         imgContainer.style.display = "none";
     } else {
         // show the image containers
         bg.style.display = "block";
-        bgButton.style.display = "block";
+        // bgButton.style.display = "block";
         imgContainer.style.display = "block";
+
+        // when the user clicks outside of the picture, it will close out
+        setTimeout(() => {
+            // Detect all clicks on the document
+            document.addEventListener("click", function(event) {
+                // If user clicks inside the element, do nothing
+                if (event.target.closest(".big-chair-images")) return;
+                bg.style.display = "none";
+                imgContainer.style.display = "none";
+            });
+        }, 10);
+
+        // allow for the images to show up again
+        setTimeout(() => {
+            // show the image containers
+            bg.style.display = "block";
+            // bgButton.style.display = "block";
+            imgContainer.style.display = "block";
+        }, 10);
     }
 }

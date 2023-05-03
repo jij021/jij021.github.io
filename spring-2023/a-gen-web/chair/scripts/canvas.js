@@ -101,15 +101,19 @@ function draw() {
       pop();
     pop();
   }
-  // if neither arms are selected, remove the appropriate slider
-  if(((window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)") && (window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"))){
+  // if neither arms are selected, remove the appropriate slider and hr tabs
+  if(((window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)") && (window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"))){
     for(let i = 0; i < arms.length; i++){
       arms[i].style.display = "none";
     }
+    document.querySelector("#armHR_1").style.display = "none";
+    document.querySelector("#armHR_2").style.display = "none";
   } else {
     for(let i = 0; i < arms.length; i++){
       arms[i].style.display = "block";
     }
+    document.querySelector("#armHR_1").style.display = "block";
+    document.querySelector("#armHR_2").style.display = "block";
   }
   
   //__________________________________________________________
@@ -219,14 +223,18 @@ function draw() {
       pop();
     pop();
   }
-  // if back isn't selected, removed appropriate sliders
-  if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(255, 255, 255)"){
+  // if back isn't selected, remove appropriate sliders and hr tabs
+  if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
     for(let i = 0; i < back.length; i++){
       back[i].style.display = "none";
     }
+    document.querySelector("#backHR_1").style.display = "none";
+    document.querySelector("#backHR_2").style.display = "none";
   } else {
     for(let i = 0; i < back.length; i++){
       back[i].style.display = "block";
+      document.querySelector("#backHR_1").style.display = "block";
+      document.querySelector("#backHR_2").style.display = "block";
     }
   }
   

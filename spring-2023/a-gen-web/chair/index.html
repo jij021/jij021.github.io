@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>Making an Uncomfortable Thing to Sit In</title>
+    <title>Creating an Uncomfortable Thing to Sit In</title>
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zar1hff.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
@@ -22,34 +23,12 @@
         <section id="input-section">
             <div id="inputs-container">
                 <div id="title">
-                    <h1>Making an <b>uncomfortable</b> thing to sit in</h1>
+                    <h1>Creating an <b>uncomfortable</b> thing to sit in</h1>
                     <p class="link" id="explanation-link"><a href="#" onclick="showDiv()">What is this?</a></p>
                 </div>
                 <div id="inputs">
                     <div id="view-settings">
                         <button type="button" onclick="showSettings()" id="settingsButton">VIEW SETTINGS</button>
-                    </div>
-                    <div id="input-devices">
-                        <div id="colorPickerDiv">
-                            <label for="colorPicker" id="colorPickerLabel">Chair color</label>
-                        </div>
-                        <div id="checkboxDiv">
-                            <label for="back" class="checkbox-control">
-                                Include back
-                                
-                            </label>
-                            <input type="checkbox" name="backBox" value="back" id="backBox" class="checkbox" onclick="backCheckBox()">
-                            <label for="L arm" class="checkbox-control">
-                                Include L arm
-                                
-                            </label>
-                            <input type="checkbox" name="lArmBox" value="lArm" id="lArmBox" class="checkbox" onclick="lArmCheckBox()">
-                            <label for="R arm" class="checkbox-control">
-                                Include R arm
-                                
-                            </label>
-                            <input type="checkbox" name="rArmBox" value="rArm" id="rArmBox" class="checkbox" onclick="rArmCheckBox()">
-                        </div>
                     </div>
                     <div id="input-grid">
                         <!-- seat sliders -->
@@ -62,8 +41,12 @@
                         <label for="seatHeight">Seat height</label>
                         <input type="range" min="1" max="150" value="5" id="seatHeight" class="slider" oninput="seatHeightProgress()">
 
+                        <hr id="armHR_1"><hr id="armHR_2">
+
                         <label for="armHeight" class="arms">Arm height</label>
                         <input type="range" min="3" max="60" value="10" id="armHeight" class="slider arms" oninput="armHeightProgress()">
+
+                        <hr id="backHR_1"><hr id="backHR_2">
 
                         <!-- back sliders -->
                         <label for="backHeight" class="back">Back height</label>
@@ -74,6 +57,8 @@
 
                         <label for="backAngle" class="back">Back angle</label>
                         <input type="range" min="-40" max="45" value="0" id="backAngle" class="slider back" oninput="backAngleProgress()">
+
+                        <hr><hr>
 
                         <!-- leg sliders -->
                         <label for="legNumber">Number of legs</label>
@@ -92,24 +77,51 @@
                         <p>Despite how often we run into chairs, not every chair is designed to be comfortable. Many are instead “designed” with the purpose of being unique or beautiful.</p>
                         <p>Inspired by Bruno Munari's “Seeking Comfort in an Uncomfortable Chair” manifesto and my own experiences, you can make your own “chair” as unique and impractical as possible here so that it does not escape into the real world.</p>
                     </div>
-                    <p class="link" id="back-to-chair-link"><a href="#" onclick="showDiv()">< Make my chair</a></p>
+                    <p class="link" id="back-to-chair-link"><a href="#" onclick="showDiv()">< Create my chair</a></p>
                 </div>
                 <div id="input-buttons">
-                    <button type="button" onclick="saveCanvasToCloud()" id="collectionButton">SAVE TO SITE</button>
+                    <button type="button" onclick="screenshot()" id="saveButton">SAVE AS PNG</button>
                     <br>
-                    <button type="button" onclick="screenShot()" id="saveButton">SAVE AS PNG</button>
+                    <button type="button" onclick="saveCanvasToCloud()" id="collectionButton">SAVE TO SITE</button>
                     <p id="collection-link" class="link"><a href="collection.html">View the Collection ></a></p>
                 </div>
             </div>
         </section>
         <section id="control-explanation">
             <div id="control-explanation-container">
-                <p>Left click + drag to change camera angle</p>
-                <p>Press "R" to reset camera</p>
-                <p>Scroll to zoom</p>     
-                <div id="placeholder"></div> 
+                <div id="input-devices">
+                    <div id="checkboxDiv">
+                        <label for="colorPicker" id="colorPickerLabel">
+                            Chair color
+                        </label>
+                        <div id="colorPickerDiv" class="input-box"></div>
+                        <label for="back" class="checkbox-control">
+                            Include back
+                        </label>
+                        <div class="input-box">
+                            <input type="checkbox" name="backBox" value="back" id="backBox" class="checkbox" onclick="backCheckBox()">
+                        </div>
+                        <label for="L arm" class="checkbox-control">
+                            Include L arm
+                        </label>
+                        <div class="input-box">
+                            <input type="checkbox" name="lArmBox" value="lArm" id="lArmBox" class="checkbox" onclick="lArmCheckBox()">
+                        </div>
+                        <label for="R arm" class="checkbox-control">
+                            Include R arm
+                        </label>
+                        <div class="input-box">
+                            <input type="checkbox" name="rArmBox" value="rArm" id="rArmBox" class="checkbox" onclick="rArmCheckBox()">
+                        </div>
+                    </div>
+                </div>
+                <hr id="control-hr">
+                <div id="control-explanation-child">
+                    <p>Left click + drag to change camera angle</p>
+                    <p>Press "R" to reset camera</p>
+                    <p>Scroll to zoom</p> 
+                </div>
             </div>
-            
         </section>
     </main>
     <section id="canvas"></section>

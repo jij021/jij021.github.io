@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'GT Pressura', Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 135%;
+    font-family: "input-sans-condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 140%;
     color: black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,10 +19,8 @@ main {
     height: 100vh;
 }
 h1 {
-    font-family: 'Cambon', 'Times New Roman', Times, serif;
-    font-size: 2em;
-    font-weight: 300;
-    font-style: italic;
+    font-family: 'KareliaTrial', Arial, Helvetica, sans-serif;
+    font-size: 2.4em;
     color: #000080;
     line-height: 120%;
     padding-bottom: 0.1em;
@@ -31,15 +30,17 @@ b {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    font-weight: 600;
+    font-weight: bold;
 }
 button {
     cursor: pointer;
-    padding: 0.3em 1em;
-    margin: 0.25em 0 0.25em 0;
+    width: 9em;
+    height: auto;
+    padding: 0.5em 1em;
+    margin: 0.3em 0;
     border: none;
 }
-button:hover, #saveButton:hover {
+button:hover, #collectionButton:hover {
     background-color: #8C8C8C;
 }
 a {
@@ -48,6 +49,12 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+label {
+    margin: 0.4em 0;
+}
+hr {
+    margin: 0.5em 0;
 }
 
 /* custom range slider + js */
@@ -71,10 +78,6 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* custom checkbox */
-.checkbox-control {
-    display: flex;
-    gap: 1em;
-}
 .checkbox {
     -webkit-appearance: none;
     appearance: none;
@@ -91,7 +94,12 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .link {
-    margin-top: 1em;
+    margin-top: 1.3em;
+}
+.input-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #savedAlert {
@@ -135,33 +143,26 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     height: auto;
 }
-#colorPickerDiv {
-    display: flex;
-    gap: 3.9em;
-    margin-bottom: 0.4em;
-}
 #colorPickerLabel {
     align-self: center;
 }
 #checkboxDiv {
     display: grid;
-    grid-template-columns: 32% 68%;
+    grid-template-columns: 70% 30%;
     grid-template-rows: auto;
+    gap: 0.55em 2em;
     width: 100%;
-    max-width: 500px;
-}
-#checkboxDiv > * {
-    margin: 0.4em 0;
+    max-width: 600px;
 }
 #inputs {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
-    margin-top: 3em;
+    gap: 0.6em;
+    margin-top: 5.5em;
     margin-bottom: 1.5em;
 }
 #input-devices {
-    display: none;
+    width: 100%;
 }
 #settingsButton {
     background-color: black;
@@ -179,9 +180,7 @@ input[type="range"]::-webkit-slider-thumb {
     display: none;
     grid-template-columns: 40% 60%;
     grid-template-rows: auto;
-}
-#input-grid > label {
-    margin: 0.4em 0;
+    gap: 0.55em 0;
 }
 #explanation-container {
     display: none;
@@ -193,7 +192,8 @@ input[type="range"]::-webkit-slider-thumb {
 #explanation p {
     background-color: black;
     color: white;
-    padding: 0.25em 1em;
+    padding: 0.25em 1.4em;
+    line-height: 170%;
 }
 #explanation p:first-child {
     padding-top: 1em;
@@ -201,7 +201,7 @@ input[type="range"]::-webkit-slider-thumb {
 #explanation p:last-child {
     padding-bottom: 1em;
 }
-#saveButton {
+#collectionButton {
     background-color: #c5c5c5;
 }
 #control-explanation {
@@ -215,12 +215,24 @@ input[type="range"]::-webkit-slider-thumb {
     user-select: none;
 }
 #control-explanation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     text-align: right;
     margin-bottom: 1vh;
     margin-left: auto;
 }
 #control-explanation-container p { 
     margin-top: 0.4em;
+}
+#control-hr {
+    height: 1px;
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #9a9a9a;
+    margin: 1.15em 0;
 }
 #bg {
     position: absolute;
@@ -277,22 +289,15 @@ input[type="range"]::-webkit-slider-thumb {
     #input-devices {
         display: block;
     }
-    #colorPickerDiv {
-        gap: 1em;
-        margin-bottom: 0.4em;
-    }
-    #checkboxDiv {
-        grid-template-columns: 36% 64%;
-    }
     #input-grid {
         display: grid;
         grid-template-columns: 45% 55%;
     }
     #explanation p:first-child {
-        padding-top: 0.75em;
+        padding-top: 1em;
     }
     #explanation p:last-child {
-        padding-bottom: 0.75em;
+        padding-bottom: 1em;
     }
     #control-explanation {
         width: 75%;
