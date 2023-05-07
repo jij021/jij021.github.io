@@ -4,14 +4,15 @@ const colorPickerDiv = document.querySelector("#colorPickerDiv");
 const canvasWidth = window.innerWidth;
 const canvasHeight = window.innerHeight;
 
-let colorPicker, cameraPos, savedImg, myCanvas;
+let colorPicker, cameraPos, savedImg, myCanvas, thinker;
 
 let seatWidth = document.querySelector("#seatWidth");
 let seatLength = document.querySelector("#seatLength");
 let seatHeight = document.querySelector("#seatHeight");
 let armHeight = document.querySelector("#armHeight");
+let armZPosition = document.querySelector("#armZPosition");
+let armAngle = document.querySelector("#armAngle");
 let backHeight = document.querySelector("#backHeight");
-let backAngle = document.querySelector("#backAngle");
 let backDepth = document.querySelector("#backDepth");
 let legNumber = document.querySelector("#legNumber");
 let legHeight = document.querySelector("#legHeight");
@@ -21,6 +22,10 @@ let saveButton = document.querySelector("#saveButton");
 // for sliders that may be removed
 let arms = document.querySelectorAll(".arms");
 let back = document.querySelectorAll(".back");
+
+function preload() {
+  thinker = loadModel('/images/thinker.obj');
+}
 
 function setup() {
   myCanvas = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -43,26 +48,109 @@ function setup() {
   firebase.initializeApp(firebaseConfig);
 }
 
-// when right click, reset the cam
-// canvasDiv.addEventListener("contextmenu", (e) => {cameraPos = camera(100,-40,80,0,10,0);});
-
 function draw() {
   let dx = mouseX - width/2;
   let dy = mouseY - height/2;
-      
-  ambientLight('#ffffff');
-  directionalLight(100,100,100,1,1,0)
+  
   background('#f0f0f0');
   orbitControl(2,2.5,0.01);
 
-  // global chair settings
-  noStroke();
-  ambientMaterial(colorPicker.value());
+   // optional thinker statue
+   if(window.getComputedStyle(thinkerBox, null).getPropertyValue('background-color') == "rgb(0, 0, 0)"){
+    // thinker statue colors
+    push();
+      if(window.getComputedStyle(wireframeBox, null).getPropertyValue('background-color') == "rgb(0, 0, 0)"){
+        noFill();
+        stroke("#818589");
+        strokeWeight(0.12);
+      } else {
+        noStroke();
+        ambientLight('#ffffff');
+        directionalLight(100,100,100,1,1,0)
+        ambientMaterial("#818589");
+      }
+      scale(0.27);
+      rotateY(90);
+      rotateZ(180);
+      translate(-15, -57, -13);
+      push();
+
+        // if the back depth is too long, put the thinker statue on top of the chair's back
+        // else put it normally on the seat
+        
+        if(seatLength.value - backDepth.value < -12){
+
+          // if the backheight is smaller than the seat height regardless, put the statue back on the seat
+          // else, keep the statue on the chair's back
+
+          if((backHeight.value - seatHeight.value) < 0){
+            if(seatLength.value >= 15) {
+              translate(seatLength.value * 1.85, (seatHeight.value * 1.85 - 5) - (backHeight.value * 1.85), 0);
+            } else {
+              translate(30, (seatHeight.value * 1.9 - 10) - (backHeight.value * 1.85), 0);
+            }
+            push();
+              if(legHeight.value <= 90) {
+                translate(0, legHeight.value * 1.9, 0);
+              } else {
+                translate(0, legHeight.value * 1.85, 0);
+              }
+              model(thinker);
+            pop();
+          }
+          else {
+            if(backHeight.value >= 15){
+              translate(backDepth.value * 1.85 - 55, (backHeight.value * 1.85 - 5) - (seatHeight.value * 1.85), 0);
+            } else {
+              translate(backDepth.value * 1.85 - 55, (backHeight.value * 1.9 - 5) - (seatHeight.value * 1.85), 0);
+            }
+            push();
+              if(legHeight.value <= 90) {
+                translate(0, legHeight.value * 1.9, 0);
+              } else {
+                translate(0, legHeight.value * 1.85, 0);
+              } 
+
+              model(thinker);
+              
+            pop();
+          }
+        } 
+
+        else {
+          if(seatLength.value >= 15) {
+            translate(seatLength.value * 1.85, (seatHeight.value * 1.85 - 5) - (backHeight.value * 1.85), 0);
+          } else {
+            translate(30, (seatHeight.value * 1.9 - 5) - (backHeight.value * 1.85), 0);
+          }
+          push();
+            if(legHeight.value <= 90) {
+              translate(0, legHeight.value * 1.9, 0);
+            } else {
+              translate(0, legHeight.value * 1.85, 0);
+            }
+            model(thinker);
+          pop();
+        }
+      pop();
+    pop();
+  }
+
+  // wireframe mode for better performance
+  if(window.getComputedStyle(wireframeBox, null).getPropertyValue('background-color') == "rgb(0, 0, 0)"){
+    noFill();
+    stroke(colorPicker.value());
+    strokeWeight(0.12);
+  } else {
+    noStroke();
+    ambientLight('#ffffff');
+    directionalLight(100,100,100,1,1,0);
+    ambientMaterial(colorPicker.value());
+  }
 
   // seat
   push();
     push();
-      // add backAngle.value/4 to the 3rd value here to make the seat adjust according to back angle (only at certain height)
       translate(0, -legHeight.value/2 + 10, 0);
       push();
         translate(0, backHeight.value/2 - 15, 0);
@@ -71,32 +159,40 @@ function draw() {
     pop();
   pop();
   
-  
   //__________________________________________________________
   
   // arms
   // right arm
   if(window.getComputedStyle(rArmBox, null).getPropertyValue('background-color') == "rgb(0, 0, 0)"){
     push();
-      translate(0, -legHeight.value/2 + 10, 0);
+      translate(0, armZPosition.value, 0);
       push();
-        translate(0, backHeight.value/2 - 15, 0);
+        translate(0, -legHeight.value/2 + 10, 0);
         push();
-          translate(seatWidth.value/2+2, seatHeight.value/2-10, 0);
-          box(5, armHeight.value, seatLength.value);
+          translate(0, backHeight.value/2 - 15, 0);
+          push();
+            translate(seatWidth.value/2+2, seatHeight.value/2-10, 0);
+            rotateX(armAngle.value);
+            box(5, armHeight.value, seatLength.value);
+          pop();
         pop();
       pop();
     pop();
+    
   }
   // left arm
   if(window.getComputedStyle(lArmBox, null).getPropertyValue('background-color') == "rgb(0, 0, 0)"){
     push();
-      translate(0, -legHeight.value/2 + 10, 0);
+      translate(0, armZPosition.value, 0);
       push();
-        translate(0, backHeight.value/2 - 15, 0);
+        translate(0, -legHeight.value/2 + 10, 0);
         push();
-          translate(-seatWidth.value/2-2, seatHeight.value/2-10, 0);
-          box(5, armHeight.value, seatLength.value);
+          translate(0, backHeight.value/2 - 15, 0);
+          push();
+            translate(-seatWidth.value/2-2, seatHeight.value/2-10, 0);
+            rotateX(armAngle.value);
+            box(5, armHeight.value, seatLength.value);
+          pop();
         pop();
       pop();
     pop();
@@ -218,7 +314,6 @@ function draw() {
     translate(0, -legHeight.value/2 + 10, 0);
       push();
         translate(0, seatHeight.value/2 - 15, -seatLength.value/2);
-        rotateX(backAngle.value);
         box(seatWidth.value, backHeight.value, backDepth.value);
       pop();
     pop();

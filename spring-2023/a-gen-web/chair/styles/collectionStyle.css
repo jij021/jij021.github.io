@@ -100,6 +100,7 @@ button:hover {
     height: auto;
     width: 35%;
     text-align: right;
+    line-height: 170%;
 }
 #images > * {
     margin: auto 0;
@@ -164,7 +165,7 @@ button:hover {
     }
     main {
         margin: 3.7em auto;
-        width: 88vw;
+        width: 89vw;
         height: 100vh;
     }
     .chair-images {

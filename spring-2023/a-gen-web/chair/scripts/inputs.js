@@ -28,9 +28,26 @@ function showSettings() {
 }
 
 // checkbox functions
+let wireframeBox = document.querySelector("#wireframeBox");
+let thinkerBox = document.querySelector("#thinkerBox");
 let backBox = document.querySelector("#backBox");
 let lArmBox = document.querySelector("#lArmBox");
 let rArmBox = document.querySelector("#rArmBox");
+
+function wireframeCheckBox() {
+    if(window.getComputedStyle(wireframeBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
+        wireframeBox.style.backgroundColor = "rgb(0, 0, 0)";
+    } else {
+        wireframeBox.style.backgroundColor = "rgb(240, 240, 240)";
+    }
+}
+function thinkerCheckBox() {
+    if(window.getComputedStyle(thinkerBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
+        thinkerBox.style.backgroundColor = "rgb(0, 0, 0)";
+    } else {
+        thinkerBox.style.backgroundColor = "rgb(240, 240, 240)";
+    }
+}
 function backCheckBox() {
     if(window.getComputedStyle(backBox, null).getPropertyValue('background-color') == "rgb(240, 240, 240)"){
         backBox.style.backgroundColor = "rgb(0, 0, 0)";
@@ -58,8 +75,9 @@ let seatWidthSlider = document.querySelector("#seatWidth");
 let seatLengthSlider = document.querySelector("#seatLength");
 let seatHeightSlider = document.querySelector("#seatHeight");
 let armHeightSlider = document.querySelector("#armHeight");
+let armZPositionSlider = document.querySelector("#armZPosition");
+let armAngleSlider = document.querySelector("#armAngle");
 let backHeightSlider = document.querySelector("#backHeight");
-let backAngleSlider = document.querySelector("#backAngle");
 let backDepthSlider = document.querySelector("#backDepth");
 let legNumberSlider = document.querySelector("#legNumber");
 let legHeightSlider = document.querySelector("#legHeight");
@@ -68,7 +86,13 @@ let legThicknessSlider = document.querySelector("#legThickness");
 // mult the slidervalue by (100 / max slider value) and then adjust w/ + - 10 or 5
 
 function seatWidthProgress() {
-    let sliderValue = seatWidthSlider.value / 2.1;
+    let sliderValue = seatWidthSlider.value * 0.5 - 10;
+    if(sliderValue < 90) {
+        sliderValue = seatWidthSlider.value * 0.5 - 5;
+    }
+    if(sliderValue >= 90) {
+        sliderValue = seatWidthSlider.value * 0.5;
+    }
     seatWidthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
@@ -77,8 +101,8 @@ function seatLengthProgress() {
     if(sliderValue < 10){
         sliderValue = seatLengthSlider.value * 0.45;
     }
-    if(sliderValue > 60){
-        sliderValue = seatLengthSlider.value * 0.66;
+    if(sliderValue > 40){
+        sliderValue = seatLengthSlider.value * 0.65;
     }
     seatLengthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
@@ -91,6 +115,28 @@ function seatHeightProgress() {
 function armHeightProgress() {
     let sliderValue = armHeightSlider.value * 1.62;
     armHeightSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
+}
+
+function armZPositionProgress() {
+    let sliderValue = 49;
+    if(armZPositionSlider.value < 0){
+        sliderValue -= -armZPositionSlider.value + 4;
+    }
+    if(armZPositionSlider.value > 1){
+        sliderValue -= -armZPositionSlider.value - 1.2;
+    }
+    armZPositionSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
+}
+
+function armAngleProgress() {
+    let sliderValue = 49;
+    if(armAngleSlider.value < 0){
+        sliderValue -= -armAngleSlider.value + 4;
+    }
+    if(armAngleSlider.value > 1){
+        sliderValue -= -armAngleSlider.value - 1.2;
+    }
+    armAngleSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function backHeightProgress() {
@@ -107,17 +153,6 @@ function backHeightProgress() {
 function backDepthProgress() {
     let sliderValue = backDepthSlider.value * (100/140);
     backDepthSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
-}
-
-function backAngleProgress() {
-    let sliderValue = 49;
-    if(backAngleSlider.value < 0){
-        sliderValue -= -backAngleSlider.value + 4;
-    }
-    if(backAngleSlider.value > 2){
-        sliderValue -= -backAngleSlider.value - 2;
-    }
-    backAngleSlider.style.background = `linear-gradient(to right, #000000 ${sliderValue}%, #D3D3D3 ${sliderValue}%)`;
 }
 
 function legNumberProgress() {
@@ -156,9 +191,10 @@ seatWidthProgress();
 seatLengthProgress();
 seatHeightProgress();
 armHeightProgress();
+armZPositionProgress();
+armAngleProgress();
 backHeightProgress();
 backDepthProgress();
-backAngleProgress();
 legNumberProgress();
 legHeightProgress();
 legThicknessProgress();
