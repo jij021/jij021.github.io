@@ -1,0 +1,44 @@
+/* home css */
+
+.center-div {
+    display: flex;
+    height: 93vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 50%;
+    font-size: 1.2rem;
+}
+
+.my-svg {
+    width: 20%; 
+    height: auto;
+    fill: #0D6EFD;
+    transition: 0.15s ease-in-out;
+}
+
+.my-button:hover .my-svg {
+    fill: #ffffff;
+}
+
+/* picture pages css */
+
+.menu-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-link p {
+    margin: 0;
+}
+
+.row {
+    align-items: center;
+}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <div class="container-md" style="max-width: 80vw">
+        <div class="row align-items-start py-5">
+            
+            <div class="col-3">
+                <div class="row pb-5">
+                    <img src="/static/images/pfp.jpg" class="img-fluid" style="border-radius: 50%;" alt="A group photo of us at UNIQLO.">
+                </div>
+                <div class="row">
+                    <ul class="list-group">
+                        <li class="list-group-item active menu-link">
+                            <p>Selfies</p>
+                            <p class="text-white-50">Pics of us</p>
+                        </li>
+                        <li class="list-group-item menu-link">
+                            <p>Food</p>
+                            <p class="text-secondary">Things we ate</p>
+                        </li>
+                        <li class="list-group-item menu-link">
+                            <p>Places</p>
+                            <p class="text-secondary">Where we went</p>
+                        </li>
+                        <li class="list-group-item menu-link">
+                            <p>Polaroids</p>
+                            <p class="text-secondary">From Yejee</p>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="col-9 ps-5">
+                <div class="card" style="padding: 1rem 3rem">
+                    <div class="card-body">
+
+                        {% for image in images %}
+
+                        <div class="row">
+                            <div class="col px-3 py-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="\static\images\selfies\{{ image }}" alt="Card image">
+                                </div>
+                            </div>
+                            <div class="col px-3 py-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="\static\images\selfies\{{ image }}" alt="Card image">
+                                </div>
+                            </div>
+                            <div class="col px-3 py-3">
+                                <div class="card">
+                                    <img class="card-img-top" src="\static\images\selfies\{{ image }}" alt="Card image">
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
