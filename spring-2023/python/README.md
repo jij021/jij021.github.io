@@ -8,6 +8,9 @@ This project includes the most iconic pictures we took separated in categories f
 * Food 
 * Places
 * Polaroids
+
 The last category is from my friend Yejee, who took polaroids throughout our trip too.
+
+---
 
 The website is made using Python, Flask, and Bootstrap (with some additional external CSS added in). 
