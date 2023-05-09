@@ -14,4 +14,4 @@ The last category is from my friend Yejee, who took polaroids throughout our tri
 
 ---------
 
-The website is made using Python, Flask, and Bootstrap (with some additional external CSS added in). 
+The website is made using Python, Flask, and Bootstrap (with some additional external CSS and Javascript added in for fun). 

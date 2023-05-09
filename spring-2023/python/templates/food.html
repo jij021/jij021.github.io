@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <div class="container-md" style="max-width: 80vw">
+        <div class="row align-items-start py-5">
+            
+            <div class="col-3" style="position: sticky; top: 3em">
+                <div class="row pb-4">
+                    <img src="/static/images/pfp.jpg" class="img-fluid img-rotate" style="border-radius: 50%;" alt="A group photo of us at UNIQLO.">
+                </div>
+                <div class="row">
+                    <ul class="list-group">
+                        <a href="{{ url_for('selfies') }}" 
+                        style="border-bottom-right-radius: 0;
+                        border-bottom-left-radius: 0;">
+                            <li class="list-group-item menu-link">
+                                <p>Selfies</p>
+                                <p class="text-secondary">Pics of us</p>
+                            </li>
+                        </a>
+                        <a href="{{ url_for('food') }}"
+                        style="border-radius: 0 0 0 0;">
+                            <li class="list-group-item active menu-link" style="border-bottom: 0">
+                                <p>Food</p>
+                                <p class="text-white-50">Things we ate</p>
+                            </li>
+                        </a>
+                        <a href="{{ url_for('places') }}"
+                        style="border-radius: 0 0 0 0;">
+                            <li class="list-group-item menu-link" style="border-bottom: 0">
+                                <p>Places</p>
+                                <p class="text-secondary">Where we went</p>
+                            </li>
+                        </a>
+                        <a href="{{ url_for('polaroids') }}"
+                        style="border-top-left-radius: 0;
+                        border-top-right-radius: 0;">
+                            <li class="list-group-item menu-link">
+                                <p>Polaroids</p>
+                                <p class="text-secondary">From Yejee</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-9 ps-5">
+                <div class="card" style="padding: 1rem 3rem">
+                    <div class="card-body">
+                        {% for x in range(0, length) %}
+
+                            <div class="row">
+                                
+                                {% for image in images[x] %}
+
+                                    <div class="col px-3 py-3">
+                                        <div class="card img-rotate">
+                                            <img class="card-img-top" src="\static\images\food\{{ image }}" alt="Card image">
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
