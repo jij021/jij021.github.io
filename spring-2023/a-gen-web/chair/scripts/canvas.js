@@ -24,7 +24,7 @@ let arms = document.querySelectorAll(".arms");
 let back = document.querySelectorAll(".back");
 
 function preload() {
-  thinker = loadModel('/images/thinker.obj');
+  thinker = loadModel('./images/thinker.obj');
 }
 
 function setup() {
