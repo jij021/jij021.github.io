@@ -4,10 +4,10 @@ from os import listdir
 
 app = Flask(__name__)
 
-folder_dir_selfies = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\selfies"
-folder_dir_food = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\food"
-folder_dir_places = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\places"
-folder_dir_polaroids = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\polaroids"
+folder_dir_selfies = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/selfies')
+folder_dir_food = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/food')
+folder_dir_places = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/places')
+folder_dir_polaroids = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/polaroids')
 
 # for when I break the lists holding the images into 3 lists, then i can make 3 columns with them
 # takes in 'lst' (list of data) and 'n' (number to be broken into)
