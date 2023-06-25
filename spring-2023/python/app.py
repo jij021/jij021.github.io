@@ -4,10 +4,14 @@ from os import listdir
 
 app = Flask(__name__)
 
-folder_dir_selfies = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/selfies')
-folder_dir_food = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/food')
-folder_dir_places = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/places')
-folder_dir_polaroids = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/polaroids')
+# folder_dir_selfies = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/selfies')
+# folder_dir_food = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/food')
+# folder_dir_places = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/places')
+# folder_dir_polaroids = url_for('https://github.com/jij021/jij021.github.io/tree/main/spring-2023/python/static/images/polaroids')
+folder_dir_selfies = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\selfies"
+folder_dir_food = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\food"
+folder_dir_places = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\places"
+folder_dir_polaroids = r"C:\Users\jan7j\Documents\College\GITHUB\jij021.github.io\spring-2023\python\static\images\polaroids"
 
 # for when I break the lists holding the images into 3 lists, then i can make 3 columns with them
 # takes in 'lst' (list of data) and 'n' (number to be broken into)
@@ -29,7 +33,7 @@ def selfies():
     for image in os.listdir(folder_dir_selfies):
         # if the image ends with these file names, add them into our list (we only want images)
         if (image.endswith(".png") or image.endswith(".jpg") or image.endswith(".jpeg")):
-            my_images.append(image)
+            my_images.append(f'images/selfies/{image}')
     
     # break the images_selfies list into chunks of 3, which is also put into a new list
     my_images_chunks = list(chunks(my_images, 3))
