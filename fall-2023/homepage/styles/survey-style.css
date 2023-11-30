@@ -147,6 +147,7 @@ input[type="radio"] {
     grid-template-columns: repeat(5, auto);
     justify-content: space-between;
     margin-top: 2em;
+    align-items: end;
 }
 .double-arrow {
     position: relative;
@@ -220,6 +221,7 @@ input[type="radio"] {
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5em;
 }
 .shareButtons {
@@ -229,10 +231,16 @@ input[type="radio"] {
     margin: 2em auto;
 }
 #homeAssembly2 {
-    margin-top: 6.5em;
+    margin-top: 8.5em;
+}
+#behavioralShapeScale {
+    margin: -4em 0 0 0;
 }
 #physicalShapeScale {
-    margin-bottom: 2em;
+    margin: -6em 0 4em 0;
+}
+#socialShapeScale, #CEShapeScale {
+    margin: -4em 0 2.5em 0;
 }
 .shapes-scale-img {
     max-height: 60%;
@@ -261,6 +269,9 @@ input[type="radio"] {
 }
 .caption, .scroll {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+}
+.caption {
+    margin-top: 2em;
 }
 .mono {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
