@@ -24,7 +24,7 @@
 </head>
 <body style="overflow-x: hidden;" class="animate__animated animate__fadeIn">
     <!-- survey  -->
-    <section class="centered-survey" id="surveyQuiz" style="display: none">
+    <section class="centered-survey" id="surveyQuiz">
         <div class="activeQuestion" id="preSurvey">
             <h3 class="gray">PRE-SURVEY</h3>
             <div class="responses">
@@ -345,15 +345,15 @@
             </svg>
         </div>
     </div>
-    <section id="surveyResults" style="display: block; visibility: visible">
+    <section id="surveyResults">
         <div id="capture">
             <p id="surveyLink">Take the survey: linkhere.com/whatever.html</p>
-            <h4 class="fade-in result-header" id="surveyHeader" style="opacity: 1">Home (for you) may look like...</h2>
+            <h4 class="fade-in result-header" id="surveyHeader" >Home (for you) may look like...</h2>
             <!-- p5js canvas draws the SVG (saved externally to firebase) -->
-            <div class="canvas fade-in" id="canvas" style="opacity: 1"></div>
-            <h4 class="fade-in result-header" id="resultMessage" style="opacity: 1"></h2>
-            <h3 class="fade-in preferences" id="preferences" style="opacity: 1">YOUR PREFERENCES:</h3>
-            <div class="fade-in" id="surveyReport" style="opacity: 1">
+            <div class="canvas fade-in" id="canvas" ></div>
+            <h4 class="fade-in result-header" id="resultMessage" ></h2>
+            <h3 class="fade-in preferences" id="preferences" >YOUR PREFERENCES:</h3>
+            <div class="fade-in" id="surveyReport" >
                 <div class="result" id="behavioralResult">
                     <h5>BEHAVIORAL</h5>
                     <p class="sphereDescription hide gray">How much you value personal freedom at home.</p>
@@ -395,7 +395,7 @@
                     <p class="mono bold" id="textBox"></p>
                 </div>
             </div>
-            <div class="fade-in" id="postQuiz" style="opacity: 1">
+            <div class="fade-in" id="postQuiz" >
                 <div class="mono" id="share">
                     <div id="shareToIG" class="pointer hide shareButtons">
                         <p>SAVE AND SHARE TO INSTAGRAM</p>
@@ -410,7 +410,7 @@
                 <!-- submits the actual answers for the survey to google via sheetmonkey, redirect to index.html -->
                 <input class="hide" id="submitAll" type="submit" value="ADD HOME TO SITE"/>
             </div>
-            <div class="fade-in hide" id="moreInfo" style="opacity: 1">
+            <div class="fade-in hide" id="moreInfo" >
                 <div class="more-info-section" id="moreInfo1">
                     <h4 class="result-header more-info-header" id="titleBox1">How was this home generated?</h4>
                     <div class="explanation">
