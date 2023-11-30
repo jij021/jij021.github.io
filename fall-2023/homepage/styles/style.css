@@ -233,6 +233,7 @@ a:hover {
     width: 100%;
     max-width: 6.5em;
     height: auto;
+    margin: 1em 0 0.5em 0;
 }
 .explanation {
     text-align: left;
