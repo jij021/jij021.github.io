@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles/fonts/fonts.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/survey-style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="scripts/homebase-index.js" defer></script>
+    <script src="scripts/falling-elements.js" defer></script>
+</head>
+<body id="indexHomepage" >
+    <main class="animate__animated animate__fadeIn">
+        <!-- add. info vvv -->
+        <section id="instructions">
+            <div id="instructionsContainer">
+                <p>Click and drag to pan</p>
+                <p>Scroll to zoom in and out</p>
+                <p>Tip: if you don't see anything, try scrolling or refreshing the page</p>
+            </div>
+        </section>
+        <section id="season">
+            <div id="seasonContainer">
+                <p>It is currently: Winter</p>
+            </div>
+        </section>
+        <section id="title">
+            <div id="titleContainer">
+                <h1>HOMEPAGE</h1>
+                <button onclick="location.href='survey.html'" type="button">take the survey</button>
+                <button onclick="location.href='about.html'" type="button">what is this?</button>
+            </div>
+        </section>
+        <!-- add. info ^^^ -->
+        <div id="zoomable-homegrid">
+            <div id="homegrid"></div>
+        </div>
+        <section id="colorChange">
+            <div id="bgColorContainer">
+                <label for="bgColor">Change background color:</label>
+                <br>
+                <input type="color" id="bgColor" name="bgColor" value="#F8F8F8">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

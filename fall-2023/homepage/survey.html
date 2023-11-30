@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Survey</title>
+    <link rel="stylesheet" href="styles/fonts/fonts.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="styles/survey-style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="scripts/p5.svg.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/scripts/survey.js" type="text/javascript" defer></script>
+    <script src="/scripts/survey-result.js" type="text/javascript" defer></script>
+    <script src="/scripts/survey-result-more-info.js" type="text/javascript" defer></script>
+</head>
+<body style="overflow-x: hidden;" class="animate__animated animate__fadeIn">
+    <!-- survey  -->
+    <section class="centered-survey" id="surveyQuiz" style="display: none">
+        <div class="activeQuestion" id="preSurvey">
+            <h3 class="gray">PRE-SURVEY</h3>
+            <div class="responses">
+                <h4>Take an 11 question survey about your ideas of home and see a visual generation of your responses.</h4>
+                <h4>Then, your home will be randomly plotted into the blank neighborhood on the homepage, where you can compare your results with other people.</h4>
+            </div>
+            <button class="surveyButton last-element-centered" type="button" onClick="startSurvey()">Begin survey</button>
+        </div>
+        <form action="https://api.sheetmonkey.io/form/m7HXoDETP1XvTvBd9GjW5z" method="post" id="survey">
+            <div class="hiddenQuestion" id="question1">
+                <h3 class="gray question">QUESTION 1/11</h3>
+                <h4>Home is somewhere I can personalize and make changes to however I wish.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label class="container" for="Q1_1"> <input type="radio" id="Q1_1" name="Q1" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label class="container" for="Q1_1"> <input type="radio" id="Q1_2" name="Q1" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label class="container" for="Q1_1"> <input type="radio" id="Q1_3" name="Q1" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label class="container" for="Q1_1"> <input type="radio" id="Q1_4" name="Q1" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label class="container" for="Q1_1"> <input type="radio" id="Q1_5" name="Q1" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question2">
+                <h3 class="gray question">QUESTION 2/11</h3>
+                <h4>Home is a place where I act differently than anywhere else.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q2_1"> <input type="radio" id="Q2_1" name="Q2" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q2_1"> <input type="radio" id="Q2_2" name="Q2" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q2_1"> <input type="radio" id="Q2_3" name="Q2" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q2_1"> <input type="radio" id="Q2_4" name="Q2" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q2_1"> <input type="radio" id="Q2_5" name="Q2" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage1, 500)">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question3">
+                <h3 class="gray question">QUESTION 3/11</h3>
+                <h4>Home is somewhere well-designed and well-furnished.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q3_1"> <input type="radio" id="Q3_1" name="Q3" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q3_1"> <input type="radio" id="Q3_2" name="Q3" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q3_1"> <input type="radio" id="Q3_3" name="Q3" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q3_1"> <input type="radio" id="Q3_4" name="Q3" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q3_1"> <input type="radio" id="Q3_5" name="Q3" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question4">
+                <h3 class="gray question">QUESTION 4/11</h3>
+                <h4>Home is somewhere with a nice view.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q4_1"> <input type="radio" id="Q4_1" name="Q4" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q4_1"> <input type="radio" id="Q4_2" name="Q4" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q4_1"> <input type="radio" id="Q4_3" name="Q4" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q4_1"> <input type="radio" id="Q4_4" name="Q4" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q4_1"> <input type="radio" id="Q4_5" name="Q4" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage2, 500)">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question5">
+                <h3 class="gray question">QUESTION 5/11</h3>
+                <h4>Home is where I’m able to receive visitors.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q5_1"> <input type="radio" id="Q5_1" name="Q5" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q5_1"> <input type="radio" id="Q5_2" name="Q5" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q5_1"> <input type="radio" id="Q5_3" name="Q5" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q5_1"> <input type="radio" id="Q5_4" name="Q5" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q5_1"> <input type="radio" id="Q5_5" name="Q5" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question6">
+                <h3 class="gray question">QUESTION 6/11</h3>
+                <h4>Home is where I can have a good relationship with my neighbors.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q6_1"> <input type="radio" id="Q6_1" name="Q6" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q6_1"> <input type="radio" id="Q6_2" name="Q6" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q6_1"> <input type="radio" id="Q6_3" name="Q6" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q6_1"> <input type="radio" id="Q6_4" name="Q6" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q6_1"> <input type="radio" id="Q6_5" name="Q6" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage3, 500)">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question7">
+                <h3 class="gray question">QUESTION 7/11</h3>
+                <h4>Home is where I can enjoy my privacy and being undisturbed.</h4>
+                <div class="responses">
+                    <p class="warning">Please select an option before proceeding.</p>
+                    <div class="radioBoxes">
+                        <label for="Q7_1"> <input type="radio" id="Q7_1" name="Q7" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q7_1"> <input type="radio" id="Q7_2" name="Q7" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q7_1"> <input type="radio" id="Q7_3" name="Q7" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q7_1"> <input type="radio" id="Q7_4" name="Q7" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q7_1"> <input type="radio" id="Q7_5" name="Q7" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question8">
+                <h3 class="gray question">QUESTION 8/11</h3>
+                <h4>Home is a place linked with strong emotions and/or memories for me.</h4>
+                <div class="responses">
+                    <div class="radioBoxes">
+                        <label for="Q8_1"> <input type="radio" id="Q8_1" name="Q8" value="1" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q8_2"> <input type="radio" id="Q8_2" name="Q8" value="2" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q8_3"> <input type="radio" id="Q8_3" name="Q8" value="3" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q8_4"> <input type="radio" id="Q8_4" name="Q8" value="4" required> <span class="checkmark"></span> </label>
+                        
+                        <label for="Q8_5"> <input type="radio" id="Q8_5" name="Q8" value="5" required> <span class="checkmark"></span> </label>
+                    </div>
+                    <div class="numberLabels">
+                        <p>strongly disagree</p>
+                        <p>strongly agree</p>
+                    </div>
+                </div>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage4, 500)">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question9">
+                <h3 class="gray question">QUESTION 9/11</h3>
+                <h4>What color looks like “home” to you?</h4>
+                <div class="responses">
+                    <label for="Q9"> <input type="color" id="Q9" name="Q9" value="#000000" /> </label>
+                </div>
+                <br>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestionColor(); redraw()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question10">
+                <h3 class="gray question">QUESTION 10/11</h3>
+                <h4>What is 1 thing you need for somewhere to feel like “home” to you?</h4>
+                <div class="responses">
+                    <p class="warning">Please type in the text area before proceeding.</p>
+                    <label for="Q10"><input type="text" id="Q10" name="Q10" placeholder="Say anything" required> <span class="checkmark"></span> </label>
+                </div>
+                <br>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestionType(); redraw(); setTimeout(saveData, 500); saveCanvasToImageFinal()">Next question</button>
+            </div>
+            <div class="hiddenQuestion" id="question11">
+                <h3 class="gray question">QUESTION 11/11</h3>
+                <h4>What is your age group?</h4>
+                <h3 class="gray research">This will be collected privately for research purposes.</h3>
+                <div class="responses">
+                    <div class="demographicBoxes">
+                        <label class="demographicLabel" for="Q11_1">8 to 24</label>
+                        <input type="radio" id="Q11_1" name="Q11" value="18 to 24" required>
+                        
+                        <label class="demographicLabel" for="Q11_1">25 to 34  </label>
+                        <input type="radio" id="Q11_2" name="Q11" value="25 to 34" required>
+                        
+                        <label class="demographicLabel" for="Q11_1">35 to 44 </label>
+                        <input type="radio" id="Q11_3" name="Q11" value="35 to 44" required> 
+                        
+                        <label class="demographicLabel" for="Q11_1">45 to 54</label>
+                        <input type="radio" id="Q11_4" name="Q11" value="45 to 54" required>
+                        
+                        <label class="demographicLabel" for="Q11_1">55 to 64</label>
+                        <input type="radio" id="Q11_5" name="Q11" value="55 to 64" required>
+    
+                        <label class="demographicLabel" for="Q11_1">65 or over</label>
+                        <input type="radio" id="Q11_6" name="Q11" value="65 or over" required>
+    
+                        <label class="demographicLabel" for="Q11_1">prefer not to answer  </label>
+                        <input type="radio" id="Q11_7" name="Q11" value="N/A" required>
+                    </div>
+                </div>
+                <!-- <input type="submit" value="Build my home"/> -->
+                <!-- hides the quiz section and shows the results -->
+                <button class="nextButton last-element-centered" type="button" onClick="switchToResults(); finishQuiz(); updateInfo()">BUILD MY HOME</button>
+            </div>
+            <br>
+        </form>
+    </section>
+    <!-- survey results (initially hidden) -->
+    <div id="carWrapper">
+        <div id="carBody">
+            <svg id="carBodySVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 87">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #29abe2;
+                    }
+              
+                    .cls-1, .cls-2, .cls-3, .cls-4 {
+                      stroke-width: 0px;
+                    }
+              
+                    .cls-2 {
+                      fill: #f44c09;
+                    }
+              
+                    .cls-3 {
+                      fill: #63626a;
+                    }
+              
+                    .cls-4 {
+                      fill: #ffd72a;
+                    }
+                  </style>
+                </defs>
+                <path class="cls-3" d="m130,70H9v9h121v-9Z"/>
+                <path class="cls-4" d="m101,0H0v70h101V0Z"/>
+                <path class="cls-2" d="m101,70h38v-20l-19-20h-19v40Z"/>
+                <path class="cls-1" d="m107,50h24l-12-13h-12v13Z"/>
+            </svg>
+        </div>
+        <div id="wheel">
+            <svg class="wheel" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                <style type="text/css">
+                    .st5{fill:#3B3A42;}
+                    .st6{fill:#D4D4D4;}
+                    .st7{fill:none;stroke:#3B3A42;stroke-width:0.5;}
+                </style>
+                <g>
+                    <circle class="st5" cx="12" cy="12" r="12"/>
+                    <circle class="st6" cx="12" cy="12" r="5"/>
+                    <circle class="st5" cx="12" cy="12" r="1"/>
+                    <path class="st7" d="M7,12h10"/>
+                    <path class="st7" d="M12,7v10"/>
+                </g>
+            </svg>
+            <svg class="wheel-back" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                <style type="text/css">
+                    .st5{fill:#3B3A42;}
+                    .st6{fill:#D4D4D4;}
+                    .st7{fill:none;stroke:#3B3A42;stroke-width:0.5;}
+                </style>
+                <g>
+                    <circle class="st5" cx="12" cy="12" r="12"/>
+                    <circle class="st6" cx="12" cy="12" r="5"/>
+                    <circle class="st5" cx="12" cy="12" r="1"/>
+                    <path class="st7" d="M7,12h10"/>
+                    <path class="st7" d="M12,7v10"/>
+                </g>
+            </svg>
+        </div>
+        <div id="smoke">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 93.1 79.3" style="enable-background:new 0 0 93.1 79.3;" xml:space="preserve">
+            <path style="fill:#C9CACA;" d="M36.7,11c-1.8-8-7-10-7-10l-19-1c-17.8,8-8,29-8,29c5.5,5.5,17,7,17,7c-12.7,14.8-7,26-7,26c4,3.8,17,2,17,2v6
+                c3.5,12,25,9,25,9c4.5-2,6-5,6-5l1-3h18c7.3-2.8,6-9,6-9l-1-9c11.3-7.8,8-25,8-25c-7.1-4-13.6-4.1-15.5-4c7-9-0.5,0-0.5,0l1-10
+                c-9-6-16-8-16-8c-4.3-1.8-19-1-19-1L36.7,11z"/>
+            </svg>
+        </div>
+    </div>
+    <section id="surveyResults" style="display: block; visibility: visible">
+        <div id="capture">
+            <p id="surveyLink">Take the survey: linkhere.com/whatever.html</p>
+            <h4 class="fade-in result-header" id="surveyHeader" style="opacity: 1">Home (for you) may look like...</h2>
+            <!-- p5js canvas draws the SVG (saved externally to firebase) -->
+            <div class="canvas fade-in" id="canvas" style="opacity: 1"></div>
+            <h4 class="fade-in result-header" id="resultMessage" style="opacity: 1"></h2>
+            <h3 class="fade-in preferences" id="preferences" style="opacity: 1">YOUR PREFERENCES:</h3>
+            <div class="fade-in" id="surveyReport" style="opacity: 1">
+                <div class="result" id="behavioralResult">
+                    <h5>BEHAVIORAL</h5>
+                    <p class="sphereDescription hide gray">How much you value personal freedom at home.</p>
+                    <div id="behaviorScale">
+                        <span id="behaviorBar"></span>
+                        <span class="mono" id="behaviorFraction"></span>
+                    </div>
+                </div>
+                <div class="result" id="physicalResult">
+                    <h5>PHYSICAL</h5>
+                    <p class="sphereDescription hide gray">How much you value physical interaction with things at home.</p>
+                    <div id="physicalScale">
+                        <span id="physicalBar"></span>
+                        <span class="mono" id="physicalFraction"></span>
+                    </div>
+                </div>
+                <div class="result" id="socialResult">
+                    <h5>SOCIAL</h5>
+                    <p class="sphereDescription hide gray">How much you value social interaction at home.</p>
+                    <div id="socialScale">
+                        <span id="socialBar"></span>
+                        <span class="mono" id="socialFraction"></span>
+                    </div>
+                </div>
+                <div class="result" id="CEResult">
+                    <h5>COGNITIVE/EMOTIONAL</h5>
+                    <p class="sphereDescription hide gray">How much you value mental/emotional states at home.</p>
+                    <div id="CEScale">
+                        <span id="CEBar"></span>
+                        <span class="mono" id="CEFraction"></span>
+                    </div>
+                </div>
+                <div class="result" id="colorResult">
+                    <h5>MY HOME'S COLOR:</h5>
+                    <p class="mono" id="colorBox"></p>
+                </div>
+                <div class="result" id="textResult">
+                    <h5>MY HOME NEEDS:</h5>
+                    <p class="mono bold" id="textBox"></p>
+                </div>
+            </div>
+            <div class="fade-in" id="postQuiz" style="opacity: 1">
+                <div class="mono" id="share">
+                    <div id="shareToIG" class="pointer hide shareButtons">
+                        <p>SAVE AND SHARE TO INSTAGRAM</p>
+                        <p class="gray">(MOBILE ONLY)</p>
+                    </div>
+                    <div onclick="downloadToPDF()" id="savePDF" class="pointer hide shareButtons">
+                        <p>DOWNLOAD RESULTS</p>
+                        <p>AS PDF</p>
+                    </div>
+                </div>
+                <!-- <button type="button">ADD HOME TO SITE</button> -->
+                <!-- submits the actual answers for the survey to google via sheetmonkey, redirect to index.html -->
+                <input class="hide" id="submitAll" type="submit" value="ADD HOME TO SITE"/>
+            </div>
+            <div class="fade-in hide" id="moreInfo" style="opacity: 1">
+                <div class="more-info-section" id="moreInfo1">
+                    <h4 class="result-header more-info-header" id="titleBox1">How was this home generated?</h4>
+                    <div class="explanation">
+                        <p>The survey questions correspond to one of <b> different spheres</b> (also seen in your result). Your answers are tallied, and an abstract representation of a “home” is generated based off of those results.</p>
+                        <p>Each part of the generated home is also based off of these spheres, which build on top of each other.</p>
+                    </div>
+                    <div class="homeAssembly" id="homeAssembly1">
+                        <div class="centered-scale">
+                            <!-- placeholder for space here -->
+                            <div id="duplicateCanvasContainer1"></div>
+                            <div class="caption">
+                                <p>Behavioral</p>
+                                <p class="gray">(roof)</p>
+                            </div>
+                        </div>
+                        <div class="centered-scale">
+                             <!-- placeholder for space here -->
+                            <div id="duplicateCanvasContainer2"></div>
+                            <div class="caption">
+                                <p>Physical</p>
+                                <p class="gray">(base)</p>
+                            </div>                           
+                        </div>
+                        <div class="centered-scale">
+                            <!-- placeholder for space here -->
+                            <div id="duplicateCanvasContainer3"></div>
+                            <div class="caption">
+                                <p>Social</p>
+                                <p class="gray">(number of windows)</p>
+                            </div>                            
+                        </div>
+                        <div class="centered-scale">
+                            <!-- placeholder for space here -->
+                            <div id="duplicateCanvasContainer4"></div>
+                            <div class="caption">
+                                <p>Cognitive/Emotional</p>
+                                <p class="gray">(shape in windows)</p>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <p>Open-ended answers allow you to tailor your generated result to be more closer to your <b>unique personal experiences/thoughts on “home”</b>.</p>
+                    </div>
+                    <div class="homeAssembly" id="homeAssembly2">
+                        <div class="centered-scale">
+                            <!-- placeholder for space here -->
+                            <div id="duplicateCanvasContainer5"></div>
+                            <!-- svg here -->
+                            <div class="caption">
+                                <p>“What color looks like 'home' to you?”</p>
+                                <p class="gray">(generated color scheme)</p>
+                            </div>  
+                        </div>
+                        <div class="centered-scale">
+                            <!-- text bubble here -->
+                            <div id="duplicateCanvasContainer6" class="tooltip">
+                                <span id="exampleText" class="tooltip-text" style="visibility: visible; opacity: 1"></span>
+                            </div>
+                            <!-- svg here -->
+                            <div class="caption">
+                                <p>“What is 1 thing you need for somewhere to feel like 'home' to you?”</p>
+                                <p class="gray">(text bubble shown on hover)</p>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="more-info-section" id="moreInfo2">
+                    <h4 class="result-header more-info-header" id="titleBox2">What does my result mean?</h4>
+                    <div class="explanation">
+                        <p>The parts of the house change based on how strongly you responded to certain questions.</p>
+                        <p>These changes are created on a scale based off of the 4 spheres exploring the different meanings of home. </p>
+                        <p>Generally, <b>more organic shapes</b> indicate a more theoretical view of home, while <b>more geometric shapes</b> indicate a more grounded view of home.</p>
+                    </div>
+                    <div class="sphereScaleContainer">
+                        <div class="text-centered sphereScale" id="behavioralScale">
+                            <div class="caption">
+                                <p>Behavioral</p>
+                                <p class="gray">(roof)</p>
+                            </div>
+                            <div>
+                                <!-- where to store the shapes -->
+                                <div class="shapes-scale" id="behavioralShapeScale">
+                                    <img src="" id="b1" class="shapes-scale-img">
+                                    <img src="" id="b2" class="shapes-scale-img">
+                                    <img src="" id="b3" class="shapes-scale-img">
+                                    <img src="" id="b4" class="shapes-scale-img">
+                                    <img src="" id="b5" class="shapes-scale-img">
+                                </div>
+                                <div class="double-arrow"></div>
+                                <div class="score-label">
+                                    <div id="lowerScoreLabel">
+                                        <p><b>Lower score</b></p>
+                                        <p class="gray sphereScaleDescription">“I don’t really care how much I’m able to do at home”</p>
+                                    </div>
+                                    <div id="higherScoreLabel">
+                                        <p><b>Higher score</b></p>
+                                        <p class="gray sphereScaleDescription">“Home means I can do whatever I want”</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-centered sphereScale" id="physicalScale">
+                            <div class="caption">
+                                <p>Physical</p>
+                                <p class="gray">(base)</p>
+                                <div>
+                                    <!-- where to store the shapes -->
+                                    <div class="shapes-scale" id="physicalShapeScale">
+                                        <img src="" id="p1" class="shapes-scale-img">
+                                        <img src="" id="p2" class="shapes-scale-img">
+                                        <img src="" id="p3" class="shapes-scale-img">
+                                        <img src="" id="p4" class="shapes-scale-img">
+                                        <img src="" id="p5" class="shapes-scale-img">
+                                    </div>
+                                    <div class="double-arrow"></div>
+                                    <div class="score-label">
+                                        <div id="lowerScoreLabel">
+                                            <p><b>Lower score</b></p>
+                                            <p class="gray sphereScaleDescription">“Home is more of an experience or state of mind than a place”</p>
+                                        </div>
+                                        <div id="higherScoreLabel">
+                                            <p><b>Higher score</b></p>
+                                            <p class="gray sphereScaleDescription">“Home is somewhere I can physically be”</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-centered sphereScale" id="socialScale">
+                            <div class="caption">
+                                <p>Social</p>
+                                <p class="gray">(style/number of windows)</p>
+                            </div>
+                            <div>
+                                <!-- where to store the shapes -->
+                                <div class="shapes-scale" id="socialShapeScale">
+                                    <img src="" id="s1" class="shapes-scale-img">
+                                    <img src="" id="s2" class="shapes-scale-img">
+                                    <img src="" id="s3" class="shapes-scale-img">
+                                    <img src="" id="s4" class="shapes-scale-img">
+                                    <img src="" id="s5" class="shapes-scale-img">
+                                </div>
+                                <div class="double-arrow"></div>
+                                <div class="score-label">
+                                    <div id="lowerScoreLabel">
+                                        <p><b>Lower score</b></p>
+                                        <p class="gray sphereScaleDescription">“Being with others isn’t a priority when I’m at home”</p>
+                                    </div>
+                                    <div id="higherScoreLabel">
+                                        <p><b>Higher score</b></p>
+                                        <p class="gray sphereScaleDescription">“Social interactions are very important to me at home”</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-centered sphereScale" id="CEScale">
+                            <div class="caption">
+                                <p>Cognitive/Emotional</p>
+                                <p class="gray">(shape in windows)</p>
+                            </div>  
+                            <div>
+                                <!-- where to store the shapes -->
+                                <div class="shapes-scale" id="CEShapeScale">
+                                    <img src="" id="ce1" class="shapes-scale-img">
+                                    <img src="" id="ce2" class="shapes-scale-img">
+                                    <img src="" id="ce3" class="shapes-scale-img">
+                                    <img src="" id="ce4" class="shapes-scale-img">
+                                    <img src="" id="ce5" class="shapes-scale-img">
+                                </div>
+                                <div class="double-arrow"></div>
+                                <div class="score-label">
+                                    <div id="lowerScoreLabel">
+                                        <p><b>Lower score</b></p>
+                                        <p class="gray sphereScaleDescription">“Home is more just a place for me to stay”</p>
+                                    </div>
+                                    <div id="higherScoreLabel">
+                                        <p><b>Higher score</b></p>
+                                        <p class="gray sphereScaleDescription">“Home needs to stir many emotions and thoughts for me”</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="explanation">
+                        <p>These parts are combined to form your generated result based off of these scales.</p>
+                        <p>Regardless of your result, the topic of “home” is endlessly complex. These results are not meant to define you or your view. </p>
+                        <p>Rather, they show a part of your thoughts and unique identity, <b>contributing to the larger idea of what 'home' may mean to many different people</b>.</p>
+                    </div>
+                </div>
+                <p class="text-centered pointer scroll" onclick="scrollToTop()">SCROLL TO TOP &#9650;</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
