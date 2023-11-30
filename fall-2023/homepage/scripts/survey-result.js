@@ -10,58 +10,58 @@ function switchToResults() {
 
 // IG stuff ------------------------------------------------------------------------------------------------------
 
-function captureAndRedirect() {
-    const elementToCapture = document.getElementById('capture');
+// function captureAndRedirect() {
+//     const elementToCapture = document.getElementById('capture');
 
-    // show certain elements before continuing 
-    document.querySelector("#surveyLink").style.display = "block";
+//     // show certain elements before continuing 
+//     document.querySelector("#surveyLink").style.display = "block";
 
-    // hide certain elements before continuing
-    // the part that will be sent to IG
-    // returns nodelist so use foreach
-    let hideElements = document.querySelectorAll(".hide");
-    hideElements.forEach(function(el) {
-        el.style.display = "none";
-     });
+//     // hide certain elements before continuing
+//     // the part that will be sent to IG
+//     // returns nodelist so use foreach
+//     let hideElements = document.querySelectorAll(".hide");
+//     hideElements.forEach(function(el) {
+//         el.style.display = "none";
+//      });
 
-    setTimeout( () => {
-        html2canvas(elementToCapture).then(canvas => {
-            // Convert canvas to base64 Data URL
-            const imageUrl = canvas.toDataURL('image/png');
+//     setTimeout( () => {
+//         html2canvas(elementToCapture).then(canvas => {
+//             // Convert canvas to base64 Data URL
+//             const imageUrl = canvas.toDataURL('image/png');
         
-            // Redirect user to Instagram with the captured image preloaded if Instagram is installed
-            const instagramShareUrl = `instagram://library?AssetPath=${encodeURIComponent(imageUrl)}`;
+//             // Redirect user to Instagram with the captured image preloaded if Instagram is installed
+//             const instagramShareUrl = `instagram://library?AssetPath=${encodeURIComponent(imageUrl)}`;
         
-            // Check if the Instagram app is installed, then redirect accordingly
-            window.location.href = instagramShareUrl;
-            setTimeout(() => {
-              if (document.hidden || document.webkitHidden) {
-                window.location.href = 'https://www.instagram.com/';
-              }
-            }, 50);
-          });
-    }, 100);
+//             // Check if the Instagram app is installed, then redirect accordingly
+//             window.location.href = instagramShareUrl;
+//             setTimeout(() => {
+//               if (document.hidden || document.webkitHidden) {
+//                 window.location.href = 'https://www.instagram.com/';
+//               }
+//             }, 50);
+//           });
+//     }, 100);
 
-    // hide and show the elements again
-    setTimeout( () => {
-        document.querySelector("#surveyLink").style.display = "none";
-        hideElements.forEach(function(el) {
-            el.style.display = "block";
-         });
-    }, 200);
-}
+//     // hide and show the elements again
+//     setTimeout( () => {
+//         document.querySelector("#surveyLink").style.display = "none";
+//         hideElements.forEach(function(el) {
+//             el.style.display = "block";
+//          });
+//     }, 200);
+// }
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (isMobile) { 
-    document.querySelector("#shareToIG").onclick = function () {
-        captureAndRedirect();
-    };
-    console.log("mobile device!");
-} else {
-    document.querySelector("#shareToIG").classList.add("gray");
-    document.querySelector("#shareToIG").classList.remove("pointer");
-    console.log("not mobile");
-}
+// const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// if (isMobile) { 
+//     document.querySelector("#shareToIG").onclick = function () {
+//         captureAndRedirect();
+//     };
+//     console.log("mobile device!");
+// } else {
+//     document.querySelector("#shareToIG").classList.add("gray");
+//     document.querySelector("#shareToIG").classList.remove("pointer");
+//     console.log("not mobile");
+// }
 
 // animate the car ------------------------------------------------------------------------------------------------------
 let car = document.querySelector("#carWrapper");
