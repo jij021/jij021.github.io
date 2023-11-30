@@ -302,6 +302,10 @@ input[type="radio"] {
     font-size: 0.9rem;
     margin-top: 0.5em;
 }
+.colorSquare {
+    height: 50px;
+    width: 50px;
+}
 
 /* car animation */
 #carWrapper { 

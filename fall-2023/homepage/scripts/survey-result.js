@@ -188,6 +188,11 @@ function contrastChecker(el, r, g, b){
 }
 
 function updateInfo() {
+    let colorSquare1 = document.querySelector("#colorSquare1");
+    let colorSquare2 = document.querySelector("#colorSquare2");
+    colorSquare1.style.backgroundColor = baseColor;
+    colorSquare2.style.backgroundColor = roofColor;
+
     // save text response to example text bubble ------------------------------------------------------------------------------------------------------
     let exampleText = document.querySelector("#exampleText");
 
