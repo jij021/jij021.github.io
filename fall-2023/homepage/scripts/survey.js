@@ -173,7 +173,7 @@ function nextQuestionType() {
             }
 
             // save the text input
-
+            
             // by the time you click on the next button for Q11 (aka, after this question), 
             // create and assemble SVGs based on the stored variables
             // then send that to firebase
@@ -929,7 +929,7 @@ function saveData() {
 
     // saves what the user put in as input (will need to replace with the variable we will save in the actual file)
     // might not have to actually use a variable if the value will just be put in
-    let textInput = document.getElementById('Q10').value;
+    shortResponse = document.getElementById('Q10').value;
 
     // Save the text input data and associate it with the SVG ID in Firebase Realtime Database
     database.ref('svgUserData/' + id).set({

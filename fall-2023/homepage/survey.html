@@ -35,7 +35,7 @@
         </div>
         <form action="https://api.sheetmonkey.io/form/m7HXoDETP1XvTvBd9GjW5z" method="post" id="survey">
             <div class="hiddenQuestion" id="question1">
-                <h3 class="gray question">QUESTION 1/11</h3>
+                <h3 class="gray question">QUESTION 1/10</h3>
                 <h4>Home is somewhere I can personalize and make changes to however I wish.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -58,7 +58,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question2">
-                <h3 class="gray question">QUESTION 2/11</h3>
+                <h3 class="gray question">QUESTION 2/10</h3>
                 <h4>Home is a place where I act differently than anywhere else.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -81,7 +81,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage1, 500)">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question3">
-                <h3 class="gray question">QUESTION 3/11</h3>
+                <h3 class="gray question">QUESTION 3/10</h3>
                 <h4>Home is somewhere well-designed and well-furnished.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -104,7 +104,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question4">
-                <h3 class="gray question">QUESTION 4/11</h3>
+                <h3 class="gray question">QUESTION 4/10</h3>
                 <h4>Home is somewhere with a nice view.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -127,7 +127,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage2, 500)">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question5">
-                <h3 class="gray question">QUESTION 5/11</h3>
+                <h3 class="gray question">QUESTION 5/10</h3>
                 <h4>Home is where I’m able to receive visitors.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -150,7 +150,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question6">
-                <h3 class="gray question">QUESTION 6/11</h3>
+                <h3 class="gray question">QUESTION 6/10</h3>
                 <h4>Home is where I can have a good relationship with my neighbors.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -173,7 +173,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage3, 500)">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question7">
-                <h3 class="gray question">QUESTION 7/11</h3>
+                <h3 class="gray question">QUESTION 7/10</h3>
                 <h4>Home is where I can enjoy my privacy and being undisturbed.</h4>
                 <div class="responses">
                     <p class="warning">Please select an option before proceeding.</p>
@@ -196,7 +196,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion()">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question8">
-                <h3 class="gray question">QUESTION 8/11</h3>
+                <h3 class="gray question">QUESTION 8/10</h3>
                 <h4>Home is a place linked with strong emotions and/or memories for me.</h4>
                 <div class="responses">
                     <div class="radioBoxes">
@@ -218,7 +218,7 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestion(); setTimeout(saveCanvasToImage4, 500)">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question9">
-                <h3 class="gray question">QUESTION 9/11</h3>
+                <h3 class="gray question">QUESTION 9/10</h3>
                 <h4>What color looks like “home” to you?</h4>
                 <div class="responses">
                     <label for="Q9"> <input type="color" id="Q9" name="Q9" value="#000000" /> </label>
@@ -227,16 +227,16 @@
                 <button class="nextButton last-element-centered" type="button" onClick="nextQuestionColor(); redraw()">Next question</button>
             </div>
             <div class="hiddenQuestion" id="question10">
-                <h3 class="gray question">QUESTION 10/11</h3>
+                <h3 class="gray question">QUESTION 10/10</h3>
                 <h4>What is 1 thing you need for somewhere to feel like “home” to you?</h4>
                 <div class="responses">
                     <p class="warning">Please type in the text area before proceeding.</p>
                     <label for="Q10"><input type="text" id="Q10" name="Q10" placeholder="Say anything" required> <span class="checkmark"></span> </label>
                 </div>
                 <br>
-                <button class="nextButton last-element-centered" type="button" onClick="nextQuestionType(); redraw(); setTimeout(saveData, 500)">Next question</button>
+                <button class="nextButton last-element-centered" type="button" onClick="nextQuestionType(); redraw(); setTimeout(saveData, 500); setTimeout(switchToResults, 600); setTimeout(finishQuiz, 700); setTimeout(updateInfo, 800)">Next question</button>
             </div>
-            <div class="hiddenQuestion" id="question11">
+            <!-- <div class="hiddenQuestion" id="question11">
                 <h3 class="gray question">QUESTION 11/11</h3>
                 <h4>What is your age group?</h4>
                 <h3 class="gray research">This will be collected privately for research purposes.</h3>
@@ -264,10 +264,8 @@
                         <input type="radio" id="Q11_7" name="Q11" value="N/A" required>
                     </div>
                 </div>
-                <!-- <input type="submit" value="Build my home"/> -->
-                <!-- hides the quiz section and shows the results -->
                 <button class="nextButton last-element-centered" type="button" onClick="switchToResults(); finishQuiz(); updateInfo()">BUILD MY HOME</button>
-            </div>
+            </div> -->
             <br>
         </form>
     </section>
@@ -406,11 +404,11 @@
                         <p>AS PDF</p>
                     </div>
                 </div>
-                <!-- <button type="button" id="submitAll" onclick="location.href='survey.html'">ADD HOME TO SITE</button> -->
+                <button type="button" id="submitAll" onclick="location.href='survey.html'">ADD HOME TO SITE</button>
                 <!-- submits the actual answers for the survey to google via sheetmonkey, redirect to index.html -->
-                <form action="https://api.sheetmonkey.io/form/m7HXoDETP1XvTvBd9GjW5z" method="post" id="survey">
+                <!-- <form action="https://api.sheetmonkey.io/form/m7HXoDETP1XvTvBd9GjW5z" method="post" id="survey">
                     <input class="hide" id="submitAll" type="submit" value="ADD HOME TO SITE"/>
-                </form>
+                </form> -->
             </div>
             <div class="fade-in hide" id="moreInfo" >
                 <div class="more-info-section" id="moreInfo1">

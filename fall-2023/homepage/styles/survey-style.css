@@ -118,6 +118,7 @@ input[type="radio"] {
     flex-direction: row;
     gap: 4em;
     justify-content: center;
+    align-items: flex-end;
 }
 .centered-scale {
     display: flex;
@@ -302,9 +303,14 @@ input[type="radio"] {
     font-size: 0.9rem;
     margin-top: 0.5em;
 }
-.colorSquare {
-    height: 50px;
-    width: 50px;
+.color-square-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+.color-square {
+    height: 5em;
+    width: 5em;
 }
 
 /* car animation */
