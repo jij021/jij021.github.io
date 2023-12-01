@@ -232,16 +232,16 @@ input[type="radio"] {
     margin: 2em auto;
 }
 #homeAssembly2 {
-    margin-top: 8.5em;
+    margin-top: 6.5em;
 }
 #behavioralShapeScale {
-    margin: -4em 0 0 0;
+    margin: -4em 0 -2em 0;
 }
 #physicalShapeScale {
-    margin: -6em 0 4em 0;
+    margin: -7em 0 3em 0;
 }
 #socialShapeScale, #CEShapeScale {
-    margin: -4em 0 2.5em 0;
+    margin: -4em 0 2em 0;
 }
 .shapes-scale-img {
     max-height: 60%;
@@ -256,10 +256,10 @@ input[type="radio"] {
     margin-bottom: 2em;
 }
 .sphereDescription {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Kulim Park', Arial, Helvetica, sans-serif;
     font-weight: normal;
     max-width: 15em;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 .result {
     display: flex;
@@ -275,7 +275,7 @@ input[type="radio"] {
     margin-top: 2em;
 }
 .mono {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     font-weight: normal;
 }
 .bold {
@@ -297,10 +297,10 @@ input[type="radio"] {
     margin: 4em 0;
 }
 .sphereScaleDescription {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Kulim Park', Arial, Helvetica, sans-serif;
     font-weight: normal;
     max-width: 15em;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 0.5em;
 }
 .color-square-container {

@@ -28,7 +28,7 @@
         <div class="activeQuestion" id="preSurvey">
             <h3 class="gray">PRE-SURVEY</h3>
             <div class="responses">
-                <h4>Take an 11 question survey about your ideas of home and see a visual generation of your responses.</h4>
+                <h4>Take a 10 question survey about your ideas of home and see a visual generation of your responses.</h4>
                 <h4>Then, your home will be randomly plotted into the blank neighborhood on the homepage, where you can compare your results with other people.</h4>
             </div>
             <button class="surveyButton last-element-centered" type="button" onClick="startSurvey()">Begin survey</button>
@@ -343,12 +343,11 @@
             </svg>
         </div>
     </div>
-    <section id="surveyResults" style="display: block; visibility: visible; opacity: 1;">
+    <section id="surveyResults">
         <div id="capture">
-            <p id="surveyLink">Take the survey: linkhere.com/whatever.html</p>
             <h4 class="fade-in result-header" id="surveyHeader" >Home (for you) may look like...</h2>
             <!-- p5js canvas draws the SVG (saved externally to firebase) -->
-            <div class="canvas fade-in" id="canvas" ></div>
+            <div class="canvas fade-in" id="canvas"></div>
             <h4 class="fade-in result-header" id="resultMessage" ></h2>
             <h3 class="fade-in preferences" id="preferences" >YOUR PREFERENCES:</h3>
             <div class="fade-in" id="surveyReport" >

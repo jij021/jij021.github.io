@@ -1,3 +1,9 @@
+// moving the p5 canvas to the correct section ------------------------------------------------------------------------------------------------------
+setTimeout(() => {
+    $("#defaultCanvas0").appendTo("#canvas");
+}, 500);
+
+
 // for switching bt the survey quiz section and the survey results section
 let surveySection = document.querySelector("#surveyQuiz");
 let surveyResults = document.querySelector("#surveyResults");
@@ -70,22 +76,22 @@ function finishQuiz() {
     surveyResults.style.visibility = "visible";
     car.style.display = "block";
     car.animate([
-        { left: '-100%' }, 
-        { left: '40%' }, 
-        { left: '40%' }, 
-        { left: '40%' }, 
+        { left: '-70%' }, 
+        { left: 'calc(100vw/2.5)' }, 
+        { left: 'calc(100vw/2.5)' }, 
+        { left: 'calc(100vw/2.5)' }, 
         { left: '140%' } 
       ], {
-        duration: 8000, 
+        duration: 7000, 
         easing: 'ease-in-out', 
         iterations: 1, 
     });
     setTimeout(() => {
         document.querySelector("#canvas").style.opacity = "1";
-    }, 3500);
+    }, 2500);
     setTimeout(() => {
         car.style.display = "none";
-    }, 7500);
+    }, 6500);
 
     setTimeout(() => {
         // reveal the rest of the results
@@ -122,13 +128,8 @@ function finishQuiz() {
             requestAnimationFrame(frame);
         }
         })();
-    }, 6000);
+    }, 5000);
 }
-
-// moving the p5 canvas to the correct section ------------------------------------------------------------------------------------------------------
-setTimeout(() => {
-    $("#defaultCanvas0").appendTo("#canvas");
-}, 500);
 
 
 // choosing a random affirming message post quiz ------------------------------------------------------------------------------------------------------
@@ -411,11 +412,12 @@ function updateInfo() {
 // downloads results to PDF ------------------------------------------------------------------------------------------------------
 function downloadToPDF() {
     var PDFsection = document.getElementById('surveyResults');
+    // html2pdf(PDFsection);
     var opt = {
         margin: 5,
         filename: 'my-home-results.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        pagebreak: { mode: 'avoid-all'}
-      };
+        pagebreak: { mode: 'legacy' }
+    };
     html2pdf().set(opt).from(PDFsection).save();
 }
