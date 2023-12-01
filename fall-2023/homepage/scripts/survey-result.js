@@ -365,7 +365,7 @@ function updateInfo() {
 }
     else if(CESum == 9 || CESum == 10){
         document.querySelector("#ce5").src = "images/houseParts/CE-5.svg" 
-        document.querySelector("#ce5").src = "images/houseParts/CE-5.svg" 
+        document.querySelector("#cogem").src = "images/houseParts/CE-5.svg" 
 }
 
     barLoad(behaviorBar, behavioralSum);
