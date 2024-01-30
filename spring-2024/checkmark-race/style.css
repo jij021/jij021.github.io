@@ -27,6 +27,9 @@
     border: 3px solid #0028FF;
     box-shadow: 0.2em 0.2em;
 }
+#more-details {
+    line-height: 130%;
+}
 #ruler {
     margin: 1em 0 2em 0;
     border: 0.5px solid #0028FF;
@@ -92,15 +95,18 @@ ul {
 }
 li {
     margin-bottom: 0.5em;
-    transition: margin 0.2s;
-    transition: display 0.2s;
+    color: #9d9d9d;
+    transition: all 0.1s;
+}
+li:first-child {
+    color: black;
 }
 label {
     margin-left: 0.5em;
 }
 input[type=checkbox]:checked ~ label {
     text-decoration: line-through;
-    color: #c1c1c1;
+    color: #dbdbdb;
 }
 
 /* timer section ------------------------------------------ */
