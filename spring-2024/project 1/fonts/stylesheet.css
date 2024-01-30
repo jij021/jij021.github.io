@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-BlIt.woff2') format('woff2'),
+        url('GTAmericaTrial-BlIt.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-Rg.woff2') format('woff2'),
+        url('GTAmericaTrial-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-RgIt.woff2') format('woff2'),
+        url('GTAmericaTrial-RgIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-Bl.woff2') format('woff2'),
+        url('GTAmericaTrial-Bl.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-BdIt.woff2') format('woff2'),
+        url('GTAmericaTrial-BdIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('GTAmericaTrial-Bd.woff2') format('woff2'),
+        url('GTAmericaTrial-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

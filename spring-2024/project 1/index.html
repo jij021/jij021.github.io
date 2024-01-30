@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkmark Race</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🏁</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <div id="left">
+            <div id="title" class="container-margin">
+                <p>Checklist Race</p>
+            </div>
+            <div id="more-details">
+                <div id="instructions" class="container-margin">
+                    <p class="subtitle">Instructions 🏁</p>
+                    <p>Click through checkboxes until the end. Click start to begin and see how long it takes for you to finish.</p>
+                </div>
+                <div id="about" class="container-margin">
+                    <p class="subtitle">About this game 📣</p>
+                    <p>This site is my short intro and also turns something I enjoy (making lists/writing) into a game. Despite always feeling like I need to rush, I still find it very satisfying to cross things out until I’m done for the day.</p>
+                </div>
+            </div>
+            <hr id="ruler">
+            <div id="scoreboard">
+                <p class="subtitle">Scoreboard 🏅</p>
+                <ol id="scoreboard-list">
+                    
+                </ol>
+            </div>
+        </div>
+        <div id="right">
+            <div id="fadeout-top"></div>
+            <div id="checkbox-container">
+                <button id="start-button" onclick="start()">Click to Start</button>
+                <ul id="checkboxes">
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" onclick="returnId(this.id); moveInput()"><label>This is a list-item</label></li>
+                    <li><input type="checkbox" id="finish-cb"><label>This is a list-item</label></li>
+                </ul>
+            </div>
+            <div id="timer-container">
+                <p id="timer">Timer: 00:00:00</p>
+            </div>
+            <div id="fadeout-bottom"></div>
+        </div>
+    </main>
+</body>
+</html>
