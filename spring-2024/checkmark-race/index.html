@@ -7,8 +7,11 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🏁</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts/stylesheet.css">
-    <script src="scripts/script.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/save.js" defer></script>
 </head>
 <body>
     <main>
@@ -16,28 +19,37 @@
             <div id="title" class="container-margin">
                 <p>Checkbox Race</p>
             </div>
-            <div id="more-details">
-                <div id="instructions" class="container-margin">
-                    <p class="subtitle">Instructions 🏁</p>
-                    <p>Click through checkboxes until the end. Click start to begin and see how long it takes for you to finish.</p>
+            <div id="mobile-container">
+                <div id="hide-left">
+                    <button id="start-button-mobile" class="button" onclick="startMobile()">Click to Start</button>
                 </div>
-                <div id="about" class="container-margin">
-                    <p class="subtitle">About this game 📣</p>
-                    <p>This site is my short intro and also turns something I enjoy (making lists/writing) into a game. Despite always feeling like I need to rush, I still find it very satisfying to cross things out until I’m done for the day.</p>
+                <div id="hide-right">
+                    <div id="more-details">
+                        <div id="instructions" class="container-margin">
+                            <p class="subtitle">Instructions 🏁</p>
+                            <p>Click through checkboxes until the end. Click start to begin and see how long it takes for you to finish.</p>
+                        </div>
+                        <div id="about" class="container-margin">
+                            <p class="subtitle">About this game 📣</p>
+                            <p>This site is my short intro and also turns something I enjoy (making lists/writing) into a game. Though I always feel like I need to hurry, I still find it very satisfying to cross stuff out until I’m done for the day.</p>
+                        </div>
+                    </div>
+                    <hr id="ruler">
+                    <div id="scoreboard">
+                        <div>
+                            <p class="subtitle">Scoreboard 🏅</p>
+                            <ol id="scoreboard-list">
+                                
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr id="ruler">
-            <div id="scoreboard">
-                <p class="subtitle">Scoreboard 🏅</p>
-                <ol id="scoreboard-list">
-                    
-                </ol>
-            </div>
+            </div>     
         </div>
         <div id="right">
             <div id="fadeout-top"></div>
             <div id="checkbox-container">
-                <button id="start-button" onclick="start()">Click to Start</button>
+                <button id="start-button" class="button" onclick="start()">Click to Start</button>
                 <ul id="checkboxes">
                     <li><input type="checkbox" onclick="returnId(this.id); moveInput(); enable()"><label>This is a list-item</label></li>
                     <li><input type="checkbox" disabled="disabled" onclick="returnId(this.id); moveInput(); enable()"><label>This is a list-item</label></li>
@@ -88,6 +100,17 @@
             </div>
             <div id="timer-container">
                 <p id="timer">Timer: 00:00:00</p>
+                <div id="score-container">
+                    <div id="score-text">
+                        <p><b>Congrats on finishing!</b></p>
+                    </div>
+                    <div id="score-submit">
+                        <p>Submit your score:</p>
+                        <div><input type="text" id="name-field" placeholder="Type your name here"></div>
+                        <div><input type="submit" value="Submit" id="submit" class="button" onclick="saveData(); updateScoreboard()"></div>
+                    </div>
+                    <p id="refresh-message">Refresh to play again.</p>
+                </div>
             </div>
             <div id="fadeout-bottom"></div>
         </div>

@@ -17,7 +17,7 @@ function enable() {
     document.getElementById("li-" + count).style.color = "black";
 }
 
-// click the start button, hide it, and start the timer -------------------------------
+// start the timer after start is clicked -------------------------------
 
 let minutes = 0;
 let seconds = 0;
@@ -61,28 +61,48 @@ function check() {
 
 let interval = null;
 
+let started = false;
+
 function start() {
-    document.querySelector("#start-button").style.display = "none";
-    document.querySelector("#checkboxes").style.display = "block";
-    document.querySelector("#timer-container").style.color = "black";
-    interval = setInterval(
-        function timer() {
-            mil += 10;
-            check();
-            document.querySelector('#timer').innerHTML = "Timer: " + format();
-        }
-    , 10);
+  started = true;
+  document.querySelector("#fadeout-top").style.display = "block";
+  document.querySelector("#fadeout-bottom").style.display = "block";
+  document.querySelector("#start-button").style.display = "none";
+  document.querySelector("#checkboxes").style.display = "block";
+  document.querySelector("#timer-container").style.color = "black";
+  interval = setInterval(
+  function timer() {
+      mil += 10;
+      check();
+      document.querySelector('#timer').innerHTML = "Timer: " + format();
+  }, 10);
 }
 
+// stop the timer and show the submit area 
+
 function stop() {
+  // if all the checkboxes have been checked
     if(document.querySelectorAll('input[type="checkbox"]:checked').length === 45){
         clearInterval(interval);
         // confetti from confetti.js.org
-        confetti({
-            particleCount: 250,
-            spread: 160,
-            origin: { y: 0.9 },
-        });
+        const colors = ["#0028FF", "#FF2800"];
+        (function frame() {
+          confetti({
+            particleCount: 150,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 1 },
+            colors: colors,
+          });
+          confetti({
+            particleCount: 150,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 1 },
+            colors: colors,
+          });
+        })();
+        document.querySelector("#score-container").style.display = "block";
     }
 }
 
@@ -111,7 +131,7 @@ function moveInput() {
     // check if this id is checked
     if(document.getElementById(recentClick).checked) {
         // move the next id 
-        translateY = translateY - 22;
+        translateY = translateY - 27;
         
         let coinflip = chooseLeftOrRight();
         if(coinflip == 0){
@@ -127,8 +147,22 @@ function moveInput() {
     }
 }
 
-// scoreboard sorting
-// convert the timer to a string
-// add everyones score to an array
-// sort the array with .sort
-// create a list from the sorted array
+// mobile sizes hiding 
+window.addEventListener("resize", function() {
+  if(window.innerWidth >= 768) {
+    document.querySelector("#left").style.display = "block";
+    document.querySelector("#right").style.display = "flex";
+  }
+  if(window.innerWidth < 768 && started === true) {
+    document.querySelector("#left").style.display = "none";
+    document.querySelector("#right").style.display = "flex";
+    document.querySelector("#right").style.overflow = "hidden";
+  }
+});
+
+function startMobile() {
+  document.querySelector("#left").style.display = "none";
+  document.querySelector("#right").style.display = "flex";
+
+  start();
+}
