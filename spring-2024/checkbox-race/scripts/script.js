@@ -135,11 +135,11 @@ function moveInput() {
         
         let coinflip = chooseLeftOrRight();
         if(coinflip == 0){
-            document.getElementById("li-" + nextNum).style.marginLeft = getRandomInt(0,3) + "em";
+            document.getElementById("li-" + nextNum).style.marginLeft = getRandomInt(0,4) + "em";
             document.getElementById("checkboxes").style.transform = "translateY(" + translateY + "px)";
         }
         else if(coinflip == 1){
-            document.getElementById("li-" + nextNum).style.marginLeft = "-" + getRandomInt(0,3) + "em";
+            document.getElementById("li-" + nextNum).style.marginLeft = "-" + getRandomInt(0,4) + "em";
             document.getElementById("checkboxes").style.transform = "translateY(" + translateY + "px)";
         }
     } else {
