@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'PP Fraktion Sans', Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+main {
+    /* transform: scale(0.3) translate(-2200px, -2200px); */
+    transform-origin: center;
+    width: 2048px;
+    height: 2048px;
+    background-color: #2e9bff;
+}
+p {
+    color: black;
+    font-size: 5.3em;
+    line-height: 116%;
+    border: 8px solid black;
+    padding: 0.8em 1em;
+    position: relative;
+
+    transition: transform 0.1s linear;
+}
+.p-1 {
+    background-color: #f9fca6;
+}
+.p-2 {
+    background-color: #7acc83;
+}
+.p-3 {
+    background-color: #ffad99;
+}
+
+@keyframes wiggleAnimation1 {
+    0%, 100% {
+        margin: 0;
+    }
+    25% {
+        margin: 1px 0 0 1px;
+    }
+    50% {
+        margin: 0;
+    }
+    75% {
+        margin: -1px 0 0 -1px;
+    }
+}
+@keyframes wiggleAnimation2 {
+    0%, 100% {
+        margin: 0;
+    }
+    25% {
+        margin: 0 1px 1px 0;
+    }
+    50% {
+        margin: 0;
+    }
+    75% {
+        margin: 0 -1px -1px 0;
+    }
+}
+
+
+/* image --------------------------------------------------------------------------------- */
+
+
+/* individual text --------------------------------------------------------------------------------- */
+
+#textDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 2048px;
+    height: 2048px;
+}
+
+/* Here are some products that match your search. */
+#text-1 {
+    width: 1100px;
+    z-index: 14;
+    transform: translate(680px, -40px);
+}
+/* If you have more questions, feel free to ask at any time. */
+#text-2 {
+    width: 800px;
+    z-index: 13;
+    transform: translate(18px, -450px);
+}
+/* Sure, let me look that up for you. */
+#text-3 {
+    width: 840px;
+    z-index: 10;
+    transform: translate(700px, -620px);
+}
+/* I’m not familiar with what you’re describing. Let me look into this. */
+#text-4 {
+    width: 1100px;
+    z-index: 9;
+    transform: translate(1300px, -1138px);
+}
+/* Sure, I can help you schedule an appointment. When would you like to book? */
+#text-5 {
+    width: 800px;
+    z-index: 12;
+    transform: translate(-250px, -1550px);
+}
+/* Let me know if there’s anything else I can do to support you. */
+#text-6 {
+    width: 820px;
+    z-index: 11;
+    transform: translate(1100px, -1970px);
+}
+/* I'm here to provide information and answer your questions. */
+#text-7 {
+    width: 1070px;
+    z-index: 15;
+    transform: translate(-240px, -2180px);
+}
+/* Here’s what I could come up with. */
+#text-8 {
+    width: 670px;
+    z-index: 6;
+    transform: translate(1720px, -2660px);
+}
+/* You can find more information about that in our FAQs. */
+#text-9 {
+    width: 900px;
+    z-index: 5;
+    transform: translate(1370px, -2780px);
+}
+/* If you’re interested in this topic, you might also like... */
+#text-10 {
+    width: 930px;
+    z-index: 8;
+    transform: translate(200px, -3250px);
+}
+/* Hello! What can I do to help you with this task? */
+#text-11 {
+    width: 790px;
+    z-index: 7;
+    transform: translate(-340px, -3420px);
+}
+/* I’ll connect you with a support representative. */
+#text-12 {
+    width: 800px;
+    z-index: 14;
+    transform: translate(560px, -3780px);
+}
+/* I’ve gathered some resources that you may like based on your search history. */
+#text-13 {
+    width: 950px;
+    z-index: 8; 
+    transform: translate(-40px, -3980px);
+}
+/* I’m sorry to hear that. I’ll use this feedback for next time. */
+#text-14 {
+    width: 1050px;
+    z-index: 15; 
+    transform: translate(1150px, -4460px);
+}
+/* Thank you for letting me know of the issue. Please let me know the details. */
+#text-15 {
+    width: 1300px;
+    z-index: 13; 
+    transform: translate(970px, -5380px);
+}
+/* Welcome! What can I do for you? */
+#text-16 {
+    width: 820px;
+    z-index: 3; 
+    transform: translate(860px, -5400px);
+}
+#text-17 {
+    width: 790px;
+    z-index: 20; 
+    transform: translate(1200px, -7630px);
+}

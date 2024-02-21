@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'PP Fraktion Sans';
+    src: url('PPFraktionSans-BoldItalic.woff2') format('woff2'),
+        url('PPFraktionSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Fraktion Sans';
+    src: url('PPFraktionSans-Bold.woff2') format('woff2'),
+        url('PPFraktionSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
