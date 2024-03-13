@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baked Logo Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div id="controls">
+            <div id="weatherText">
+                <div class="radio-container">
+                    <input type="radio" id="apiCheck" name="radioBox" value="api" checked>
+                    <span class="radio"></span>
+                    <label for="apiCheck">API data</label>
+                    
+                    <p id="tempText" class="margin-adj">Temperature: 53°F</p>
+                    <p id="humidityText" class="margin-adj">Humidity: 50%</p>
+                </div>
+                <br>
+                <div class="radio-container">
+                    <input type="radio" id="userCheck" name="radioBox" value="user">
+                    <span class="radio"></span>
+                    <label for="userCheck">User input</label>
+                </div>
+            </div>
+            <div id="font-adjust" class="font-controls col">
+                <div>
+                    <label class="control-sub">Weight</label>
+                    <input type="range" min="400" max="900" value="415" step="1" class="slider" id="weightControl">
+                </div>
+                <br>
+                <div>
+                    <label class="control-sub">Width</label>
+                    <input type="range" min="70" max="115" value="115" step="1" class="slider" id="widthControl">
+                </div>
+            </div>
+            <div id="colors" class="font-controls col">
+                
+                <div>
+                    <label class="control-sub">Amount burnt</label>
+                    <input type="range" min="0" max="1" value="0" step="0.1" class="slider" id="burnControl">
+                </div>
+            </div>
+            <div id="buttonContainer" class="col">
+                <div id="textColorControl">
+                    <label class="control-sub">Text Color</label>
+                    <input type="color" id="textColor" name="textColorControl" value="#AC6B11">
+                </div>  
+                <br>
+                <button id="download">Download</button>
+            </div>
+        </div>
+        <div id="textContainer">
+            <p id="logo-bottom" class="logo">baked</p>
+            <p id="logo-top" class="logo">baked</p>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js" integrity="sha512-wUa0ktp10dgVVhWdRVfcUO4vHS0ryT42WOEcXjVVF2+2rcYBKTY7Yx7JCEzjWgPV+rj2EDUr8TwsoWF6IoIOPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js" integrity="sha512-UNbeFrHORGTzMn3HTt00fvdojBYHLPxJbLChmtoyDwB6P9hX5mah3kMKm0HHNx/EvSPJt14b+SlD8xhuZ4w9Lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

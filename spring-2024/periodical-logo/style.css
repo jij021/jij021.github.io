@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Ginto Nord Rounded Variable';
+    src: url('./fonts/ABCGintoRoundedNordPlusVariableVF-Trial.woff2') format('woff2-variations'),
+        url('./fonts/ABCGintoRoundedNordPlusVariableVF-Trial.woff') format('woff-variations'),
+        url('./fonts/ABCGintoRoundedNordPlusVariableVF-Trial.ttf') format('truetype-variations');
+}
+
+@font-face {
+    font-family: 'Ginto Nord Rounded';
+    src: url('./fonts/ABCGintoRoundedNord-Bold-Trial.woff2') format('woff2'),
+        url('./fonts/ABCGintoRoundedNord-Bold-Trial.woff') format('woff');
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+body {
+    font-family: "Ginto Nord Rounded Variable", "Ginto Nord Rounded", Arial, Helvetica, sans-serif;
+    font-stretch: 110%;
+
+    margin: 2em 5em;
+}
+
+/* CONTROLS ---------------------------------------- */
+
+#controls {
+    /* width: 100%; */
+    margin: 0 5em 0 9em;
+    /* display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 4em; */
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    justify-content: space-evenly;
+
+    user-select: none;
+}
+
+#weatherText {
+    margin-right: 1.5em;
+}
+
+.col {
+    width: 15%;
+}
+
+#tempText {
+    opacity: 0.5;
+    margin-left: 22px;
+}
+#humidityText {
+    opacity: 0.5;
+    margin-left: 22px;
+}
+
+.margin-adj {
+    margin-top: 0.2em;
+}
+
+.control-sub {
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+input[type="radio"]{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0 5px 0 0;
+    font: inherit;
+    color: currentColor;
+    width: 15px;
+    height: 15px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    transform: translateY(1.5px);
+
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #000;
+}
+
+.slider {
+    appearance :none;
+    background: none;
+    cursor: pointer;
+    height: 1.5px;
+    width: 90%;
+    background-color: #000;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    background-color: #000;
+    border-radius: 50%;
+    border: none;
+}
+
+.slider::-moz-range-thumb {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    background-color: #000;
+    border-radius: 50%;
+    border: none;
+}
+
+button {
+    display: block;
+    margin-bottom: 1em;
+    padding: 0.3em 1em;
+    border-radius: 16px;
+    border: 1.5px black solid;
+    background: none;
+    font-family: "Ginto Nord Rounded Variable", "Ginto Nord Rounded", Arial, Helvetica, sans-serif;
+    font-stretch: 110%;
+
+    cursor: pointer;
+}
+button:hover {
+    background: rgb(207, 207, 207);
+}
+
+/* TEXT ---------------------------------------- */
+
+#textContainer {
+    width: 100%;
+    height: 77vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+
+    font-size: 20em;
+}
+
+#logo-bottom {
+    color: #ac6b11;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px transparent;
+    -webkit-text-stroke-color: #ac6b11;
+}
+
+#logo-top {
+    /* display: none; */
+
+    background: -webkit-linear-gradient(rgb(39, 3, 3) 35%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 3px transparent;
+
+    mix-blend-mode: multiply;
+
+    opacity: 0;
+}
