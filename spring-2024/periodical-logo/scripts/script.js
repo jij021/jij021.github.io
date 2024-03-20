@@ -44,6 +44,9 @@ function getPosition(position) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
 
+    lat = lat.toString();
+    long = long.toString();
+
     console.log("lat = " + lat + " || long = " + long);
 }
 
@@ -51,7 +54,7 @@ getLocation();
 
 // get user weather with API
 //                                                             vvv lat / long (after C)
-const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat.toString()}%2C${long.toString()}`;
+const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${long}`;
 const options = {
 	method: 'GET',
 	headers: {
