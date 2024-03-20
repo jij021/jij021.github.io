@@ -51,7 +51,7 @@ getLocation();
 
 // get user weather with API
 //                                                             vvv lat / long (after C)
-const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${long}`;
+const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat.toString()}%2C${long.toString()}`;
 const options = {
 	method: 'GET',
 	headers: {
@@ -71,6 +71,10 @@ async function fetchData() {
         // replace the weather values
         temp = jsonified.current.temp_f;
         humidity = jsonified.current.humidity;
+
+        // console.log("temp/humidity:");
+        // console.log(temp);
+        // console.log(humidity);
 
         // replace variables with weather data
 
