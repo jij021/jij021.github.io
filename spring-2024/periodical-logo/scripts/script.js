@@ -26,35 +26,19 @@ function map(value, low1, high1, low2, high2) {
 
 // API CONTROLS ---------------------------------------------------------------------
 
-// get user location
-
-let lat;
-let long;
-
-function getLocation() {
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getPosition);
-    } else {
-        console.log("API not supported or denied; displaying NYC location as placeholder");
-        lat = 40.730610;
-        long = -73.935242;
-    }
-}
-function getPosition(position) {
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-
-    lat = lat.toString();
-    long = long.toString();
-
-    console.log("lat = " + lat + " || long = " + long);
-}
-
-getLocation();
+// syracuse university (where the magazine/demographic is located) location
+let lat = 43.039230478330744;
+let long = -76.1333917925887;
 
 // get user weather with API
+// weather API used: https://rapidapi.com/weatherapi/api/weatherapi-com/
 //                                                             vvv lat / long (after C)
 const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${lat}%2C${long}`;
+
+// const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=' + stringLat + '%2C' + stringLong;
+
+console.log(url);
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -74,10 +58,6 @@ async function fetchData() {
         // replace the weather values
         temp = jsonified.current.temp_f;
         humidity = jsonified.current.humidity;
-
-        // console.log("temp/humidity:");
-        // console.log(temp);
-        // console.log(humidity);
 
         // replace variables with weather data
 
@@ -139,12 +119,18 @@ async function fetchData() {
         tempText.innerHTML = "Temperature: " + temp + "°F";
         humidityText.innerHTML = "Humidity: " + humidity + "%";
 
+        console.log("temp:" + jsonified.current.temp_f);
+        console.log("humid:" + jsonified.current.humidity);
+        console.log("temp var:" + temp);
+        console.log("humid var:" + humidity);
+
         console.log(result);
     } catch (error) {
         console.error(error);
     }
 }
 
+fetchData();
 
 // USER CONTROLS ---------------------------------------------------------------------
 
