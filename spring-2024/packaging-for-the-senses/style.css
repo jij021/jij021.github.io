@@ -1,0 +1,172 @@
+/* universal ------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #252424;;
+}
+.hidden {
+    visibility: hidden;
+}
+#packaging-data {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 0 2em 2em 0;
+}
+.packaging-container {
+    position: relative;
+    margin: 1em 1em;
+    width: calc(300.48px*1.5);
+    height: calc(492.48px*1.5);
+}
+#example-package {
+    display: none;
+}
+.no-show {
+    display: none;
+}
+h1, p {
+    user-select: none;
+}
+
+/* general generator styling ------------------------------------------*/
+.gen-bg {
+    background-color: #fcfcfc;
+}
+
+/* background ------------------------------------------*/
+.isolate {
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.noise {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, hsl(57,93%,5%) 20%, hsl(57,93%,5%) 50%, transparent 100%);   
+    filter: contrast(130%) brightness(700%) blur(0.4px);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(69,90%,55%);
+    mix-blend-mode: hard-light;
+}
+.noise-white {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, transparent 75%, hsl(57,100%,100%) 100%);   
+    filter: contrast(500%) brightness(100%) blur(0.4px);
+}
+
+/* top portion ------------------------------------------*/
+.text {
+    padding: 1em 1.4em;
+
+    position: absolute;
+    z-index: 100;
+}
+.stash-logo {
+    width: 28%;
+    height: auto;
+}
+hr {
+    border-color: #252424;
+    border-bottom: 0.1px solid #252424;
+    width: 45%;
+    margin: 0.5em 0em;
+}
+/* text part ------------------------------------------*/
+.text-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-bottom: 1em;
+}
+.name {
+    font-family: quatro-slab, serif;
+    font-weight: 500;
+    color: #1f1e1e;
+    line-height: 107%;
+    font-size: 3em;
+    width: 100%;
+}
+.text-extra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15em;
+
+    margin-top: 1em;
+}
+.text-extra-labels {
+    font-family: auger-mono, 'Courier New', Courier, monospace;
+    font-weight: 500;
+    text-align: right;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+.text-extra-tea-container {
+    margin-bottom: 0.4em;
+}
+.text-extra-tea {
+    border: 1.9px solid #252424;
+    border-radius: 16px;
+    padding: 2px 10px;
+    display: inline;
+}
+.caffeine-label {
+    font-family: auger-mono, 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 1em;
+    margin-top: 0.65em;
+}
+.no-caffeine-label {
+    font-family: auger-mono, 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 1em;
+    margin-top: 0.4em;
+}
+.caffeine-container {
+    margin-top: 0.4em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4em;
+}
+.spark {
+    width: 6%;
+    height: auto;
+}
+
+/* bottom portion ------------------------------------------*/
+/* cup */
+.cup-container {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: -4.4px;
+
+    z-index: 1;
+}
+
+/* ingredients */
+.ingredients-container {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    left: 14px;
+    bottom: 6%;
+    z-index: 1;
+}
