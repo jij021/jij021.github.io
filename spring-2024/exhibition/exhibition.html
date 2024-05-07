@@ -16,12 +16,13 @@
     <main>
         <h1>Treasures From Today</h1>
         <p>Help preserve today's memories for future generations by sharing what you treasure today:</p>
-        <h2><a>bit.ly/placeholder</a></h2>
+        <h2><a href="https://jij021.github.io/spring-2024/exhibition/index.html">www.nypl.org/treasures</a></h2>
         <hr>
         <div id="exhibit-treasure">
-            <h3>Submission name</h3>
-            <!-- frame 1 -->
-            <div id="frame-1-container" class="hidden-section frame-container">
+            <h3 id="sub-name"></h3>
+            <div id="resultContainer">
+              <!-- frame 1 -->
+              <div id="frame-1-container" class="hidden-section frame-container">
                 <svg id="frameSVG1" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.07 551.61">
                     <defs>
                       <style>
@@ -38,10 +39,10 @@
                     <image id="resultImg1" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-1)">
                 </svg>
                 <img class="frames" src="images/frame-1.png" width="600" height="779">
-            </div>
+              </div>
 
-            <!-- frame 2 -->
-            <div id="frame-2-container" class="hidden-section frame-container">
+              <!-- frame 2 -->
+              <div id="frame-2-container" class="hidden-section frame-container">
                 <svg id="frameSVG2" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.76 578.61">
                     <defs>
                       <style>
@@ -58,10 +59,10 @@
                     <image id="resultImg2" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-2)"></image>
                 </svg>
                 <img id="frame2" class="frames" src="images/frame-2.png" width="600" height="779">
-            </div>
-            
-            <!-- frame 3 -->
-            <div id="frame-3-container" class="hidden-section frame-container">
+              </div>
+
+              <!-- frame 3 -->
+              <div id="frame-3-container" class="hidden-section frame-container">
                 <svg id="frameSVG3" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.6 668.08">
                     <defs>
                       <style>
@@ -78,10 +79,10 @@
                     <image id="resultImg3" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-3)"></image>
                   </svg>
                 <img id="frame3" class="frames" src="images/frame-3.png" width="600" height="779">
-            </div>
-            
-            <!-- frame 4 -->
-            <div id="frame-4-container" class="hidden-section frame-container">
+              </div>
+
+              <!-- frame 4 -->
+              <div id="frame-4-container" class="hidden-section frame-container">
                 <svg id="frameSVG4" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.91 696.34">
                     <defs>
                       <style>
@@ -98,10 +99,10 @@
                     <image id="resultImg4" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-4)"></image>
                 </svg>
                 <img id="frame4" class="frames" src="images/frame-4.png" width="600" height="779">
-            </div>
-            
-            <!-- frame 5 -->
-            <div id="frame-5-container" class="hidden-section frame-container">
+              </div>
+
+              <!-- frame 5 -->
+              <div id="frame-5-container" class="hidden-section frame-container">
                 <svg id="frameSVG5" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.04 605.47">
                     <defs>
                       <style>
@@ -118,8 +119,29 @@
                     <image id="resultImg5" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-5)"></image>
                   </svg>
                 <img id="frame5" class="frames" src="images/frame-5.png" width="600" height="779">
+              </div>
+
+              <!-- always going to be hidden, just to set the height -->
+              <div class="hidden-section frame-container">
+                <svg id="frameSVG3" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.6 668.08">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                    <clipPath id="clip-3">
+                        <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                    </clipPath>
+                    <image id="resultImg3" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-3)"></image>
+                  </svg>
+                <img id="frame3" class="frames" src="images/frame-3.png" width="600" height="779">
+              </div>
             </div>
-            <h4>Person who submitted</h4>
+            <h4 id="owner-name"></h4>
         </div>
         <hr>
     </main>

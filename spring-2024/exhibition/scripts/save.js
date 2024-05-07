@@ -16,6 +16,7 @@ const database = firebase.database();
 function submit() {
     // get the image file from the input element
     const image = document.querySelector('#imageUpload').files[0];
+    const treasureName = document.querySelector('#treasureName').value;
     const ownerName = document.querySelector('#ownerName').value;
     const radioOption = document.querySelector('input[name="Q4"]:checked').value;
   
@@ -61,7 +62,7 @@ function submit() {
         }
 
         // update the name at the end
-        document.querySelector('#resultName').innerHTML = ownerName;
+        document.querySelector('#resultName').innerHTML = treasureName;
         
         // once the image is uploaded and SVG is updated, store the quiz response in Firebase
         storeResponse(url); 
