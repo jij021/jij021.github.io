@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasures from Today Form</title>
+    <link rel="stylesheet" href="./style.css">    
+    <link rel="stylesheet" href="https://use.typekit.net/ebp7jdu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/save.js" defer></script>
+</head>
+<body style="background-color: #F8F6F5;" class="animate__animated animate__fadeIn">
+    <main>
+        <div class="header">
+            <img class="logo" src="images/New_York_Public_Library_logo.png" width="800" height="466">
+        </div>
+        <div id="q-1">
+            <div class="main-container">
+                <p class="form-number">1/4</p>
+                <h2>What is something that you treasure?</h2>
+                
+                <p class="warning hidden-section" id="warning-1">Please submit an image.</p>
+                <label id="addImage" class="responses">
+                    <p class="caption" id="image-caption">Add a .jpg or .png image here. <br> Portrait view is recommended.</p>
+                    <img id="image-icon" src="images/image-png.png" width="48" height="36">
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/png, image/jpeg" required/>
+                </label>
+                <button class="light-button body" onclick="nextOne()">NEXT</button>
+            </div>
+        </div>
+        <div id="q-2" class="hidden-section">
+            <div class="main-container">
+                <p class="form-number">2/4</p>
+                <h2>Give this treasure a name.</h2>
+                <p class="caption chara-limit">Maximum 32 character limit.</p>
+                <div class="responses">
+                    <p class="warning hidden-section" id="warning-2">Please type in the text area.</p>
+                    <label for="Q2"><input id="treasureName" class="textbox" type="text" id="Q2" name="Q2" required></label>
+                </div>
+                <button class="light-button body" onclick="nextTwo()">NEXT</button>
+            </div>
+        </div>
+        <div id="q-3" class="hidden-section">
+            <div class="main-container">
+                <p class="form-number">3/4</p>
+                <h2>Who owns this treasure?</h2>
+                <p class="caption">Maximum 32 character limit.</p>
+                <div class="responses">
+                    <p class="warning hidden-section" id="warning-3">Please type in the text area.</p>
+                    <label for="Q3"><input id="ownerName" class="textbox" type="text" id="Q3" name="Q3" required></label>
+                </div>
+                <button class="light-button body" onclick="nextThree()">NEXT</button>
+            </div>
+        </div>
+        <div id="q-4" class="hidden-section">
+            <div class="main-container">
+                <p class="form-number">4/4</p>
+                <h2>Why do you consider this a “treasure”?</h2>
+
+                <p class="warning hidden-section" id="warning-4">Please choose a response.</p>
+                <div class="radio-boxes">
+                    <label for="Q4_1" class="radio-container">I want to pass it down.<input type="radio" class="radio" id="Q4_1" name="Q4" value="1" required><span class="checkmark"></span></label>
+                    
+                    <label for="Q4_2" class="radio-container">It’s a gift from someone.<input type="radio" class="radio" id="Q4_2" name="Q4" value="2" required><span class="checkmark"></span></label>
+                    
+                    <label for="Q4_3" class="radio-container">It’s worth a lot of money.<input type="radio" class="radio" id="Q4_3" name="Q4" value="3" required><span class="checkmark"></span></label>
+                    
+                    <label for="Q4_4" class="radio-container">It’s a precious memory.<input type="radio" class="radio" id="Q4_4" name="Q4" value="4" required><span class="checkmark"></span></label>
+                    
+                    <label for="Q4_5" class="radio-container">It’s beautiful.<input type="radio" class="radio" id="Q4_5" name="Q4" value="5" required><span class="checkmark"></span></label>
+                </div>
+                <button class="light-button body" onclick="nextFour(); submit()">FINISH</button>
+            </div>
+        </div>
+        
+        <div id="result" class="hidden-section">
+            <div class="main-container">
+                <h3>Thank you for submitting</h3>
+                <h4 id="resultName"></h4>
+
+                <div id="resultContainer">
+                    <!-- frame 1 -->
+                    <div id="frame-1-container" class="hidden-section frame-container">
+                        <svg id="frameSVG1" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.07 551.61">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #000;
+                                  stroke-width: 0px;
+                                }
+                              </style>
+                            </defs>
+                            <rect class="cls-1" width="353.07" height="551.61"/>
+                            <clipPath id="clip-1">
+                                <rect class="cls-1" width="353.07" height="551.61"/>
+                            </clipPath>
+                            <image id="resultImg1" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-1)">
+                        </svg>
+                        <img class="frames" src="images/frame-1.png" width="600" height="779">
+                    </div>
+
+                    <!-- frame 2 -->
+                    <div id="frame-2-container" class="hidden-section frame-container">
+                        <svg id="frameSVG2" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.76 578.61">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #000;
+                                  stroke-width: 0px;
+                                }
+                              </style>
+                            </defs>
+                            <rect class="cls-1" width="414.76" height="578.61"/>
+                            <clipPath id="clip-2">
+                                <rect class="cls-1" width="414.76" height="578.61"/>
+                            </clipPath>
+                            <image id="resultImg2" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-2)"></image>
+                        </svg>
+                        <img id="frame2" class="frames" src="images/frame-2.png" width="600" height="779">
+                    </div>
+                    
+                    <!-- frame 3 -->
+                    <div id="frame-3-container" class="hidden-section frame-container">
+                        <svg id="frameSVG3" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.6 668.08">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #000;
+                                  stroke-width: 0px;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                            <clipPath id="clip-3">
+                                <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                            </clipPath>
+                            <image id="resultImg3" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-3)"></image>
+                          </svg>
+                        <img id="frame3" class="frames" src="images/frame-3.png" width="600" height="779">
+                    </div>
+                    
+                    <!-- frame 4 -->
+                    <div id="frame-4-container" class="hidden-section frame-container">
+                        <svg id="frameSVG4" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.91 696.34">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #000;
+                                  stroke-width: 0px;
+                                }
+                              </style>
+                            </defs>
+                            <ellipse class="cls-1" cx="265.46" cy="348.17" rx="265.46" ry="348.17"/>
+                            <clipPath id="clip-4">
+                                <ellipse class="cls-1" cx="265.46" cy="348.17" rx="265.46" ry="348.17"/>
+                            </clipPath>
+                            <image id="resultImg4" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-4)"></image>
+                        </svg>
+                        <img id="frame4" class="frames" src="images/frame-4.png" width="600" height="779">
+                    </div>
+                    
+                    <!-- frame 5 -->
+                    <div id="frame-5-container" class="hidden-section frame-container">
+                        <svg id="frameSVG5" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.04 605.47">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #000;
+                                  stroke-width: 0px;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M208.24,0h18.56C341.73,0,435.04,93.31,435.04,208.24v397.23H0V208.24C0,93.31,93.31,0,208.24,0Z"/>
+                            <clipPath id="clip-5">
+                                <path class="cls-1" d="M208.24,0h18.56C341.73,0,435.04,93.31,435.04,208.24v397.23H0V208.24C0,93.31,93.31,0,208.24,0Z"/>
+                            </clipPath>
+                            <image id="resultImg5" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-5)"></image>
+                          </svg>
+                        <img id="frame5" class="frames" src="images/frame-5.png" width="600" height="779">
+                    </div>
+                </div>
+  
+                <p class="body">The New York Public Library values each of its guests and their own connection to our collection.</p>
+                <p class="body">Feel free to view your treasure alongside many others’ on the screen in the Polonsky Exhibition.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

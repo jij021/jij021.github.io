@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasures from Today Form</title>
+    <link rel="stylesheet" href="./exhibition-style.css">    
+    <link rel="stylesheet" href="https://use.typekit.net/ebp7jdu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="./scripts/exhibit-script.js" defer></script>
+</head>
+<body style="background-color: #12122A;">
+    <main>
+        <h1>Treasures From Today</h1>
+        <p>Help preserve today's memories for future generations by sharing what you treasure today:</p>
+        <h2><a>bit.ly/placeholder</a></h2>
+        <hr>
+        <div id="exhibit-treasure">
+            <h3>Submission name</h3>
+            <!-- frame 1 -->
+            <div id="frame-1-container" class="hidden-section frame-container">
+                <svg id="frameSVG1" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.07 551.61">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <rect class="cls-1" width="353.07" height="551.61"/>
+                    <clipPath id="clip-1">
+                        <rect class="cls-1" width="353.07" height="551.61"/>
+                    </clipPath>
+                    <image id="resultImg1" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-1)">
+                </svg>
+                <img class="frames" src="images/frame-1.png" width="600" height="779">
+            </div>
+
+            <!-- frame 2 -->
+            <div id="frame-2-container" class="hidden-section frame-container">
+                <svg id="frameSVG2" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.76 578.61">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <rect class="cls-1" width="414.76" height="578.61"/>
+                    <clipPath id="clip-2">
+                        <rect class="cls-1" width="414.76" height="578.61"/>
+                    </clipPath>
+                    <image id="resultImg2" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-2)"></image>
+                </svg>
+                <img id="frame2" class="frames" src="images/frame-2.png" width="600" height="779">
+            </div>
+            
+            <!-- frame 3 -->
+            <div id="frame-3-container" class="hidden-section frame-container">
+                <svg id="frameSVG3" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.6 668.08">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                    <clipPath id="clip-3">
+                        <path class="cls-1" d="M115.57.22L0,115.79v432.16l120.12,120.12h218.18l120.3-120.3V127.7L335.42,4.51S115.57-1.18,115.57.22Z"/>
+                    </clipPath>
+                    <image id="resultImg3" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-3)"></image>
+                  </svg>
+                <img id="frame3" class="frames" src="images/frame-3.png" width="600" height="779">
+            </div>
+            
+            <!-- frame 4 -->
+            <div id="frame-4-container" class="hidden-section frame-container">
+                <svg id="frameSVG4" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.91 696.34">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <ellipse class="cls-1" cx="265.46" cy="348.17" rx="265.46" ry="348.17"/>
+                    <clipPath id="clip-4">
+                        <ellipse class="cls-1" cx="265.46" cy="348.17" rx="265.46" ry="348.17"/>
+                    </clipPath>
+                    <image id="resultImg4" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-4)"></image>
+                </svg>
+                <img id="frame4" class="frames" src="images/frame-4.png" width="600" height="779">
+            </div>
+            
+            <!-- frame 5 -->
+            <div id="frame-5-container" class="hidden-section frame-container">
+                <svg id="frameSVG5" class="frameSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.04 605.47">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #000;
+                          stroke-width: 0px;
+                        }
+                      </style>
+                    </defs>
+                    <path class="cls-1" d="M208.24,0h18.56C341.73,0,435.04,93.31,435.04,208.24v397.23H0V208.24C0,93.31,93.31,0,208.24,0Z"/>
+                    <clipPath id="clip-5">
+                        <path class="cls-1" d="M208.24,0h18.56C341.73,0,435.04,93.31,435.04,208.24v397.23H0V208.24C0,93.31,93.31,0,208.24,0Z"/>
+                    </clipPath>
+                    <image id="resultImg5" class="imageUnderFrame" xlink:href="" clip-path="url(#clip-5)"></image>
+                  </svg>
+                <img id="frame5" class="frames" src="images/frame-5.png" width="600" height="779">
+            </div>
+            <h4>Person who submitted</h4>
+        </div>
+        <hr>
+    </main>
+</body>
+</html>
