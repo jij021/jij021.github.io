@@ -24,37 +24,47 @@
                 <p class="form-number">1/4</p>
                 <h2>What is something that you treasure?</h2>
                 
-                <p class="warning hidden-section" id="warning-1">Please submit an image.</p>
-                <label id="addImage" class="responses">
-                    <p class="caption" id="image-caption">Add a .jpg or .png image here. <br> Portrait view is recommended.</p>
-                    <img id="image-icon" src="images/image-png.png" width="48" height="36">
-                    <input type="file" id="imageUpload" name="imageUpload" accept="image/png, image/jpeg" required/>
-                </label>
-                <button class="light-button body" onclick="nextOne()">NEXT</button>
+                <div id="q-1-input">
+                  <p class="warning hidden-section" id="warning-1">Please submit an image.</p>
+                  <label id="addImage" class="responses">
+                      <p class="caption" id="image-caption">Add a .jpg or .png image here. <br> Portrait view is recommended.</p>
+                      <img id="image-icon" src="images/image-png.png" width="48" height="36">
+                      <input type="file" id="imageUpload" name="imageUpload" accept="image/png, image/jpeg" required/>
+                  </label>
+                </div>
+                
+                <button class="light-button" onclick="nextOne()">NEXT</button>
             </div>
         </div>
         <div id="q-2" class="hidden-section">
             <div class="main-container">
                 <p class="form-number">2/4</p>
                 <h2>Give this treasure a name.</h2>
-                <p class="caption chara-limit">Maximum 32 character limit.</p>
-                <div class="responses">
-                    <p class="warning hidden-section" id="warning-2">Please type in the text area.</p>
-                    <label for="Q2"><input id="treasureName" class="textbox" type="text" id="Q2" name="Q2" required></label>
+                
+                <div id="q-2-input">
+                  <p class="caption chara-limit">Maximum 32 character limit.</p>
+                  <div class="responses">
+                      <p class="warning hidden-section" id="warning-2">Please type in the text area.</p>
+                      <label for="Q2"><input id="treasureName" class="textbox" type="text" id="Q2" name="Q2" required></label>
+                  </div>
                 </div>
-                <button class="light-button body" onclick="nextTwo()">NEXT</button>
+                <button class="light-button" onclick="nextTwo()">NEXT</button>
             </div>
         </div>
         <div id="q-3" class="hidden-section">
             <div class="main-container">
                 <p class="form-number">3/4</p>
                 <h2>Who owns this treasure?</h2>
-                <p class="caption">Maximum 32 character limit.</p>
-                <div class="responses">
-                    <p class="warning hidden-section" id="warning-3">Please type in the text area.</p>
-                    <label for="Q3"><input id="ownerName" class="textbox" type="text" id="Q3" name="Q3" required></label>
+                
+                <div id="q-3-input">
+                  <p class="caption">Maximum 32 character limit.</p>
+                  <div class="responses">
+                      <p class="warning hidden-section" id="warning-3">Please type in the text area.</p>
+                      <label for="Q3"><input id="ownerName" class="textbox" type="text" id="Q3" name="Q3" required></label>
+                  </div>
                 </div>
-                <button class="light-button body" onclick="nextThree()">NEXT</button>
+                
+                <button class="light-button" onclick="nextThree()">NEXT</button>
             </div>
         </div>
         <div id="q-4" class="hidden-section">
@@ -62,19 +72,22 @@
                 <p class="form-number">4/4</p>
                 <h2>Why do you consider this a “treasure”?</h2>
 
-                <p class="warning hidden-section" id="warning-4">Please choose a response.</p>
-                <div class="radio-boxes">
-                    <label for="Q4_1" class="radio-container">I want to pass it down.<input type="radio" class="radio" id="Q4_1" name="Q4" value="1" required><span class="checkmark"></span></label>
-                    
-                    <label for="Q4_2" class="radio-container">It’s a gift from someone.<input type="radio" class="radio" id="Q4_2" name="Q4" value="2" required><span class="checkmark"></span></label>
-                    
-                    <label for="Q4_3" class="radio-container">It’s worth a lot of money.<input type="radio" class="radio" id="Q4_3" name="Q4" value="3" required><span class="checkmark"></span></label>
-                    
-                    <label for="Q4_4" class="radio-container">It’s a precious memory.<input type="radio" class="radio" id="Q4_4" name="Q4" value="4" required><span class="checkmark"></span></label>
-                    
-                    <label for="Q4_5" class="radio-container">It’s beautiful.<input type="radio" class="radio" id="Q4_5" name="Q4" value="5" required><span class="checkmark"></span></label>
+                <div id="q-4-input">
+                  <p class="warning hidden-section" id="warning-4">Please choose a response.</p>
+                  <div class="radio-boxes">
+                      <label for="Q4_1" class="radio-container">I want to pass it down.<input type="radio" class="radio" id="Q4_1" name="Q4" value="1" required><span class="checkmark"></span></label>
+                      
+                      <label for="Q4_2" class="radio-container">It’s a gift from someone.<input type="radio" class="radio" id="Q4_2" name="Q4" value="2" required><span class="checkmark"></span></label>
+                      
+                      <label for="Q4_3" class="radio-container">It’s worth a lot of money.<input type="radio" class="radio" id="Q4_3" name="Q4" value="3" required><span class="checkmark"></span></label>
+                      
+                      <label for="Q4_4" class="radio-container">It’s a precious memory.<input type="radio" class="radio" id="Q4_4" name="Q4" value="4" required><span class="checkmark"></span></label>
+                      
+                      <label for="Q4_5" class="radio-container">It’s beautiful.<input type="radio" class="radio" id="Q4_5" name="Q4" value="5" required><span class="checkmark"></span></label>
+                  </div>
                 </div>
-                <button class="light-button body" onclick="nextFour(); submit()">FINISH</button>
+                
+                <button class="light-button" onclick="nextFour(); submit()">FINISH</button>
             </div>
         </div>
         
@@ -185,8 +198,11 @@
                     </div>
                 </div>
   
-                <p class="body">The New York Public Library values each of its guests and their own connection to our collection.</p>
-                <p class="body">Feel free to view your treasure alongside many others’ on the screen in the Polonsky Exhibition.</p>
+                <div style="margin-top: 0.7em">
+                  <p class="body">The New York Public Library values each of its guests and their own connection to our collection.</p>
+                  <p class="body">Feel free to view your treasure alongside many others’ on the screen in the Polonsky Exhibition.</p>
+                </div>
+                
             </div>
         </div>
     </main>

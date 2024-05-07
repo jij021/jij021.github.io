@@ -41,8 +41,11 @@ function displayResponses(responses) {
     function displayNextResponse() {
         let response = responses[index];
 
-        $("#sub-name").fadeOut();
-        $("#owner-name").fadeOut();
+        // $("#sub-name").fadeOut();
+        // $("#owner-name").fadeOut();
+
+        $("#sub-name").fadeIn();
+        $("#owner-name").fadeIn();
 
         // update based on radio option
         for (let i = 1; i <= 5; i++) {
@@ -61,8 +64,7 @@ function displayResponses(responses) {
         subName.innerHTML = response.treasureName;
         ownerName.innerHTML = response.ownerName;
 
-        $("#sub-name").fadeIn();
-        $("#owner-name").fadeIn();
+        
 
         // function to loop
         index = (index + 1) % responses.length;
